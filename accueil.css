@@ -1,0 +1,78 @@
+body 
+{
+    padding: 0px;
+    margin: 0px;
+    background: #f2f6e9;
+    background-image: url('background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-item
+{
+    left: 28%;
+    top: 5%;
+    margin: auto;
+}
+
+.description 
+{
+    left: 50%;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+}
+   
+.description h1 
+{
+    color: #1334f1;
+}
+
+.description p 
+{
+    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.description button 
+{
+    border:1px solid #3002fc;
+    background-color: transparent;
+    border-radius: 0;
+    color: #fff;
+}
+   
+.description button:hover 
+{
+    border:1px solid #fff;
+    background-color: #fff;
+    color: #000;
+}
+
+.feature-title 
+{
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.features .btn 
+{
+    background-color: #5449f0;
+    border: 1px solid #ff0202;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.features .btn:hover 
+{
+    background-color: #333;
+    border: 1px solid #333;
+}
+   
+   
