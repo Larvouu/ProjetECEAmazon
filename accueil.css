@@ -13,7 +13,7 @@ body
 {
     left: 28%;
     top: 5%;
-    margin: auto;
+    margin-bottom: 120px;;
 }
 
 .description 
@@ -67,6 +67,7 @@ body
     border: 1px solid #ff0202;
     color: #fff;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .features .btn:hover 

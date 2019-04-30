@@ -61,15 +61,17 @@
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Malte</h3>
+            <h3 class="feature-title">Meilleure vente</h3>
             <img src="img/malte.jpg" class="img-fluid">
-            <p> Venez visiter Malte, ce pays incroyables ou vous rencontrerez des personnes magnifiques que vous n'oublirez pas !</p>
+            <p> Venez découvrir notre article le plus vendu et ne ratez pas votre chance de vous le procurer!</p>
+            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Budapest</h3>
+            <h3 class="feature-title">Vendre des articles</h3>
             <img src="img/buda.jpg" class="img-fluid">
-            <p>Budapest, une des meilleures villes pour passer quelques jours avec des potes et passer des moments inoubliables !</p>
+            <p>Vous avez des articles dont vous ne vous servez plus? Venez les ventre sur notre site web au lieu de les jetter!</p>
+            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="Vendre des articles" name="">
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -84,9 +86,9 @@
                     <textarea class="form-control" rows="4">Vos commentaires</textarea>
                 </div>
                 <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+
         </div>
     </div>
-</div>
 
         
     <footer>
