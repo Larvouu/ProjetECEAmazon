@@ -21,6 +21,8 @@
     
     <div id="nav">
         <div id="photo">Photow</div>
+        <p id="nomVendeur">Nom</p>
+        <input id="addProductButton" type="button" value="Vendre un nouveau produit">
     </div>
 
     <div id="section">
