@@ -1,0 +1,38 @@
+#addProductButton{
+    margin-top : 25px;
+    margin-left : 70px;
+}
+
+#nav{
+    background-color: #ffffff;
+    height: 90%;
+    width: 22%;
+    float: left;
+    padding: 5px;
+}
+
+#nomVendeur{
+    height :auto;
+    width : auto;
+    text-align: center;
+    margin-right: 20px;
+}
+
+#photo{
+    border-style: solid;
+    background-color : #4a69bd;
+    height: 200px;
+    width: 200px;
+    margin : 70px;
+    text-align: center;
+    padding-top: 80px;
+}
+
+#section{
+    background-color: #63cdda;
+    width: 78%;
+    float: left;
+    padding: 5px;
+    height: 90%;
+}
+

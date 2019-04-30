@@ -7,8 +7,8 @@
     
     <?php include 'navbar.php'; ?>
     <div id="centrerBouton">
-        <a class="button" href="createVendeurForm.html">Create a new account</a>
-        <a class="button" href="loginVendeurForm.html">Login</a>
+        <a class="button" href="createVendeurForm.php">Create a new account</a>
+        <a class="button" href="loginVendeurForm.php">Login</a>
     </div>  
 
 </body>
