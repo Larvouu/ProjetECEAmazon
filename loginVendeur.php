@@ -13,22 +13,23 @@ $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
  
 if ( $email=="" && $pseudo=="")
 {
-     echo "les champs n'ont pas été saisis!!!";
-    
+    echo "<br><br><div class='bord'><br>";
+    echo "<p class='titre'>les champs n'ont pas été saisis !</p></div>";
+    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
 }
-else if ($email=="" && isset($_POST["pseudo"]))//si le champ email n'a pas été rempli
+else if ($email=="" && isset($_POST["pseudo"]))//si le champ pseudo n'a pas été rempli
 {
     
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>Le champ email est vide !</p></div>";
-    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se créer un compte</button></div></form>";
+    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
 
 }
 else if($pseudo=="" && isset($_POST["email"]))//si le champ email n'a pas été rempli
 {
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>Le champ pseudo est vide !</p></div>";
-    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se créer un compte</button></div></form>";
+    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
 }
 else //si les 2 valeurs ont ben été set
 {
@@ -48,13 +49,24 @@ else //si les 2 valeurs ont ben été set
        if (mysqli_num_rows($result) == 0) 
        {
            //l'email entré n'existe pas
-           echo "l'email n'a pas été trouvé dans la bdd";
+           echo "<br><br><div class='bord'><br>";
+           echo "<p class='titre'>l'email n'a pas été trouvé dans la bdd !</p></div>";
+           echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
        } 
        else 
        {
            //l'email entré a été trouvé --> Affichage de la page du vendeur
            while ($data = mysqli_fetch_assoc($result)) 
            {
+            if($pseudo != $data['pseudo'])
+            {
+                //le pseudo entré ne correspond pas à l'email
+                echo "<br><br><div class='bord'><br>";
+                echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
+                echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+            }
+            else{
+
                 include 'navbar.php';
                 echo "<div id='nav'>
                 
@@ -75,6 +87,7 @@ else //si les 2 valeurs ont ben été set
                     </small>
                 </footer>";
            }
+        }
        }
     
        mysqli_close($db_handle);
