@@ -17,14 +17,16 @@
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; ?> 
 
-    <header class="page-header header container-fluid">
+    <div class="container-fluid">
         <div class="overlay">
             <div class="description">
                 <h1>Bienvenue Dans l'ECE Amazon !</h1>
                 <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p>
                 <button class="btn btn-outline-secondary btn-lg">Découvirir les offres du moment</button>
             </div>
-    </header>
+            </div>
+            </div>
+    
     
     <div id="demo" class="carousel slide" data-ride="carousel">            
         <!-- The slideshow -->
