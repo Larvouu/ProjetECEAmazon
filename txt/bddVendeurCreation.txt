@@ -1,0 +1,9 @@
+create database if not exists eceamazon;
+use eceamazon;
+drop table if exists vendeur;
+
+
+CREATE TABLE vendeur(
+    email varchar(100), 
+    pseudo varchar(100), 
+    PRIMARY KEY (email));
