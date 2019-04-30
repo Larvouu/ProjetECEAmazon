@@ -1,0 +1,23 @@
+create database if not exists eceamazon;
+use eceamazon;
+drop table if exists item;
+
+
+CREATE TABLE item(
+    id int(250) NOT NULL AUTO_INCREMENT, 
+    nom varchar(100), 
+    photo varchar(200),
+    description varchar(200),
+    categorie varchar(200),
+    prix float,
+    video varchar(200),
+    isVendu boolean,
+    tailleVetement int(250),
+    tailleChaussure varchar(5),
+    couleur varchar(200),
+    auteur varchar(200),
+    PRIMARY KEY (id));
+
+#
+
+INSERT INTO item(nom, photo, description, categorie, prix, video, isVendu, tailleVetement, tailleChaussure, couleur, auteur) values ("Candide", "img/candide.jpg", "Il faut cultiver notre jardin", "Livre", "1.99", NULL, 0, NULL, NULL, NULL, "Voltaire");
