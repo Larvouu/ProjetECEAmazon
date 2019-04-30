@@ -10,5 +10,5 @@ CREATE TABLE vendeur(
 
 #
 
-INSERT INTO account(email,pseudo) values ("axel.vinant@edu.ece.fr", "busterfake");
-INSERT INTO account(email,pseudo) values ("anto.ghiassi@edu.ece.fr", "anto");
+INSERT INTO vendeur(email,pseudo) values ("axel.vinant@edu.ece.fr", "busterfake");
+INSERT INTO vendeur(email,pseudo) values ("anto.ghiassi@edu.ece.fr", "anto");
