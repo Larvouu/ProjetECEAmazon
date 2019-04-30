@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <link href="navbar.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navbar.js"></script>
@@ -17,15 +18,22 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Catégories</a>
             <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Livres</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Musique</a>
-            <a class="dropdown-item" href="#">Vêtements</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Sports et loisirs</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-header">Vêtements</a>
+            <a class="dropdown-item" href="#">Tee-shirts</a>
+            <a class="dropdown-item" href="#">Chaussures Homme</a>
+            <a class="dropdown-item" href="#">Chaussures Femme</a>
+     
             </div>
         </li>
             
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Ventes flash</a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu">     
             <a class="dropdown-item" href="#">Livres</a>
             <a class="dropdown-item" href="#">Musique</a>
             <a class="dropdown-item" href="#">Vêtements</a>
