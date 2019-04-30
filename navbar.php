@@ -56,7 +56,7 @@
 <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="#">Votre Compte</a>
+            <a class="nav-link" href="#"><img src="img/monCompte.png" height=25px width=25px> Votre Compte</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#"><img src="img/panier.png" height=30px width=30px></a>
