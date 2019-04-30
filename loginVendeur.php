@@ -10,7 +10,7 @@ echo "<head>
 //avec ce qui a été passé par méthode POST
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
-
+ 
 if ( $email=="" && $pseudo=="")
 {
      echo "les champs n'ont pas été saisis!!!";
@@ -41,7 +41,7 @@ else //si les 2 valeurs ont ben été set
 
     if ($db_found) 
    {
-       $sql = "SELECT email,pseudo FROM vendeur WHERE email = '$email' ";
+       $sql = "SELECT email,pseudo,photo,img_fond FROM vendeur WHERE email = '$email' ";
        $result = mysqli_query($db_handle, $sql);
        
        //regarder s'il y a de résultat
@@ -57,12 +57,15 @@ else //si les 2 valeurs ont ben été set
            {
                 include 'navbar.php';
                 echo "<div id='nav'>
-                <div id='photo'>Photow</div>
+                
+                <img id='photo' src=".$data['photo']."  alt='photo'>
+
                 <p id='pseudoVendeur'>". $data['pseudo']."</p>
+
                 <input id='addProductButton' type='button' value='Vendre un nouveau produit'>
                 </div>
 
-                <div id='section'></div>
+                <img id='section' src=".$data['img_fond']."  alt='image_de_couverture'>
                 
                 <footer>
                     <small>
