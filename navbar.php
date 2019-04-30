@@ -2,7 +2,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <link href="navbar.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navbar.js"></script>
@@ -60,7 +59,7 @@
             <a class="nav-link" href="#">Votre Compte</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Panier</a>
+            <a class="nav-link" href="#"><img src="img/panier.png" height=30px width=30px></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Admin</a>
