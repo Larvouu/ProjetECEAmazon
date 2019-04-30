@@ -3,9 +3,6 @@
     <title>ECE Amazon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="accueil.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="accueil.js"></script>
 </head>
@@ -24,8 +21,8 @@
                 <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p>
                 <button class="btn btn-outline-secondary btn-lg">Découvirir les offres du moment</button>
             </div>
-            </div>
-            </div>
+        </div>
+    </div>
     
     
     <div id="demo" class="carousel slide" data-ride="carousel">            
