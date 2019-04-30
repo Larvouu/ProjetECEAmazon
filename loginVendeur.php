@@ -1,5 +1,8 @@
 <?php 
 echo "<head>
+        <title>ECE Amazon</title>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link href='loginVendeur.css' rel='stylesheet' type='text/css'>
     </head>";
 
@@ -49,12 +52,25 @@ else //si les 2 valeurs ont ben été set
        } 
        else 
        {
-           //l'email entré a été trouvé 
+           //l'email entré a été trouvé --> Affichage de la page du vendeur
            while ($data = mysqli_fetch_assoc($result)) 
            {
-               echo "email: " . $data['email'] . "<br>";
-               echo "pseudo: " . $data['pseudo'] . "<br>";
-               
+                include 'navbar.php';
+                echo "<div id='nav'>
+                <div id='photo'>Photow</div>
+                <p id='pseudoVendeur'>". $data['pseudo']."</p>
+                <input id='addProductButton' type='button' value='Vendre un nouveau produit'>
+                </div>
+
+                <div id='section'></div>
+                
+                <footer>
+                    <small>
+                        <p>
+                            Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
+                        </p>
+                    </small>
+                </footer>";
            }
        }
     
