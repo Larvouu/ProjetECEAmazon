@@ -1,0 +1,47 @@
+body
+{
+    
+    background: url(img/degrade.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+.bord
+{ 
+  font-family : Ebrima;
+  font-size:20px;
+  width: 50%;
+  border: 6px solid #ffe0ef;
+  border-radius: 12px;
+  margin: auto;
+    
+}
+
+#centrerB
+{
+  text-align: center;
+}
+
+#submitB
+{
+    cursor: pointer;
+    color:white;
+    background-color:#00d8a5;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 14px 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      
+}
+
+.titre
+{
+	color: #ffe0ef;
+    font-family: Ebrima;
+    text-align: center;
+	font-size:30px;
+	text-shadow: 2px 1px rgba(0,0,0,0.19);
+}
+

@@ -9,7 +9,7 @@
    
         <div class="uploadImgUser">
             <strong>Compléter ces champs afin de vous créer un compte Vendeur :</strong>
-            <form action="createAccount.php" method="post">
+            <form action="createVendeur.php" method="post">
                 
             <table style="margin-left:30px;">
                 <tr>
