@@ -22,14 +22,14 @@
                 <p>Retrouvez ici tous nos sports et loisirs proposés.</p>
               
             </div>
-            </div>
-            </div>
+        </div>
+    </div>
     
 
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Parachutimse</h3>
+            <h3 class="feature-title">Parachutisme</h3>
             <img src="img/parachute.jpg" class="img-fluid">
             <p> Descripton: Un saut en parachute pour un moment inoubliable et un maximum d'adrénaline en compagnie d'un professionnel. <br>Prix: 239€ <br> durée: environ 4h</p>
             <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">

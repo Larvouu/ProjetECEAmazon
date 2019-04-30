@@ -1,7 +1,7 @@
 <?php 
 
 echo "<head>
-            <link href='createAccount.css' rel='stylesheet' type='text/css'>
+            <link href='createVendeur.css' rel='stylesheet' type='text/css'>
     </head>";
 
 //Déclaration et initialisation des variables $email et $pseudo 
@@ -17,9 +17,14 @@ if(isset($_POST["submit"]))
     //Si un des champs est vide
     if ($email=="" || $pseudo=="" || $photo=="" || $img_fond=="")
     {
-        echo "<br><br><div class='bord'><br>";
-        echo "<p class='titre'>Champ(s) vide(s) !!!</p></div>";
-        echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createAccountForm.php'>Ré-essayer de se créer un compte</button></div></form>";
+        echo "<br><br>
+                <div class='bord'>
+                    <br><p class='titre'>Champ(s) vide(s) !!!</p>
+                </div>
+              <br><br>
+                <div id='centrerB'>
+                    <form><button id='submitB' type='submit' formaction='createVendeurForm.php'>Ré-essayer de se créer un compte</button></form>
+                </div>";
         
     }
     else
@@ -38,7 +43,14 @@ if(isset($_POST["submit"]))
             //regarder s'il y a de résultat
             if (mysqli_query($db_handle, $sql)) 
             {
-                echo "Les informations du compte créé ont bien été ajouté dans la bdd.";
+                echo "<div class='bord'>";
+                echo "<p class='titre'>Les informations du compte créé ont bien été ajouté dans la bdd.</p>";
+                echo "</div>";
+
+                echo "<div id='centrerB'>
+                            <form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Connectez-vous dès maintenant !</button></form>
+                        </div>";
+
             } 
             else 
             {

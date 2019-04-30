@@ -17,11 +17,11 @@
          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Catégories</a>
             <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Livres</a>
+            <a class="dropdown-item" href="cat_livre.php">Livres</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Musique</a>
+            <a class="dropdown-item" href="cat_musique.php">Musique</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Sports et loisirs</a>
+            <a class="dropdown-item" href="cat_sport.php">Sports et loisirs</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-header">Vêtements</a>
             <a class="dropdown-item" href="#">Tee-shirts</a>
@@ -34,10 +34,10 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Ventes flash</a>
             <div class="dropdown-menu">     
-            <a class="dropdown-item" href="#">Livres</a>
-            <a class="dropdown-item" href="#">Musique</a>
+            <a class="dropdown-item" href="cat_livre.php">Livres</a>
+            <a class="dropdown-item" href="cat_musique.php">Musique</a>
             <a class="dropdown-item" href="#">Vêtements</a>
-            <a class="dropdown-item" href="#">Sports et loisirs</a>
+            <a class="dropdown-item" href="cat_sport.php">Sports et loisirs</a>
             </div>
          </li>
 

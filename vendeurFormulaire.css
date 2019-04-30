@@ -1,3 +1,9 @@
+body
+{
+    background: url(img/whiteadmin.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
 .button
 {
     cursor: pointer;
