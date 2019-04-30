@@ -1,0 +1,90 @@
+body
+{
+    
+    background: url(img/degrade.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+#button
+{
+    cursor: pointer;
+    color:white;
+    background-color:rgb(248, 158, 170);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 50px;
+}
+
+input[type=text] 
+{
+    
+    margin: 8px 0;
+    width : 200px;
+    border: 3px solid rgb(252, 205, 212);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size : 20px;
+   text-align : center;
+  }
+  
+input[type=text]:focus 
+{
+    border: 3px solid #555;
+}
+
+
+.logForm
+{
+    
+    font-family: Ebrima;
+    text-align: center;
+    color: white;
+    font-size:20px;
+    width: 25%;
+    border: 3px solid white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 10px;
+
+}
+
+
+#loginInterface
+{
+    background-color: transparent; 
+    color: white;
+    font-weight: bold;
+    font-family: Calibri;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 25px 25px 25px 25px;
+    width: 25%;
+    margin: auto;
+    
+
+    
+   
+}
+
+#submitB
+{
+    cursor: pointer;
+    color:white;
+    background-color:#e28a43;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 14px 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+}
+
