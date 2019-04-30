@@ -40,8 +40,8 @@
 </div>
            
 <div class="mx-auto order-0">
-    <img src="img/logo.jpg" class="navbar-brand mx-auto">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+    <a href="accueil.php"> <img src="img/logo.jpg" class="navbar-brand mx-auto"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"> 
     <span class="navbar-toggler-icon"></span>
     </button>
 </div>
