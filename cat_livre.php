@@ -22,60 +22,60 @@
                 <p>Retrouvez ici tous les livres disponibles à l'achat.</p>
               
             </div>
-            </div>
-            </div>
+        </div>
+    </div>
     
 
     <div class="container features">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Les misérables</h3>
-            <img src="img/miserables.jpg" class="img-fluid">
-            <p> Auteur: Victor Hugo <br>Prix: 5.29€ <br> Année: 1862</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">La maison biscornue</h3>
-            <img src="img/maison.jpg" class="img-fluid">
-            <p> Auteur: Agatha Christie <br>Prix: 4.99€ <br> Année: 1949</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Voyage au centre de la Terre</h3>
-            <img src="img/voyage.jpg" class="img-fluid">
-            <p> Auteur: Jules Verne <br>Prix: 8.79€ <br> Année: 1864</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">La peau de chagrin</h3>
-            <img src="img/peau.jpg" class="img-fluid">
-            <p> Auteur: Balzac <br>Prix: 3.29€ <br> Année: 1831</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">L'étranger</h3>
-            <img src="img/etranger.jpg" class="img-fluid">
-            <p> Auteur: Albert Camus <br>Prix: 5.39€ <br> Année: 1942</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Candide</h3>
-            <img src="img/candide.jpg" class="img-fluid">
-            <p> Auteur: Voltaire <br>Prix: 1.99€ <br> Année: 1759</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        </div>
-        </div>
+           
+<?php
+    //On précise à quelle BDD on veut accéder...
+    $database = "eceamazon";
 
+    //pour s'y connecter
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+
+    if ($db_found) //Si la connection est établie
+    {
+        //On sélectionne les attributs (seulement ceux à afficher) d'item pour les livres (WHERE)
+        $sql = "SELECT nom, photo, descrip, categorie, prix, auteur FROM item WHERE categorie = 'Livre' ";
+        $result = mysqli_query($db_handle, $sql);
         
+        if (mysqli_num_rows($result) == 0) //Si on a aucun résultat suite à la requette
+        {
+            echo "<br><br><div class='bord'><br>";
+            echo "<p class='titre'>Erreur : Aucun livre en vente actuellement </p></div>";
+            echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour menu</button></div></form>";
+        } 
 
+        else //Si la requete SQL obtient des résultats
+        {
+            while ($data = mysqli_fetch_assoc($result)) // = tant que la connexion est établie ?
+            {
+                echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
+                echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre Livre
+                echo "<img src=".$data['photo']." class='img-fluid'>"; //Couverture Livre
+                echo "<p style='font-size:20px;'><strong>Auteur: ".$data['auteur']."<br>"; //Auteur Livre
+                echo "<p style='font-size:15px;'>".$data['descrip']."<br>";//Description Livre
+                echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix Livre
+                echo "<input  type='submit'  class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'>";
+                echo "</div>";
+            }
 
+        }
 
-        
+        mysqli_close($db_handle);//Toujours à la fin d'une connexion de BDD
+    }
+    else //Si la connexion échoue
+    {
+        echo "Sorry, Database not found";
+    }
 
-
-
-
+?>
+        </div>
+        </div>
 
     <footer>
         <small>
