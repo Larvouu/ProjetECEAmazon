@@ -16,8 +16,12 @@ CREATE TABLE item(
     tailleChaussure varchar(5),
     couleur varchar(200),
     auteur varchar(200),
-    PRIMARY KEY (id));
+    vendeur_email varchar(100),
+    PRIMARY KEY (id),
+    FOREIGN KEY (vendeur_email) REFERENCES vendeur (email)
+);
 
 #
 
-INSERT INTO item(nom, photo, description, categorie, prix, video, isVendu, tailleVetement, tailleChaussure, couleur, auteur) values ("Candide", "img/candide.jpg", "Il faut cultiver notre jardin", "Livre", "1.99", NULL, 0, NULL, NULL, NULL, "Voltaire");
+INSERT INTO item(nom, photo, description, categorie, prix, video, isVendu, tailleVetement, tailleChaussure, couleur, auteur, vendeur_email) 
+values ("Candide", "img/candide.jpg", "Il faut cultiver notre jardin", "Livre", "1.99", NULL, 0, NULL, NULL, NULL, "Voltaire", "axel.vinant@edu.ece.fr");
