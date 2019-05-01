@@ -68,7 +68,6 @@ else //si les 2 valeurs ont ben été set
             }
             else{
 
-                include 'navbar.php';
                 echo "<div id='nav'>
                 
                 <img id='photo' src=".$data['photo']."  alt='photo'>
