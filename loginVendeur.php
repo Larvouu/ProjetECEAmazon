@@ -1,11 +1,12 @@
-<?php 
-echo "<head>
-        <title>ECE Amazon</title>
-        <meta charset='utf-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link href='loginVendeur.css' rel='stylesheet' type='text/css'>
-    </head>";
+<head>
+    <title>ECE Amazon</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='loginVendeur.css' rel='stylesheet' type='text/css'>
+</head>
 
+<?php 
+    include 'navbar.php';
 //Déclaration et initialisation des variables $email et $pseudo 
 //avec ce qui a été passé par méthode POST
 $email = isset($_POST["email"])? $_POST["email"] : "";

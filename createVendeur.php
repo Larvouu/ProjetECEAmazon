@@ -1,9 +1,10 @@
+<head>
+    <link href='createVendeur.css' rel='stylesheet' type='text/css'>
+</head>
+
 <?php 
 
-echo "<head>
-            <link href='createVendeur.css' rel='stylesheet' type='text/css'>
-    </head>";
-
+    include 'navbar.php';
 //Déclaration et initialisation des variables $email et $pseudo 
 //avec ce qui a été passé par méthode POST
 $email = isset($_POST["email"])? $_POST["email"] : "";
@@ -92,7 +93,7 @@ if(isset($_POST["submit"]))
                         echo "<p class='titre'>Les informations du compte créé ont bien été ajouté dans la bdd.</p>";
                         echo "</div>";
 
-                        echo "<div id='centrerB'>
+                        echo "<div id='centrerB'><br><br>
                                     <form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Connectez-vous dès maintenant !</button></form>
                                 </div>";
 
