@@ -9,6 +9,7 @@ body
     background-size: cover;
 }
 
+
 .description 
 {
     left: 50%;
@@ -30,10 +31,15 @@ body
     color: #333;
     font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 20px;
-    margin-top: 200px;
+    margin-bottom: 50px;
+    margin-top: 40px;
     text-transform: uppercase;
     text-align : center;
+}
+
+.container-fluid
+{
+    margin-bottom: 140px;
 }
 
 .features .btn 
@@ -41,7 +47,7 @@ body
     background-color: #5449f0;
     border: 1px solid #ff0202;
     color: #fff;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 50px;
 }
 

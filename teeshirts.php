@@ -14,68 +14,70 @@
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; ?> 
 
-
     <div class="container-fluid"> 
         <div class="overlay">
             <div class="description">
                 <h1>Nos Tee-shirts </h1>
-                <p>Retrouvez ici notre plus belle selection de Tee-shirts et impressionez vous amis avec no Tee-shirts originiaux ! .</p>
-              
+                <p>Retrouvez ici notre plus belle selection de Tshirts et impressionez vous amis avec nos Tshirts originiaux !</p>
             </div>
-            </div>
-            </div>
-    
+        </div>
+    </div>
 
+
+    <!--________________________________________________________________________________________-->
     <div class="container features">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Tee-shirt Père(fect)</h3>
-            <img src="img/perfect.jpg" class="img-fluid">
-            <p> Marque: Au masculin <br>Prix: 19.29€ <br> Taille: M-L-XL</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Tee-shirt Brice de Nice</h3>
-            <img src="img/brice.jpg" class="img-fluid">
-            <p> Marque: Nike <br>Prix: 29.99€ <br> Taille: S-M-XL</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Tee-shirt bisous & love</h3>
-            <img src="img/bisous.jpg" class="img-fluid">
-            <p> Marque: Au féminin <br>Prix: 23.99€ <br> Taille S-M</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Tee-shirt Supreme</h3>
-            <img src="img/supreme.jpg" class="img-fluid">
-            <p> Marque: Supreme <br>Prix: 300€ <br> Taille M-L</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Tee-shirt Calvin Klein</h3>
-            <img src="img/calvin.jpg" class="img-fluid">
-            <p> Marque: Calvin Klein <br>Prix: 51€ <br> Taille: XS-M-L-XL-XXL</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Tee-shirt Taggle</h3>
-            <img src="img/taggle.jpg" class="img-fluid">
-            <p> Marque: Au féminin <br>Prix: 19.95€ <br> Taille: XS-S-M</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        </div>
-        </div>
 
-        
+    <?php
+            //Identifier la BDD
+            $database = "eceamazon";
 
+            //Connexion dans la BDD
 
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+           
 
-        
+            if ($db_found) 
+            {
+                
+                $sql = "SELECT nom, photo, descrip, prix, tailleS, tailleM, tailleL FROM item WHERE categorie = 'TeeShirt' ";
+                $result = mysqli_query($db_handle, $sql);
+                
+                //s'il n'y a de résultat
+                if (mysqli_num_rows($result) == 0) 
+                {
+                    echo "<br><br><div class='bord'><br>";
+                    echo "<p class='titre'>Erreur : Pas de résultats (select datas d'une musique)</p></div>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour menu</button></div></form>";
+                } 
+                else 
+                {
+                    //s'il y a bien des résulats à la requête sql
+                    //On affiche chacun des items appartenant à la categorie TeeShirt
+                    while ($data = mysqli_fetch_assoc($result)) 
+                    {
+                        echo "<div class='col-lg-4 col-md-4'>";
+                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
+                            echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
+                            echo "<p>Marque: ".$data['descrip']."<br>"; //Marque du Tshirt
+                            echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
+                            echo "Taille :";//Taille du Tshirt
+                            echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                        echo "</div>";
+                    }
+                }
+                
+                mysqli_close($db_handle);
+            }
+            else
+            {
+                echo "Sorry, Database not found";
+            }
 
-
-
-
+    ?>
+    </div>
+    </div><br><br>
 
     <footer>
         <small>
@@ -85,10 +87,6 @@
         </small>
     </footer>
         
-
         
 </body>
-
-
-
 </html>
