@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_musique.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="accueil.js"></script>
+
 </head>
 
 
@@ -23,8 +24,6 @@
         </div>
     </div>
 
-
-    <!--________________________________________________________________________________________-->
     <div class="container features">
         <div class="row">
 
@@ -33,7 +32,6 @@
             $database = "eceamazon";
 
             //Connexion dans la BDD
-
             $db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
            
@@ -62,7 +60,30 @@
                             echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
                             echo "<p>Marque: ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
-                            echo "Taille :";//Taille du Tshirt
+                           /* echo "
+                                    //FAIRE UN ONCLICK SUR AJOUTER PANIER !!!!!
+                                    <div class='dropdown'>
+                                        <button class='btn btn-light dropdown-toggle' type='button' data-toggle='dropdown'>
+                                        Taille<span class='caret'></span></button>
+                                            <ul class='dropdown-menu'>
+                                            <li><a href='#'>".$data['tailleS']."</a></li>
+                                            <li><a href='#'>".$data['tailleM']."</a></li>
+                                            <li><a href='#'>".$data['tailleS']."</a></li>
+                                            </ul>
+                                    </div>
+                            
+                            ";//Taille du Tshirt*/
+                            echo "
+                            <form action='ajoutPanierSpecial.php'>
+                                <input type='radio' name='taille' value='male'>".$data['tailleS']."<br>
+                                <input type='radio' name='taille' value='female'>".$data['tailleM']."<br>
+                                <input type='radio' name='taille' value='other'>".$data['tailleL']."<br>  
+                                <input type='submit' value='Ajouter au panier'>
+                            </form>
+                            
+                            
+                            
+                            ";
                             echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
                         echo "</div>";
                     }
