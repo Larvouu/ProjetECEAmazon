@@ -32,7 +32,7 @@
             
 
         <li class="nav-item">
-            <a class="nav-link" href="ventes_flash.php.php">Ventes flash</a>
+            <a class="nav-link" href="ventes_flash.php">Ventes flash</a>
         </li>
 
         <li class="nav-item">
