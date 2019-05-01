@@ -11,7 +11,6 @@
         <br><br>
         <p id="loginInterface">Login</p>
         <br><br>
-        
         <form action="loginVendeur.php" method="post">
             <table style="text-align:center;">
                 <tr>

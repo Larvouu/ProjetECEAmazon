@@ -57,7 +57,7 @@
             <a class="nav-link" href="#"><img src="img/panier.png" height=30px width=30px></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Admin</a>
+            <a class="nav-link" href="loginVendeurForm.php">Admin</a>
         </li>
     </ul>
 </div>

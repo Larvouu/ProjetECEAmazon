@@ -34,6 +34,19 @@ else if($pseudo=="" && isset($_POST["email"]))//si le champ email n'a pas été 
 }
 else //si les 2 valeurs ont ben été set
 {
+    //////////////////////////////////
+    //  SI ON A AFFAIRE A UN ADMIN  //
+    //////////////////////////////////
+    if($email == "sarah.le@edu.ece.fr" && $pseudo =="schouketta")
+    {
+        echo "<br><br><div class='bord'><br>";
+        echo "<p class='titre'>Hello admin Sarah</p></div>";
+        echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='admin.php'>Accéder à votre page</button></div></form>";
+    }
+    ////////////////////////////////////
+    //  SI ON A AFFAIRE A UN VENDEUR  //
+    ////////////////////////////////////
+    else{
     //Identifier la BDD
     $database = "eceamazon";
 
@@ -43,7 +56,7 @@ else //si les 2 valeurs ont ben été set
 
     if ($db_found) 
    {
-       $sql = "SELECT email,pseudo,photo,img_fond FROM vendeur WHERE email = '$email' ";
+       $sql = "SELECT email,pseudo,photo,img_fond FROM vendeur WHERE email = '$email'";
        $result = mysqli_query($db_handle, $sql);
        
        //regarder s'il y a de résultat
@@ -74,7 +87,7 @@ else //si les 2 valeurs ont ben été set
 
                 <p id='pseudoVendeur'>". $data['pseudo']."</p>
 
-                <input id='addProductButton' type='button' value='Vendre un nouveau produit'>
+                <input id='product' type='button' value='Vendre un nouveau produit'>
                 </div>
 
                 <img id='section' src=".$data['img_fond']."  alt='image_de_couverture'>
@@ -96,7 +109,7 @@ else //si les 2 valeurs ont ben été set
    {
       echo "Sorry, Database not found";
    }
-
+  }
 }
 
 
