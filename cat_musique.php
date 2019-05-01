@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_musique.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="accueil.js"></script>
 </head>
 
 
@@ -71,8 +70,10 @@
             }
 
     ?>
+    <br><br>
     </div>
-    </div><br><br>
+    </div>
+    <br><br>
 
     <footer>
         <small>

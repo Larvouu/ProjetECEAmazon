@@ -1,11 +1,10 @@
 <html>
 <head>
     <title>ECE Amazon</title>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_sport.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="accueil.js"></script>
 </head>
+
 
 
 <body>
@@ -13,7 +12,6 @@
     <!-- On inclut la barre de navigation 'navbar.php'. Cela permet d'éviter de tout recopier à chaque fois 
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; ?> 
-
 
     <div class="container-fluid"> 
         <div class="overlay">
@@ -34,11 +32,14 @@
             $database = "eceamazon";
 
             //Connexion dans la BDD
+
             $db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
+           
 
             if ($db_found) 
             {
+                
                 $sql = "SELECT nom, photo, descrip, categorie, prix FROM item WHERE categorie = 'SportsLoisirs' ";
                 $result = mysqli_query($db_handle, $sql);
                 
@@ -72,7 +73,7 @@
                 echo "Sorry, Database not found";
             }
 
-    ?>
+    ?><br><br>
     </div>
     </div><br><br>
 
