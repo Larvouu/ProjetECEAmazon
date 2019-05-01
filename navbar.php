@@ -23,16 +23,16 @@
             <a class="dropdown-item" href="cat_sport.php">Sports et loisirs</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-header">Vêtements</a>
-            <a class="dropdown-item" href="#">Tee-shirts</a>
-            <a class="dropdown-item" href="#">Chaussures Homme</a>
-            <a class="dropdown-item" href="#">Chaussures Femme</a>
+            <a class="dropdown-item" href="teeshirts.php">Tee-shirts</a>
+            <a class="dropdown-item" href="chaussures_h.php">Chaussures Homme</a>
+            <a class="dropdown-item" href="chaussures_f.php">Chaussures Femme</a>
      
             </div>
         </li>
             
 
         <li class="nav-item">
-            <a class="nav-link" href="vendeurFormulaire.php">Ventes flash</a>
+            <a class="nav-link" href="ventes_flash.php.php">Ventes flash</a>
         </li>
 
         <li class="nav-item">
