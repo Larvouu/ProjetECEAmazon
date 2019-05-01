@@ -26,7 +26,7 @@ if ($db_found)
     while ($data = mysqli_fetch_assoc($result))
     {
         echo "<div id='nav'>
-                
+        <p style='font-size : 60px; text-align : center; color : #2c3e50'><strong>ADMIN</strong></p>
         <img id='photo' src=".$data['photo']."  alt='photo'>
 
         <p id='pseudoVendeur'>". $data['pseudo']."</p>

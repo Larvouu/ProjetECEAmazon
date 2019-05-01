@@ -7,7 +7,6 @@
     font-weight: bold;
     border: none;
     margin-top : 25px;
-    margin-left : 70px;
 }
 
 #nav{
@@ -16,13 +15,14 @@
     width: 22%;
     float: left;
     padding: 5px;
+    text-align: center;
 }
 
 #pseudoVendeur{
     height :auto;
     width : auto;
     text-align: center;
-    margin-right: 20px;
+    font-size: 40px;
 }
 
 #photo{
@@ -30,7 +30,8 @@
     background-color : #4a69bd;
     height: 200px;
     width: 200px;
-    margin : 70px;
+    margin-top : 70px;
+    margin-bottom : 50px;
 }
 
 #section{
