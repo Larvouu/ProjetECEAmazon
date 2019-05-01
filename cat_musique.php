@@ -19,63 +19,60 @@
         <div class="overlay">
             <div class="description">
                 <h1>Nos musiques </h1>
-                <p>Retrouvez ici toutes nos musiques.</p>
-              
+                <p>Retrouvez ici toutes nos musiques.</p><br><br>
             </div>
-            </div>
-            </div>
+        </div>
+    </div>
     
-
     <div class="container features">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Meilleure vente</h3>
-            <img src="img/malte.jpg" class="img-fluid">
-            <p> Artiste: Game of Thrones main theme <br>Prix: 1.29€ <br> durée: 1m51</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Overgrown</h3>
-            <img src="img/wonder.jpg" class="img-fluid">
-            <p> Artiste: Oh Wonder <br>Prix: 1.19€ <br> durée: 3m58</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Pinacle</h3>
-            <img src="img/pinacle.jpg" class="img-fluid">
-            <p> Artiste: Lucio Bukowski <br>Prix: 0.99€ <br> durée: 7m35</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">What it takes</h3>
-            <img src="img/what_it_takes.jpg" class="img-fluid">
-            <p> Artiste: Aerosmith <br>Prix: 1.29€ <br> durée: 5m11</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Happier</h3>
-            <img src="img/happier.jpg" class="img-fluid">
-            <p> Artiste: Marshmello <br>Prix: 1.39€ <br> Durée: 3m34</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Let me down slowly</h3>
-            <img src="img/let_me_down.jpg" class="img-fluid">
-            <p> Artiste: Alec Benjamin <br>Prix: 1.15€ <br> durée: 1m49</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        </div>
-        </div>
 
-        
+    <?php
+            //Identifier la BDD
+            $database = "eceamazon";
 
+            //Connexion dans la BDD
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
 
+            if ($db_found) 
+            {
+                $sql = "SELECT nom, photo, descrip, categorie, prix, auteur FROM item WHERE categorie = 'Musique' ";
+                $result = mysqli_query($db_handle, $sql);
+                
+                //s'il n'y a de résultat
+                if (mysqli_num_rows($result) == 0) 
+                {
+                    echo "<br><br><div class='bord'><br>";
+                    echo "<p class='titre'>Erreur : Pas de résultats (select datas d'une musique)</p></div>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour menu</button></div></form>";
+                } 
+                else 
+                {
+                    //s'il y a bien des résulats à la requête sql
+                    //On affiche chacun des items appartenant à la categorie Musique
+                    while ($data = mysqli_fetch_assoc($result)) 
+                    {
+                        echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
+                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
+                            echo "<img src=".$data['photo']." class='img-fluid'>"; //Image de la musique
+                            echo "<p style='font-size:20px;'><strong>Artiste: ".$data['auteur']."<br>"; //Artiste de la musique
+                            echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
+                            echo "<input  type='submit'  class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'>";
+                        echo "</div>";
+                    }
+                }
+                
+                mysqli_close($db_handle);
+            }
+            else
+            {
+                echo "Sorry, Database not found";
+            }
 
-        
-
-
-
-
+    ?>
+    </div>
+    </div><br><br>
 
     <footer>
         <small>
@@ -85,10 +82,5 @@
         </small>
     </footer>
         
-
-        
 </body>
-
-
-
 </html>

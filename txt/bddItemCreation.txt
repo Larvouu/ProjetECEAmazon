@@ -7,7 +7,7 @@ CREATE TABLE item(
     id int(250) NOT NULL AUTO_INCREMENT, 
     nom varchar(100), 
     photo varchar(200),
-    description varchar(200),
+    descrip varchar(200),
     categorie varchar(200),
     prix float,
     video varchar(200) DEFAULT '',
@@ -29,64 +29,64 @@ CREATE TABLE item(
 );
 
 #
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Main Theme", "img/malte.jpg", "Valar morgulis", "Musique", "1.29", "Game of Thrones", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Overgrown", "img/wonder.jpg", "Merveilleuse", "Musique", "1.19", "Oh Wonder", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Pinacle", "img/pinacle.jpg", "Rap français", "Musique", "0.99", "Lucio Bukowski", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("What it takes", "img/what_it_takes.jpg", "Meilleur réveil de Sarah", "Musique", "1.29", "Aerosmith", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Happier", "img/happier.jpg", "Soyez heureux", "Musique", "1.39", "Marshmello", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Let me down slowly", "img/let_me_down.jpg", "Cry alone", "Musique", "1.15", "Alec Benjamin", "axel.vinant@edu.ece.fr");
 
 
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Les Misérables", "img/miserables.jpg", "Aussi nul que poignant", "Livre", "5.29", "Victor Hugo", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("La Maison Biscornue", "img/maison.jpg", "On l'a pas lu", "Livre", "4.99", "Agatha Christie", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Voyage au centre de la Terre", "img/voyage.jpg", "Livre fantastique pour bébé", "Livre", "8.79", "Jules Verne", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("La Peau de Chagrin", "img/peau.jpg", "spoil : elle rapetisse", "Livre", "3.29", "Balzac", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("L'étranger", "img/etranger.jpg", "C'est qui lui ?", "Livre", "5.39", "Albert Camus", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, auteur, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Candide", "img/candide.jpg", "Il faut cultiver notre jardin", "Livre", "1.99", "Voltaire", "axel.vinant@edu.ece.fr");
 
-INSERT INTO item(nom, photo, description, categorie, prix, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, vendeur_email) 
 values ("Parachutisme", "img/parachute.jpg", "Un saut en parachute pour un moment inoubliable et un maximum d'adrénaline en compagnie d'un professionnel ! (Durée : environ 4h)", "SportsLoisirs", "239.0", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, vendeur_email) 
 values ("Weekend à Disney", "img/disney.jpg", "Venez passer un merveilleux weekend avec l'élu(e) de votre coeur ou un ami et entrez dans la magie de Disney ! (Durée : 2 jours)", "SportsLoisirs", "179.0", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, vendeur_email) 
 values ("Stage de pilotage 18 tours", "img/f1.jpg", "Réveillez le Lewis Hamilton qui sommeille en vous en prenant les commandes d'une F4. (Durée : environ 2h)", "SportsLoisirs", "455", "axel.vinant@edu.ece.fr");
 
-INSERT INTO item(nom, photo, description, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
 values ("Nike Air Max 2017", "img/airmax.jpg", "Comme sur un petit nuage", "ChaussureH", "209.0", "40","42","44", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
 values ("Stan Smith", "img/stan.jpg", "La chaussure la plus originale de tous les temps", "ChaussureH", "79.0", "40","42","44", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
 values ("Adidas Falcon", "img/falcon.jpg", "Hyper coloré", "ChaussureH", "155.0", "40","42","44", "axel.vinant@edu.ece.fr");
 
 
-INSERT INTO item(nom, photo, description, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
 values ("Nike Vomero Shield", "img/airmaxf.jpg", "Parfaite pour les marathons sous la pluie", "ChaussureF", "209.0", "35","36","37", "rose", "bleu", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
 values ("Crocs", "img/croqs.jpg", "Meilleur rapport qualité prix", "ChaussureF", "1000.0", "35","36","37", "rose", "bleu", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
 values ("Lauboutin", "img/lauboutin.jpg", "La contrefaçon à votre portée", "ChaussureF", "2.0", "35","36","37", "kaki", "bleu", "axel.vinant@edu.ece.fr");
 
-INSERT INTO item(nom, photo, description, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Taggle", "img/taggle.jpg", "S'exprime à votre place", "TeeShirt", "19.95", "S","M","L", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Père(fect)", "img/perfect.jpg", "Au Masculin", "TeeShirt", "19.29", "S","M","L", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Bisous And Love", "img/bisous.jpg", "Au Feminin", "TeeShirt", "23.99", "S","M","L", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Calvin Klein", "img/calvin.jpg", "Hyper trop style", "TeeShirt", "51.0", "S","M","L", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Supreme", "img/supreme.jpg", "Un tee shirt de champions", "TeeShirt", "300.0", "S","M","L", "axel.vinant@edu.ece.fr");
-INSERT INTO item(nom, photo, description, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
+INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Brice de Nice", "img/brice.jpg", "Ca farte ?", "TeeShirt", "29.99", "S","M","L", "axel.vinant@edu.ece.fr");

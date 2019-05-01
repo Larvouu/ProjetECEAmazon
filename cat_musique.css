@@ -25,6 +25,11 @@ body
     
 }
 
+.row
+{
+    background-color: rgba(0, 0, 0, 0.096);
+}
+
 .feature-title 
 {
     color: #333;
@@ -41,7 +46,6 @@ body
     border: 1px solid #ff0202;
     color: #fff;
     margin-top: 20px;
-    margin-bottom: 50px;
 }
 
 .features .btn:hover 
