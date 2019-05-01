@@ -78,7 +78,7 @@
                                 <input type='radio' name='taille' value='male'>".$data['tailleS']."<br>
                                 <input type='radio' name='taille' value='female'>".$data['tailleM']."<br>
                                 <input type='radio' name='taille' value='other'>".$data['tailleL']."<br>  
-                                <input type='submit' value='Ajouter au panier'>
+                                <input type='submit' value='Ajouter panier'>
                             </form>
                             
                             
