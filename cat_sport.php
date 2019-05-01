@@ -24,42 +24,57 @@
             </div>
         </div>
     </div>
-    
 
+    <!--________________________________________________________________________________________-->
     <div class="container features">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Parachutisme</h3>
-            <img src="img/parachute.jpg" class="img-fluid">
-            <p> Descripton: Un saut en parachute pour un moment inoubliable et un maximum d'adrénaline en compagnie d'un professionnel. <br>Prix: 239€ <br> durée: environ 4h</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Week-end à Disney</h3>
-            <img src="img/disney.jpg" class="img-fluid">
-            <p> Description: Venez passer un merveilleux week-end avec l'élu(e) de votre coeur ou un ami et entrez dans la magie de Disney.  <br>Prix: 179€ <br> durée: deux jours</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Stage de pilotage (18 tours)</h3>
-            <img src="img/f1.jpg" class="img-fluid">
-            <p> Description: Révélez le Lewis Hamilton qui sommeille en vous en prenant les commandes d'une F4. <br>Prix: 455€ <br> durée: env 2h</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        
-       
-        </div>
-        </div>
 
-        
+    <?php
+            //Identifier la BDD
+            $database = "eceamazon";
 
+            //Connexion dans la BDD
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
 
+            if ($db_found) 
+            {
+                $sql = "SELECT nom, photo, descrip, categorie, prix FROM item WHERE categorie = 'SportsLoisirs' ";
+                $result = mysqli_query($db_handle, $sql);
+                
+                //s'il n'y a de résultat
+                if (mysqli_num_rows($result) == 0) 
+                {
+                    echo "<br><br><div class='bord'><br>";
+                    echo "<p class='titre'>Erreur : Pas de résultats (select datas d'une musique)</p></div>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour menu</button></div></form>";
+                } 
+                else 
+                {
+                    //s'il y a bien des résulats à la requête sql
+                    //On affiche chacun des items appartenant à la categorie Musique
+                    while ($data = mysqli_fetch_assoc($result)) 
+                    {
+                        echo "<div class='col-lg-4 col-md-4'>";
+                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
+                            echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Image de la musique
+                            echo "<p>Description : ".$data['descrip']."<br>"; //Image de la musique
+                            echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
+                            echo "<p  style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                        echo "</div>";
+                    }
+                }
+                
+                mysqli_close($db_handle);
+            }
+            else
+            {
+                echo "Sorry, Database not found";
+            }
 
-        
-
-
-
-
+    ?>
+    </div>
+    </div><br><br>
 
     <footer>
         <small>

@@ -59,7 +59,7 @@ values ("Candide", "img/candide.jpg", "Il faut cultiver notre jardin", "Livre", 
 INSERT INTO item(nom, photo, descrip, categorie, prix, vendeur_email) 
 values ("Parachutisme", "img/parachute.jpg", "Un saut en parachute pour un moment inoubliable et un maximum d'adrénaline en compagnie d'un professionnel ! (Durée : environ 4h)", "SportsLoisirs", "239.0", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, vendeur_email) 
-values ("Weekend à Disney", "img/disney.jpg", "Venez passer un merveilleux weekend avec l'élu(e) de votre coeur ou un ami et entrez dans la magie de Disney ! (Durée : 2 jours)", "SportsLoisirs", "179.0", "axel.vinant@edu.ece.fr");
+values ("Weekend à Disney", "img/disney.jpg", "Venez passer un merveilleux weekend avec l'élu(e) de votre coeur, entrez dans la magie de Disney ! (Durée : 2 jours)", "SportsLoisirs", "179.0", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, vendeur_email) 
 values ("Stage de pilotage 18 tours", "img/f1.jpg", "Réveillez le Lewis Hamilton qui sommeille en vous en prenant les commandes d'une F4. (Durée : environ 2h)", "SportsLoisirs", "455", "axel.vinant@edu.ece.fr");
 
