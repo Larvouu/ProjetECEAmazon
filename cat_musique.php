@@ -68,7 +68,6 @@
             {
                 echo "Sorry, Database not found";
             }
-
     ?>
     <br><br>
     </div>
