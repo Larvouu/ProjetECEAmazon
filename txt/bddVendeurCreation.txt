@@ -6,11 +6,13 @@ drop table if exists vendeur;
 CREATE TABLE vendeur(
     email varchar(100), 
     pseudo varchar(100), 
+    nom varchar(100),
     photo varchar(200),
     img_fond varchar(200),
     PRIMARY KEY (email));
 
 #
 
-INSERT INTO vendeur(email,pseudo,photo, img_fond) values ("axel.vinant@edu.ece.fr", "busterfake", "img/axel.jpg", "img/axelfond.jpg" );
-INSERT INTO vendeur(email,pseudo, photo, img_fond) values ("anto.ghiassi@edu.ece.fr", "anto","img/anto.jpg","img/bookLed.jpg");
+INSERT INTO vendeur(email,pseudo, nom, photo, img_fond) values ("axel.vinant@edu.ece.fr", "busterfake", "Axel", "img/axel.jpg", "img/axelfond.jpg" );
+INSERT INTO vendeur(email,pseudo, nom, photo, img_fond) values ("anto.ghiassi@edu.ece.fr", "anto", "Antoine", "img/anto.jpg","img/bookLed.jpg");
+INSERT INTO vendeur(email,pseudo, nom, photo, img_fond) values ("sarah.le@edu.ece.fr", "schouketta", "Sarah", "img/sarah.jpg","img/africa.jpg");
