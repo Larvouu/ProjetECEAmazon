@@ -1,0 +1,30 @@
+body
+{
+    background: url(img/whiteadmin.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+.button
+{
+    cursor: pointer;
+    color:rgb(43, 97, 168);
+    background-color:rgba(248, 248, 248, 0.164);
+    border: 5px solid white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 14px 40px;
+    box-shadow: 0 16px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+
+#centrerBouton
+{
+    color:white;
+    font-family: Ebrima;
+    text-align: center;
+    font-size:35px;
+    text-shadow: 3px 3px rgba(0,0,0,0.19);
+    margin-top: 15%;
+}
