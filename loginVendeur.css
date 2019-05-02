@@ -42,6 +42,11 @@
     height: 90%;
 }
 
+#section_bckgnd{
+    width: 100%;
+    height: 100%;
+}
+
 /*            
 * Au dessus : la page elle même
 * En dessous : les blindages

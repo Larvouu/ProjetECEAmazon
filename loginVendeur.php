@@ -56,7 +56,7 @@ else //si les 2 valeurs ont ben été set
 
     if ($db_found) 
    {
-       //Requete pour afficher le
+       //Requete pour afficher nom, photo, img_fond du vendeur
        $sql = "SELECT email, pseudo, nom, photo, img_fond FROM vendeur WHERE email = '$email'";
        $result = mysqli_query($db_handle, $sql);
        
@@ -73,6 +73,7 @@ else //si les 2 valeurs ont ben été set
            //l'email entré a été trouvé --> Affichage de la page du vendeur
            while ($data = mysqli_fetch_assoc($result)) 
            {
+
             if($pseudo != $data['pseudo'])
             {
                 //le pseudo entré ne correspond pas à l'email
@@ -80,8 +81,7 @@ else //si les 2 valeurs ont ben été set
                 echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
                 echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
             }
-            else{
-
+            else{              
                 echo "<div id='nav'>
                 
                 <img id='photo' src=".$data['photo']."  alt='photo'>
@@ -90,19 +90,40 @@ else //si les 2 valeurs ont ben été set
 
                 <input id='product' type='button' value='Vendre un nouveau produit'>
                 </div>
-
-                <img id='section' src=".$data['img_fond']."  alt='image_de_couverture'>
                 
-                <footer>
-                    <small>
-                        <p>
-                            Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
-                        </p>
-                    </small>
-                </footer>";
+                <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center;'>";
            }
-        }
+        } 
+
+        ///DEUXIEME WHILE
+        /////////////////////////////////////////
+        //Requete pour afficher les items du vendeur
+        //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
+        $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
+        $result1 = mysqli_query($db_handle, $sql1);
+        if (mysqli_num_rows($result1) == 0) 
+        {
+            //pas de resultat1
+            echo "<br><br><div class='bord'><br>";
+            echo "<p class='titre'>La requete des items n'a aucun resultat</p></div>";
+        } 
+        else 
+        {
+            echo "<div class='container features'>";
+            echo "<div class='row'>";
+            while($data1 = mysqli_fetch_assoc($result1))  
+            {    
+                echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
+                echo "<h3 class='feature-title'>".$data1['nom']."</h3>"; //Titre
+                echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
+                echo "<p style='font-size:15px;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
+                echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
+                //Faire boutton supprimer de la vente
+                echo "</div>";
+            }
+            echo "</div>";
        }
+    }
     
        mysqli_close($db_handle);
    }
@@ -112,14 +133,15 @@ else //si les 2 valeurs ont ben été set
    }
   }
 }
-
-
-/*else if ($email=="" )//si le champ email n'a pas été rempli
-{
-    
-    echo "<br><br><div class='bord'><br>";
-    echo "<p class='titre'>Le champ email est vide !</p></div>";
-    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se créer un compte</button></div></form>";
-
-}*/
 ?>
+</div>
+</div>
+<br><br>
+<footer>
+<small>
+    <p>
+        Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
+    </p>
+</small>
+</footer>
+
