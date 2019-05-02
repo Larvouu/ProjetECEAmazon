@@ -55,82 +55,84 @@ else //si les 2 valeurs ont ben été set
     $db_found = mysqli_select_db($db_handle, $database);
 
     if ($db_found) 
-   {
-       //Requete pour afficher nom, photo, img_fond du vendeur
-       $sql = "SELECT email, pseudo, nom, photo, img_fond FROM vendeur WHERE email = '$email'";
-       $result = mysqli_query($db_handle, $sql);
-       
-       //regarder s'il y a de résultat
-       if (mysqli_num_rows($result) == 0) 
-       {
-           //l'email entré n'existe pas
-           echo "<br><br><div class='bord'><br>";
-           echo "<p class='titre'>l'email n'a pas été trouvé dans la bdd !</p></div>";
-           echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
-       } 
-       else 
-       {
-           //l'email entré a été trouvé --> Affichage de la page du vendeur
-           while ($data = mysqli_fetch_assoc($result)) 
-           {
-
-            if($pseudo != $data['pseudo'])
-            {
-                //le pseudo entré ne correspond pas à l'email
-                echo "<br><br><div class='bord'><br>";
-                echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
-                echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
-            }
-            else{              
-                echo "<div id='nav'>
-                
-                <img id='photo' src=".$data['photo']."  alt='photo'>
-
-                <p id='nomVendeur'>". $data['nom']."</p>
-
-                <input id='product' type='button' value='Vendre un nouveau produit'>
-                </div>
-                
-                <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
-           }
-        } 
-
-        ///DEUXIEME WHILE
-        /////////////////////////////////////////
-        //Requete pour afficher les items du vendeur
-        //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
-        $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
-        $result1 = mysqli_query($db_handle, $sql1);
-        if (mysqli_num_rows($result1) == 0) 
+    {
+        //Requete pour afficher nom, photo, img_fond du vendeur
+        $sql = "SELECT email, pseudo, nom, photo, img_fond FROM vendeur WHERE email = '$email'";
+        $result = mysqli_query($db_handle, $sql);
+        
+        //regarder s'il y a de résultat
+        if (mysqli_num_rows($result) == 0) 
         {
-            //pas de resultat1
+            //l'email entré n'existe pas
             echo "<br><br><div class='bord'><br>";
-            echo "<p class='titre'>Aucun item en vente pour le moment</p></div>";
+            echo "<p class='titre'>l'email n'a pas été trouvé dans la bdd !</p></div>";
+            echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
         } 
         else 
         {
-            echo "<div class='container features'>";
-            echo "<div class='row'>";
-            while($data1 = mysqli_fetch_assoc($result1))  
-            {    
-                echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
-                echo "<h3 class='feature-title'>".$data1['nom']."</h3>"; //Titre
-                echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
-                echo "<p style='font-size:15px;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
-                echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
-                //Faire boutton supprimer de la vente
+            //l'email entré a été trouvé --> Affichage de la page du vendeur
+            while ($data = mysqli_fetch_assoc($result)) 
+            {
+
+                if($pseudo != $data['pseudo'])
+                {
+                    //le pseudo entré ne correspond pas à l'email
+                    echo "<br><br><div class='bord'><br>";
+                    echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+                }
+                else
+                {              
+                    echo "<div id='nav'>
+                    
+                    <img id='photo' src=".$data['photo']."  alt='photo'>
+
+                    <p id='nomVendeur'>". $data['nom']."</p>
+
+                    <input id='product' type='button' value='Vendre un nouveau produit'>
+                    </div>
+                    
+                    <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
+                }
+            } 
+
+            ///DEUXIEME WHILE
+            /////////////////////////////////////////
+            //Requete pour afficher les items du vendeur
+            //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
+            $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
+            $result1 = mysqli_query($db_handle, $sql1);
+            if (mysqli_num_rows($result1) == 0) 
+            {
+                //pas de resultat1
+                echo "<br><br><div class='bord'><br>";
+                echo "<p class='titre'>Aucun item en vente pour le moment</p></div>";
+            } 
+            else 
+            {
+                echo "<div class='container features'>";
+                echo "<div class='row'>";
+                while($data1 = mysqli_fetch_assoc($result1))  
+                {    
+                    echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
+                    echo "<h3 class='feature-title'>".$data1['nom']."</h3>"; //Titre
+                    echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
+                    echo "<p style='font-size:15px;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
+                    echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
+                    //Faire boutton supprimer de la vente
+                    echo "</div>";
+                }
                 echo "</div>";
             }
-            echo "</div>";
-       }
+        }
+        
+        mysqli_close($db_handle);
+        
+    } //fin if($db_found)
+    else
+    {
+        echo "Sorry, Database not found";
     }
-    
-       mysqli_close($db_handle);
-   }
-   else
-   {
-      echo "Sorry, Database not found";
-   }
   }
 }
 ?>

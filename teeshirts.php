@@ -115,7 +115,6 @@ for(var i=0; i<selected_options.length; i++) {
 </html>
 
 <?php
-
 if(isset($_POST['submit']))
 {       
     $option = isset($_POST['sel']) ? $_POST['sel'] : false;
