@@ -24,6 +24,7 @@ CREATE TABLE item(
     auteur varchar(200) DEFAULT '',
     vendeur_email varchar(100),
     qteAchetee int(250) DEFAULT '0',
+    qteVendue int(250) DEFAULT '0',
     PRIMARY KEY (id),
     FOREIGN KEY (vendeur_email) REFERENCES vendeur (email)
 );
