@@ -1,0 +1,63 @@
+body 
+{
+    padding: 0px;
+    margin: 0px;
+    background: #f2f6e9;
+    background-image: url('background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-fluid
+{
+    margin-bottom: 130px;
+}
+
+.description 
+{
+    left: 50%;
+    position: absolute;
+    top: 20%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+    
+}
+   
+.description h1 
+{
+    color: #1334f1;
+    
+}
+
+.row
+{
+    background-color: rgba(0, 0, 0, 0.096);
+    text-align : center;
+}
+
+.feature-title 
+{
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-align : center;
+}
+
+.features .btn 
+{
+    background-color: #5449f0;
+    border: 1px solid #ff0202;
+    color: #fff;
+    margin-top: 20px;
+
+}
+
+.features .btn:hover 
+{
+    background-color: #333;
+    border: 1px solid #333;
+}

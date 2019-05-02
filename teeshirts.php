@@ -4,10 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_musique.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="accueil.js"></script>
 
 </head>
 
+
+
+<script>
+function fruit() 
+{
+    var selected_options = document.querySelector('#choose-fruit-multiple').selectedOptions;
+
+for(var i=0; i<selected_options.length; i++) {
+    document.getElementById("fruito").innerHTML = selected_options[].text;}
+}
+</script>
 
 <body>
 
@@ -57,34 +67,25 @@
                     {
                         echo "<div class='col-lg-4 col-md-4'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
-                            echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
+                            echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
                             echo "<p>Marque: ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
-                           /* echo "
-                                    //FAIRE UN ONCLICK SUR AJOUTER PANIER !!!!!
-                                    <div class='dropdown'>
-                                        <button class='btn btn-light dropdown-toggle' type='button' data-toggle='dropdown'>
-                                        Taille<span class='caret'></span></button>
-                                            <ul class='dropdown-menu'>
-                                            <li><a href='#'>".$data['tailleS']."</a></li>
-                                            <li><a href='#'>".$data['tailleM']."</a></li>
-                                            <li><a href='#'>".$data['tailleS']."</a></li>
-                                            </ul>
-                                    </div>
-                            
-                            ";//Taille du Tshirt*/
                             echo "
-                            <form action='ajoutPanierSpecial.php'>
-                                <input type='radio' name='taille' value='male'>".$data['tailleS']."<br>
-                                <input type='radio' name='taille' value='female'>".$data['tailleM']."<br>
-                                <input type='radio' name='taille' value='other'>".$data['tailleL']."<br>  
-                                <input type='submit' value='Ajouter panier'>
-                            </form>
-                            
-                            
-                            
+                                
+                                    <form class='form-inline' method='post'>
+                                    <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Taille</label>
+                                    <select name='sel' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
+                                        <option selected>Choix...</option>
+                                        <option value=".$data['tailleS'].">".$data['tailleS']."</option>
+                                        <option value=".$data['tailleM'].">".$data['tailleM']."</option>
+                                        <option value=".$data['tailleL'].">".$data['tailleL']."</option>
+                                    </select>
+
+                                    <button name='submit' class='btn btn-primary my-1'>Ajouter au panier</button>
+                                    </form>
+                                
                             ";
-                            echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                           // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
                         echo "</div>";
                     }
                 }
@@ -107,7 +108,27 @@
             </p>
         </small>
     </footer>
-        
+
+
         
 </body>
 </html>
+
+<?php
+
+if(isset($_POST['submit']))
+{       
+    $option = isset($_POST['sel']) ? $_POST['sel'] : false;
+    if ($option) 
+    {
+        echo "taille :".$_POST['sel']."";
+        echo "<script>alert('".$_POST['sel']."');</script>";
+
+    } 
+    else 
+    {
+        echo "task option is required";
+        exit; 
+    }
+}
+?>
