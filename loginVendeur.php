@@ -89,7 +89,7 @@ else //si les 2 valeurs ont ben été set
 
                     <p id='nomVendeur'>". $data['nom']."</p>
 
-                    <input id='product' type='button' value='Vendre un nouveau produit'>
+                    <form><button id='button' type='submit' formaction='adminAjoutItemCat.php'>Ajouter un nouvel item</button></form>
                     </div>
                     
                     <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
@@ -127,7 +127,7 @@ else //si les 2 valeurs ont ben été set
         }
         
         mysqli_close($db_handle);
-        
+
     } //fin if($db_found)
     else
     {

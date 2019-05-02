@@ -1,6 +1,9 @@
-Desing du Front: 
-	Voir pjweb2019_conception.word
+Desing du Front (storyboard + wireframes): 
+	Voir designFront.pdf
 
-Conception du Back:
+Conception du Back (modele entité-association):
 	Voir modeleEntiteAssociation.jpg
+
+Vous trouverez également les sources dans :
+	sources.txt
 	

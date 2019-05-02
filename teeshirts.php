@@ -114,7 +114,12 @@ for(var i=0; i<selected_options.length; i++) {
 </body>
 </html>
 
+<!-- Code de traitement du bouton "ajouter panier". 
+     Ce code traite la Taille du vêtement que l'acheteur
+     a selectionné. -->
+
 <?php
+
 if(isset($_POST['submit']))
 {       
     $option = isset($_POST['sel']) ? $_POST['sel'] : false;
