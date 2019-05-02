@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link href="createVendeurForm.css" rel="stylesheet" type="text/css">
+    <link href="createAcheteurForm.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -47,6 +47,10 @@
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Numéro de téléphone :</strong></td>
                     <td><input type="text" name="numTel"/></td>
+                </tr>
+                <tr>
+                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Numéro de carte :</strong></td>
+                    <td><input type="text" name="numCarte"/></td>
                 </tr>
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Type de carte :</strong></td>

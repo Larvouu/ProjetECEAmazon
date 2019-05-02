@@ -13,6 +13,7 @@ CREATE TABLE acheteur(
     codePostal int(100),
     pays varchar(100),
     numTel int(100),
+    numCarte int(100),
     typeCarte varchar(100),
     nomAfficheCarte varchar(100),
     dateExpi varchar(100),
@@ -21,4 +22,4 @@ CREATE TABLE acheteur(
 
 #
 
-INSERT INTO acheteur(email, mdp, nom, prenom, ville, adresse, codePostal, pays, numTel, typeCarte, nomAfficheCarte, dateExpi, codeSecu) values ("manolo.hina@edu.ece.fr", "abc", "Hina", "Manolo", "Paris", "37 quai de Grenelle", "75015", "France", "0666666666", "visa", "Hina", "jamais", "123");
+INSERT INTO acheteur(email, mdp, nom, prenom, ville, adresse, codePostal, pays, numTel, numCarte, typeCarte, nomAfficheCarte, dateExpi, codeSecu) values ("manolo.hina@edu.ece.fr", "abc", "Hina", "Manolo", "Paris", "37 quai de Grenelle", "75015", "France", "0666666666", "123456789", "visa", "Hina", "jamais", "123");
