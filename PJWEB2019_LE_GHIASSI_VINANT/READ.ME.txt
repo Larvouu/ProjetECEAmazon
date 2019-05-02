@@ -1,0 +1,6 @@
+Desing du Front: 
+	Voir pjweb2019_conception.word
+
+Conception du Back:
+	Voir modeleEntiteAssociation.jpg
+	
