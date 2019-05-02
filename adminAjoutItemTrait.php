@@ -15,7 +15,7 @@ if($categorie == "musique")//nom(titre), auteur(artiste), descrip(genre), photo,
 {
     echo "
         <div class='uploadImgUser'>
-            <strong style='color:#ffe0ef;'>Compléter les informations de votre musique :</strong>
+            <strong style='color:#ffe0ef;'>Compléter les informations de la musique à ajouter:</strong>
             <form action='adminAjoutItem.php' method='post'>
                 
             <table style='margin-left:30px;'>
@@ -55,7 +55,7 @@ else if ($categorie == "livre")//nom, auteur, descrip(description), photo,  prix
 {
     echo "
     <div class='uploadImgUser'>
-        <strong style='color:#ffe0ef;'>Compléter ces champs afin de vous créer un compte Vendeur :</strong>
+        <strong style='color:#ffe0ef;'>Compléter les informations du livre à ajouter:</strong>
         <form action='adminAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
@@ -81,7 +81,7 @@ else if ($categorie == "livre")//nom, auteur, descrip(description), photo,  prix
 
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Page de couverture:</strong></td>
-                <td><input type='text' name='photo' placeholder='img/nomImage.jpg'/></td>
+                <td><input type='text' name='photo' placeholder='ex : img/nomImage.jpg'/></td>
             </tr>
 
         </table>
@@ -95,7 +95,7 @@ else if ($categorie == "sport")//nom, photo, descrip(descrip + durée), prix, --
 {
     echo "
     <div class='uploadImgUser'>
-        <strong style='color:#ffe0ef;'>Compléter ces champs afin de vous créer un compte Vendeur :</strong>
+        <strong style='color:#ffe0ef;'>Compléter les informations du sport/loisir à ajouter:</strong>
         <form action='adminAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
@@ -111,12 +111,12 @@ else if ($categorie == "sport")//nom, photo, descrip(descrip + durée), prix, --
 
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
-                <td><input type='text' name='photo' placeholder='ex : 54&#8364'/></td>
+                <td><input type='text' name='photo' placeholder='ex : 54.00&#8364'/></td>
             </tr>
 
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Photo de l'activité :</strong></td>
-                <td><input type='text' name='photo' placeholder='img/nomImage.jpg'/></td>
+                <td><input type='text' name='photo' placeholder='ex : img/nomImage.jpg'/></td>
             </tr>
 
         </table>
@@ -126,107 +126,134 @@ else if ($categorie == "sport")//nom, photo, descrip(descrip + durée), prix, --
         </form>
     </div>";
 }
-else if ($categorie == "teeshirt")
+else if ($categorie == "teeshirt")//nom, descrip, photo, prix, tailleS, tailleM, tailleL, ------- vendeur_email, categorie
 {
     echo "
     <div class='uploadImgUser'>
-        <strong style='color:#ffe0ef;'>Compléter ces champs afin de vous créer un compte Vendeur :</strong>
+        <strong style='color:#ffe0ef;'>Compléter les informations du TeeShirt à ajouter:</strong>
         <form action='adminAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Email :</strong></td>
-                <td><input type='text' name='email'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom du TeeShirt :</strong></td>
+                <td><input type='text' name='nom' placeholder='ex : TeeShirt Calvin Klein'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Pseudo :</strong></td>
-                <td><input type='text' name='pseudo'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Description :</strong></td>
+                <td><input type='text' name='descrip' placeholder='ex : col rond, cintré'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>lien photo :</strong></td>
-                <td><input type='text' name='photo' placeholder='img/nomPhoto.jpg'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Photo du TeeShirt:</strong></td>
+                <td><input type='text' name='photo' placeholder='ex : img/nomPhoto.jpg'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>lien image de fond :</strong></td>
-                <td><input type='text' name='img_fond' placeholder='img/nomImage.jpg'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
+                <td><input type='text' name='prix' placeholder='ex : 36.50&#8364'/></td>
             </tr>
 
-        </table>
+            <tr>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Tailles disponibles: </strong></td>
+                
+            </tr>
+        </table><input type='text' name='tailleS' placeholder='ex : S'/><br>
+                <input type='text' name='tailleM' placeholder='ex : M'/><br>
+                <input type='text' name='tailleL' placeholder='ex : L'/>
             <br><br>
             <input class='button' type='submit' name='submit' value='ENTER'/>
     
         </form>
     </div>";
 }
-else if ($categorie == "chaussh")
+else if ($categorie == "chaussh")//nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3 ---- vendeur_email, categorie
 {
     echo "
     <div class='uploadImgUser'>
-        <strong style='color:#ffe0ef;'>Compléter ces champs afin de vous créer un compte Vendeur :</strong>
+        <strong style='color:#ffe0ef;'>Compléter les informations de la chaussure Homme à ajouter:</strong>
         <form action='adminAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Email :</strong></td>
-                <td><input type='text' name='email'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom de la chaussure :</strong></td>
+                <td><input type='text' name='nom' placeholder='ex : Nike SB Janoski'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Pseudo :</strong></td>
-                <td><input type='text' name='pseudo'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Description :</strong></td>
+                <td><input type='text' name='descrip' placeholder='ex : for daily use or skateboard'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>lien photo :</strong></td>
-                <td><input type='text' name='photo' placeholder='img/nomPhoto.jpg'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Lien photo :</strong></td>
+                <td><input type='text' name='photo' placeholder='ex : img/nomPhoto.jpg'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>lien image de fond :</strong></td>
-                <td><input type='text' name='img_fond' placeholder='img/nomImage.jpg'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
+                <td><input type='text' name='img_fond' placeholder='ex : 72.00&#8364'/></td>
             </tr>
 
+            <tr>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Tailles disponibles :</strong></td>
+            </tr>
         </table>
+                <input type='text' name='tailleCh1' placeholder='ex : 41'/><br>
+                <input type='text' name='tailleCh2' placeholder='ex : 42'/><br>
+                <input type='text' name='tailleCh3' placeholder='ex : 44'/>
+
             <br><br>
             <input class='button' type='submit' name='submit' value='ENTER'/>
     
         </form>
     </div>";
 }
-else if ($categorie == "chaussf")
+else if ($categorie == "chaussf")//nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, ----- vendeur_email, categorie
 {
     echo "
     <div class='uploadImgUser'>
-        <strong style='color:#ffe0ef;'>Compléter ces champs afin de vous créer un compte Vendeur :</strong>
+        <strong style='color:#ffe0ef;'>Compléter les informations de la chaussure Femme à ajouter:</strong>
         <form action='adminAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Email :</strong></td>
-                <td><input type='text' name='email'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom de la chaussure :</strong></td>
+                <td><input type='text' name='nom' placeholder='ex : Bottines talons Minelli '/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Pseudo :</strong></td>
-                <td><input type='text' name='pseudo'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Description :</strong></td>
+                <td><input type='text' name='descrip' placeholder='ex : faux-leather noir'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>lien photo :</strong></td>
-                <td><input type='text' name='photo' placeholder='img/nomPhoto.jpg'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Lien photo :</strong></td>
+                <td><input type='text' name='photo' placeholder='ex : img/nomPhoto.jpg'/></td>
             </tr>
 
             <tr>
-                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>lien image de fond :</strong></td>
-                <td><input type='text' name='img_fond' placeholder='img/nomImage.jpg'/></td>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
+                <td><input type='text' name='img_fond' placeholder='ex : 72.00&#8364'/></td>
             </tr>
 
+            <tr>
+                <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Tailles disponibles :</strong></td>
+            </tr>
         </table>
-            <br><br>
-            <input class='button' type='submit' name='submit' value='ENTER'/>
+                <input type='text' name='tailleCh1' placeholder='ex : 36'/><br>
+                <input type='text' name='tailleCh2' placeholder='ex : 37'/><br>
+                <input type='text' name='tailleCh3' placeholder='ex : 38'/><br>
+        <table>
+            <tr>
+            <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Couleurs disponibles :</strong></td>
+            </tr>
+        </table>
+                <input type='text' name='couleur1' placeholder='ex : orange'/><br>
+                <input type='text' name='couleur2' placeholder='ex : violet'/><br>
+
+        <br><br>
+        <input class='button' type='submit' name='submit' value='ENTER'/>
     
         </form>
     </div>";

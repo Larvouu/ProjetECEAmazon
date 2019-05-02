@@ -39,13 +39,13 @@
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="chaussh">
+          <input class="form-check-input" type="radio" name="categorie" value="chaussh">
           <label class="form-check-label" for="gridRadios5">
             Chaussures Hommes
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6" value="chaussf">
+          <input class="form-check-input" type="radio" name="categorie" value="chaussf">
           <label class="form-check-label" for="gridRadios6">
             Chaussures Femmes
           </label>
