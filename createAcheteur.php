@@ -99,11 +99,11 @@ if(isset($_POST["submit"]))
                         //on affiche un message informant que le compte a été créé avec SUCCES
                         //ainsi, on invite l'utilisateur à se connecter via un bouton
                         echo "<div class='bord'>";
-                        echo "<p class='titre'>Les informations du compte créé ont bien été ajouté dans la bdd.</p>";
+                        echo "<p class='titre'>Les informations du compte créé ont bien été ajoutées dans la bdd.</p>";
                         echo "</div>";
 
                         echo "<div id='centrerB'><br><br>
-                                    <form><button id='submitB' type='submit' formaction='Accueil.php'>Vous êtes bien connecté !</button></form>
+                                    <form><button id='submitB' type='submit' formaction='loginAcheteurForm.php'>Connectez vous dès maintenant</button></form>
                                 </div>";
 
                     } 
