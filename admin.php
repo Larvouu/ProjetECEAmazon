@@ -41,7 +41,7 @@ if ($db_found)
     /////////////////////////////////////////
     //Requete pour afficher les items de l'admin ( = tous les items)
     //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
-    $sql1 = "SELECT nom, photo, descrip, categorie, prix FROM item";
+    $sql1 = "SELECT id, nom, photo, descrip, categorie, prix FROM item";
     $result1 = mysqli_query($db_handle, $sql1);
     if (mysqli_num_rows($result1) == 0) 
     {
@@ -56,11 +56,11 @@ if ($db_found)
         while($data1 = mysqli_fetch_assoc($result1))  
         {    
             echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
-            echo "<h3 class='feature-title'>".$data1['nom']."</h3>"; //Titre
+            echo "<h3 style='text-shadow:1px 1px #000000; color : #ffffff;' class='feature-title'>".$data1['nom']."</h3>"; //Titre
             echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
-            echo "<p style='font-size:15px;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
+            echo "<p style='font-size:15px;text-shadow:1px 1px #000000; color : #ffffff;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
             echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
-            //Faire boutton supprimer de la vente
+            echo "<input  type='submit' id='supprBtn' formaction='' value='Retirer de la vente'>";
             echo "</div>";
         }
         echo "</div>";

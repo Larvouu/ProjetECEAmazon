@@ -54,6 +54,19 @@
     overflow: auto;
 }
 
+#supprBtn{
+    background-color: rgb(234, 32, 39);
+    cursor: pointer;
+    color:rgba(255, 255, 255, 0.808);
+    border: 1px solid white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    padding: 7px 20px;
+    box-shadow: 0 16px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 10px;
+}
+
 /*            
 * Au dessus : la page elle même
 * En dessous : les blindages
