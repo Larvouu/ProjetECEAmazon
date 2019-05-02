@@ -91,7 +91,7 @@ else //si les 2 valeurs ont ben été set
                 <input id='product' type='button' value='Vendre un nouveau produit'>
                 </div>
                 
-                <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center;'>";
+                <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
            }
         } 
 
@@ -105,7 +105,7 @@ else //si les 2 valeurs ont ben été set
         {
             //pas de resultat1
             echo "<br><br><div class='bord'><br>";
-            echo "<p class='titre'>La requete des items n'a aucun resultat</p></div>";
+            echo "<p class='titre'>Aucun item en vente pour le moment</p></div>";
         } 
         else 
         {
