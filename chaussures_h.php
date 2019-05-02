@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_sport.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="accueil.js"></script>
 </head>
 
 
@@ -32,6 +31,28 @@
             <h3 class="feature-title">Nike Air Max 2017</h3>
             <img src="img/airmax.jpg" class="img-fluid">
             <p> Prix: 209€ <br> taille: disponible entre 39 et 49</p>
+            <!--      _____________________________________________________________      -->
+            <!--      _____________________________________________________________      -->
+            <form action="" method="post">
+            <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+      
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="select">
+            <option selected>Choose...</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+            <option value="38">38</option>
+            </select>
+            </div>
+    
+            <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary" name="SubmitButton">Submit</button>
+            </div>
+            </div>
+            </form>
+            
+            <!--      _____________________________________________________________      -->
+            <!--      _____________________________________________________________      -->
             <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -76,3 +97,11 @@
 
 
 </html>
+
+<?php    
+if(isset($_POST['SubmitButton'])){ //check if form was submitted
+$input = $_POST['select']; //get input text
+$message = "T'as des ptits pieds. ".$input;
+echo "<script>alert('$input');</script>";
+}    
+?>
