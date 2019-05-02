@@ -56,7 +56,8 @@ else //si les 2 valeurs ont ben été set
 
     if ($db_found) 
    {
-       $sql = "SELECT email,pseudo,photo,img_fond FROM vendeur WHERE email = '$email'";
+       //Requete pour afficher le
+       $sql = "SELECT email, pseudo, nom, photo, img_fond FROM vendeur WHERE email = '$email'";
        $result = mysqli_query($db_handle, $sql);
        
        //regarder s'il y a de résultat
@@ -85,7 +86,7 @@ else //si les 2 valeurs ont ben été set
                 
                 <img id='photo' src=".$data['photo']."  alt='photo'>
 
-                <p id='pseudoVendeur'>". $data['pseudo']."</p>
+                <p id='nomVendeur'>". $data['nom']."</p>
 
                 <input id='product' type='button' value='Vendre un nouveau produit'>
                 </div>

@@ -20,7 +20,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 if ($db_found) 
 {
-    $sql = "SELECT email,pseudo,photo,img_fond FROM vendeur WHERE email = '$email'";
+    $sql = "SELECT email,pseudo,nom,photo,img_fond FROM vendeur WHERE email = '$email'";
     $result = mysqli_query($db_handle, $sql);
 
     while ($data = mysqli_fetch_assoc($result))
@@ -29,7 +29,7 @@ if ($db_found)
         <p style='font-size : 60px; text-align : center; color : #2c3e50'><strong>ADMIN</strong></p>
         <img id='photo' src=".$data['photo']."  alt='photo'>
 
-        <p id='pseudoVendeur'>". $data['pseudo']."</p>
+        <p id='nomVendeur'>". $data['nom']."</p>
 
         <input id='addProductButton' type='button' value='Vendre un nouveau produit'>
         <input id='gererVendeursButton' type='button' value='Gérer les vendeurs'>
