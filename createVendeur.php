@@ -94,7 +94,7 @@ if(isset($_POST["submit"]))
                         echo "</div>";
 
                         echo "<div id='centrerB'><br><br>
-                                    <form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Connectez-vous dès maintenant !</button></form>
+                                    <form><button id='submitB' type='submit' formaction='loginVendeur.php'>Se connecter dès maintenant</button></form>
                                 </div>";
 
                     } 

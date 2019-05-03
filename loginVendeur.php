@@ -17,6 +17,7 @@ if ( $email=="" && $pseudo=="")
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>les champs n'ont pas été saisis !</p></div>";
     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+   
 }
 else if ($email=="" && isset($_POST["pseudo"]))//si le champ pseudo n'a pas été rempli
 {
@@ -68,6 +69,7 @@ else //si les 2 valeurs ont ben été set
             echo "<br><br><div class='bord'><br>";
             echo "<p class='titre'>l'email n'a pas été trouvé dans la bdd !</p></div>";
             echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+            echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createVendeurForm.php'>Créer un nouveau compte</button></div></form>";
         } 
         else 
         {
@@ -81,6 +83,7 @@ else //si les 2 valeurs ont ben été set
                     echo "<br><br><div class='bord'><br>";
                     echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
                     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createVendeurForm.php'>Créer un nouveau compte</button></div></form>";
                 }
                 else 
                 {              

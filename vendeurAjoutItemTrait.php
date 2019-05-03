@@ -12,7 +12,7 @@ echo "hello $email";
 //On récupère la valeur de la categorie passée par méthode POST
 $categorie = isset($_POST["categorie"])? $_POST["categorie"] : "";
 
-if($categorie == "musique")//nom(titre), auteur(artiste), descrip(genre), photo, prix, ----- vendeur_email, categorie,
+if($categorie == "Musique")//nom(titre), auteur(artiste), descrip(genre), photo, prix, ----- vendeur_email, categorie,
 {
     echo "
         <div class='uploadImgUser'>
