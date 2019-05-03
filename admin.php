@@ -32,7 +32,8 @@ if ($db_found)
         <p id='nomVendeur'>". $data['nom']."</p>
 
         <input id='addProductButton' type='button' value='Vendre un nouveau produit'>
-        <input id='gererVendeursButton' type='button' value='Gérer les vendeurs'>
+        <input id='addVendeursButton' type='button' value='Ajouter un vendeur'>
+        <input id='supprVendeursButton' type='button' value='Supprimer un vendeur'>
         </div>
 
         <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>"; 

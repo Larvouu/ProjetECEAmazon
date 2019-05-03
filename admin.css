@@ -7,17 +7,31 @@
     font-weight: bold;
     border: none;
     margin-top : 25px;
+    padding: 10px 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#gererVendeursButton{
+#addProductButton:hover 
+{
+    background-color: #3e8e41;
+}
+
+#addVendeursButton{
     cursor: pointer;
     color:white;
-    background-color:#43cfe2;
+    background-color:#20bf6b;
     border-radius: 4px;
     text-align: center;
     font-weight: bold;
     border: none;
     margin-top : 25px;
+    padding: 10px 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#addVendeursButton:hover 
+{
+    background-color: #218c74;
 }
 
 #nav{
@@ -65,6 +79,24 @@
     padding: 7px 20px;
     box-shadow: 0 16px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     margin-bottom: 10px;
+}
+
+#supprVendeursButton{
+    cursor: pointer;
+    color:white;
+    background-color:#fc5c65;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    margin-top : 25px;
+    padding: 10px 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#supprVendeursButton:hover 
+{
+    background-color: rgb(255, 70, 70);
 }
 
 /*            
