@@ -118,6 +118,91 @@ if(isset($_POST["submit"]))
                     echo "Error database: " . mysqli_error($db_handle);
                 }
             }
+            else if ($categorie == "teeshirt")
+            {
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleS, tailleM, tailleL, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$tailleS','$tailleM','$tailleL','$categorie', '$email')"; 
+                 
+                if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
+                {
+                    //on affiche un message informant que l'item a été ajouté avec SUCCES
+                    //ainsi, on invite l'utilisateur à retourner sur son compte Vendeur 
+                    echo "<div class='uploadImgUser'>";
+                    echo "<p class='titre'>Le $nom a bien été ajoutée à la vente.</p>";
+                    echo "</div>";
+
+                    echo "
+                        <div id='centrerB'><br><br>
+                                <form method='post' action='loginVendeur.php'>
+                                    <input type='hidden' name='email' value='".$email."'></input>
+                                    <input type='hidden' name='pseudo' value='".$pseudo."'></input>
+                                    <button id='submitB' type='submit'>Retourner à la page de votre compte vendeur.</button>
+                                    
+                                </form>
+                            </div>";
+
+                } 
+                else 
+                {
+                    echo "Error database: " . mysqli_error($db_handle);
+                }
+            }
+            else if ($categorie == "chaussh")
+            {
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$tailleCh1','$tailleCh2','$tailleCh3','$categorie', '$email')"; 
+                 
+                if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
+                {
+                    //on affiche un message informant que l'item a été ajouté avec SUCCES
+                    //ainsi, on invite l'utilisateur à retourner sur son compte Vendeur 
+                    echo "<div class='uploadImgUser'>";
+                    echo "<p class='titre'>La chaussure $nom a bien été ajoutée à la vente.</p>";
+                    echo "</div>";
+
+                    echo "
+                        <div id='centrerB'><br><br>
+                                <form method='post' action='loginVendeur.php'>
+                                    <input type='hidden' name='email' value='".$email."'></input>
+                                    <input type='hidden' name='pseudo' value='".$pseudo."'></input>
+                                    <button id='submitB' type='submit'>Retourner à la page de votre compte vendeur.</button>
+                                    
+                                </form>
+                            </div>";
+
+                } 
+                else 
+                {
+                    echo "Error database: " . mysqli_error($db_handle);
+                }
+            }
+            else if ($categorie == "chaussf")
+            {
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$tailleCh1','$tailleCh2','$tailleCh3','$couleur1','$couleur2','$categorie', '$email')"; 
+                 
+                if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
+                {
+                    //on affiche un message informant que l'item a été ajouté avec SUCCES
+                    //ainsi, on invite l'utilisateur à retourner sur son compte Vendeur 
+                    echo "<div class='uploadImgUser'>";
+                    echo "<p class='titre'>Le $nom a bien été ajouté à la vente.</p>";
+                    echo "</div>";
+
+                    echo "
+                        <div id='centrerB'><br><br>
+                                <form method='post' action='loginVendeur.php'>
+                                    <input type='hidden' name='email' value='".$email."'></input>
+                                    <input type='hidden' name='pseudo' value='".$pseudo."'></input>
+                                    <button id='submitB' type='submit'>Retourner à la page de votre compte vendeur.</button>
+                                    
+                                </form>
+                            </div>";
+
+                } 
+                else 
+                {
+                    echo "Error database: " . mysqli_error($db_handle);
+                }
+            }
+
             else
             {
                 echo "petit pb";
