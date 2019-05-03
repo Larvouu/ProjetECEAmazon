@@ -29,11 +29,16 @@ if ($db_found)
         <p style='font-size : 60px; text-align : center; color : #2c3e50'><strong>ADMIN</strong></p>
         <img id='photo' src=".$data['photo']."  alt='photo'>
 
-        <p id='nomVendeur'>". $data['nom']."</p>
+        <p id='nomVendeur'>". $data['nom']."</p>";
 
-        <input id='addProductButton' type='button' value='Vendre un nouveau produit'>
+        /////////////////////////////////
+        ///     LES TROIS BOUTONS     ///
+        /////////////////////////////////
+        echo "<input id='addProductButton' type='button' value='Vendre un nouveau produit'>
         <input id='addVendeursButton' type='button' value='Ajouter un vendeur'>
-        <input id='supprVendeursButton' type='button' value='Supprimer un vendeur'>
+
+        <a id='supprVendeursButton' class='button' href='supprVendeurForm.php' type='button'>Supprimer un vendeur</a>
+    
         </div>
 
         <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>"; 
