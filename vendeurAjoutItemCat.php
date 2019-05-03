@@ -6,8 +6,9 @@
 </head>
 
 <?php include 'navbar.php';
-$email = isset($_POST["emailVendeur"])? $_POST["emailVendeur"] : "";
-echo "hello $email";
+$email = isset($_POST["email"])? $_POST["email"] : "";
+$pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+//echo "hello $email et $pseudo";
 ?>
 
 
@@ -16,7 +17,8 @@ echo "hello $email";
 
 <form method="post" action="vendeurAjoutItemTrait.php">  
   <!--On fait passer par méthode POST l'email du vendeur -->
-  <input type='hidden' name='emailVendeur' value="<?php echo "".$email."" ?>"></input>
+  <input type='hidden' name='email' value="<?php echo "".$email."" ?>"></input>
+  <input type='hidden' name='pseudo' value="<?php echo "".$pseudo."" ?>"></input>
 
     <!-- Le vendeur doit cocher la catégorie de l'item qu'il veut vendre-->
     Choisis catégorie :<br><br>

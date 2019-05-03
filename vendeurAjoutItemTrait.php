@@ -6,8 +6,9 @@
 </head>
 
 <?php include 'navbar.php';
-$email = isset($_POST["emailVendeur"])? $_POST["emailVendeur"] : "";
-echo "hello $email";
+$email = isset($_POST["email"])? $_POST["email"] : "";
+$pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+//echo "hello $email et $pseudo";
 
 //On récupère la valeur de la categorie passée par méthode POST
 $categorie = isset($_POST["categorie"])? $_POST["categorie"] : "";
@@ -18,8 +19,9 @@ if($categorie == "Musique")//nom(titre), auteur(artiste), descrip(genre), photo,
         <div class='uploadImgUser'>
             <strong style='color:#ffe0ef;'>Compléter les informations de la musique à ajouter:</strong>
             <form action='vendeurAjoutItem.php' method='post'>
-            <input type='hidden' name='emailVendeur' value='".$email."'></input>
+            <input type='hidden' name='email' value='".$email."'></input>
             <input type='hidden' name='categorie' value='".$categorie."'></input>
+            <input type='hidden' name='pseudo' value='".$pseudo."'></input>
 
             <table style='margin-left:30px;'>
                 <tr>
