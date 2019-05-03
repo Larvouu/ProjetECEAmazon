@@ -12,7 +12,7 @@ body
 .carousel-item
 {
     left: 28%;
-    margin-top: 300px;
+    margin-top: 240px;
     margin-bottom: 60px;;
 }
 
@@ -27,7 +27,10 @@ body
    
 .description h1 
 {
-    color: #1334f1;
+    color: #000000;
+    font-size:60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 2px 2px #cccccc;
 }
 
 .description p 

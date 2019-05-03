@@ -18,45 +18,45 @@
         <div class="overlay">
             <div class="description">
                 <h1>Bienvenue Dans l'ECE Amazon !</h1>
-                <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p>
+               <!-- <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p> -->
                 <button class="btn btn-outline-secondary btn-lg">Découvirir les offres du moment</button>
             </div>
         </div>
     </div>
     
-    
-    <div id="demo" class="carousel slide" data-ride="carousel">            
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <img src="img/image1.jpg"  alt="Vêtements">
-            </div>
-
-            <div class="carousel-item">
-                <img src="img/image2.jpg"  alt="Musique">
-            </div>
-
-            <div class="carousel-item">
-                <img src="img/image3.jpg"  alt="Sports et loisirs">
-            </div>
-
-            <div class="carousel-item">
-            <img src="img/image4.jpg"  alt="livres">
-            </div>
-
-        </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        </a>
-
+    <!-- -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block" src="img/c_music.jpg" style="width:700px; height:400px; border-radius:20px;" alt="First slide">
     </div>
+    <div class="carousel-item">
+      <img class="d-block" src="img/c_sport.jpg" style="width:700px; height:400px; border-radius:20px;" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block " src="img/c_clothes.jpg" style="width:700px; height:400px; border-radius:20px;" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="img/c_book.jpeg" style="width:700px; height:400px; border-radius:20px;" alt="Fourth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
+<!-- -->
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
