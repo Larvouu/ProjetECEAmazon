@@ -60,7 +60,30 @@ if ($db_found)
             echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
             echo "<p style='font-size:15px;text-shadow:1px 1px #000000; color : #ffffff;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
             echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
-            echo "<input  type='submit' id='supprBtn' formaction='' value='Retirer de la vente'>";
+
+            ///////////////////////////////////////////
+            //////  SUPPRESSION D UN ITEM  DEBUT //////
+            ///////////////////////////////////////////
+            echo "<form action='' method='post'>";
+            echo "<input  type='submit' id='supprBtn' name='".$data1['id']."' value='Retirer de la vente'>";
+            echo "</form>";
+            
+            if(isset($_POST[$data1['id']]))
+            {
+                //Supprime l'item
+                $sql_delete = "DELETE FROM item WHERE item.id = ".$data1['id']."";
+                if(mysqli_query($db_handle, $sql_delete)) //Si la suppression marche on rafraichit la page
+                {
+                    echo '<script>location.reload();</script>';
+                }
+                if (!mysqli_query($db_handle, $sql_delete)) 
+                {
+                    echo "Error creating database: " . mysqli_error($db_handle);
+                } 
+            }
+            ////////////////////////////////////////////
+            //////    SUPPRESSION D UN ITEM  FIN  //////
+            ////////////////////////////////////////////
             echo "</div>";
         }
         echo "</div>";
