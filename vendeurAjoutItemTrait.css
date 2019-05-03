@@ -35,9 +35,9 @@
     text-align:center;
 }
 
-input[type=text] 
+.inputText
 {
-    
+    border-radius:3px;
     width : 250px;
     border: 2px solid rgb(252, 205, 212);
     -webkit-transition: 0.5s;
@@ -47,9 +47,22 @@ input[type=text]
    text-align : center;
 }
   
-input[type=text]:focus 
+.inputText:focus 
 {
     border: 2px solid #555;
+}
+
+.inputTaille
+{
+    border-radius:3px;
+    width : 100px;
+    border: 1px solid rgb(252, 205, 212);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size : 18px;
+   text-align : center;
+   margin-top:3px;
 }
 
 #submitB
