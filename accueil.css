@@ -9,6 +9,18 @@ body
     background-size: cover;
 }
 
+.btn{
+    border-radius :2px;
+    background-color: white;
+    color: rgb(46, 46, 46);
+    font-family : 'Cabin', Helvetica, Arial, sans-serif;
+}
+
+.btn:hover{
+    background-color: #fc5c65;
+    color: white;
+}
+
 .carousel-item
 {
     left: 16%;
@@ -65,17 +77,16 @@ body
 
 .features .btn 
 {
-    background-color: #f04949;
-    border: 1px solid #ff0202;
-    color: #fff;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    border-radius :2px;
+    background-color: #fc5c65;
+    color: white;
+    font-family : 'Cabin', Helvetica, Arial, sans-serif;
 }
 
 .features .btn:hover 
 {
-    background-color: #333;
-    border: 1px solid #333;
+    background-color: white;
+    color: rgb(46, 46, 46);
 }
    
    

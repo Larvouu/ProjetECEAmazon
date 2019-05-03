@@ -24,7 +24,7 @@
             <div class="description">
                 <h1>Bienvenue Dans l'ECE Amazon !</h1>
                <!-- <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p> -->
-                <button class="btn btn-lg">Découvirir les offres du moment</button>
+                <a class="btn btn-lg" role="button" href="ventes_flash.php">Découvirir les offres du moment</a>
             </div>
     
     <!-- -->
@@ -67,14 +67,14 @@
             <h3 class="feature-title">Meilleure vente</h3>
             <img src="img/malte.jpg" class="img-fluid">
             <p> Venez découvrir notre article le plus vendu et ne ratez pas votre chance de vous le procurer!</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
+            <a class="btn btn-lg" role="button" href="ventes_flash.php">J'en profite !</a>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Vendre des articles</h3>
             <img src="img/buda.jpg" class="img-fluid">
             <p>Vous avez des articles dont vous ne vous servez plus? Venez les ventre sur notre site web au lieu de les jetter!</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="Vendre des articles" name="">
+            <a class="btn btn-lg" role="button" href="vendeurFormulaire.php">Vendre des articles</a>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -88,7 +88,7 @@
                 <div class="form-group">
                     <textarea class="form-control" rows="4">Vos commentaires</textarea>
                 </div>
-                <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+                <input type="submit" class="btn btn-lg" value="Envoyer" name="">
 
         </div>
     </div>
