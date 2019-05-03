@@ -11,26 +11,25 @@ body
 
 .carousel-item
 {
-    left: 28%;
-    margin-top: 240px;
-    margin-bottom: 60px;;
+    left: 16%;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    
 }
 
 .description 
 {
-    left: 50%;
-    position: absolute;
-    top: 30%;
-    transform: translate(-50%, -55%);
+    margin-top : 4%;
     text-align: center;
 }
    
 .description h1 
 {
-    color: #000000;
-    font-size:60px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-shadow: 2px 2px #cccccc;
+    
+        font-family: 'Lobster', Georgia, Times, serif;
+        font-size: 50px;
+        line-height: 100px;
+    
 }
 
 .description p 
@@ -42,31 +41,31 @@ body
 
 .description button 
 {
-    border:1px solid #3002fc;
-    background-color: transparent;
-    border-radius: 0;
-    color: #fff;
+    border-radius :2px;
+    background-color: white;
+    color: rgb(46, 46, 46);
+    font-family : 'Cabin', Helvetica, Arial, sans-serif;
 }
    
 .description button:hover 
 {
-    border:1px solid #fff;
-    background-color: #fff;
-    color: #000;
+    background-color: #fc5c65;
+    color: white;
 }
 
 .feature-title 
 {
     color: #333;
-    font-size: 1.3rem;
+    font-size: 25px;
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-family: 'Allan', Helvetica, Arial, sans-serif;
 }
 
 .features .btn 
 {
-    background-color: #5449f0;
+    background-color: #f04949;
     border: 1px solid #ff0202;
     color: #fff;
     margin-top: 20px;

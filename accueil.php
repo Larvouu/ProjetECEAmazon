@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="accueil.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="accueil.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+
+
 </head>
 
 
@@ -14,36 +21,32 @@
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; ?> 
 
-    <div class="container-fluid">
-        <div class="overlay">
             <div class="description">
                 <h1>Bienvenue Dans l'ECE Amazon !</h1>
                <!-- <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p> -->
-                <button class="btn btn-outline-secondary btn-lg">Découvirir les offres du moment</button>
+                <button class="btn btn-lg">Découvirir les offres du moment</button>
             </div>
-        </div>
-    </div>
     
     <!-- -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block" src="img/c_music.jpg" style="width:700px; height:400px; border-radius:20px;" alt="First slide">
+      <img class="d-block" src="img/c_music.jpg" style="width:70%; height:600px; border-radius:20px;" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block" src="img/c_sport.jpg" style="width:700px; height:400px; border-radius:20px;" alt="Second slide">
+      <img class="d-block" src="img/c_sport.jpg" style="width:70%; height:600px; border-radius:20px;" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block " src="img/c_clothes.jpg" style="width:700px; height:400px; border-radius:20px;" alt="Third slide">
+      <img class="d-block " src="img/c_clothes.jpg" style="width:70%; height:600px; border-radius:20px;" alt="Third slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block" src="img/c_book.jpeg" style="width:700px; height:400px; border-radius:20px;" alt="Fourth slide">
+      <img class="d-block" src="img/c_book.jpeg" style="width:70%; height:600px; border-radius:20px;" alt="Fourth slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -56,6 +59,7 @@
   </a>
 </div>
 
+<br><br><br><br>
 <!-- -->
     <div class="container features">
         <div class="row">
