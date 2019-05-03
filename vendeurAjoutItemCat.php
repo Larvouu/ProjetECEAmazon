@@ -22,7 +22,7 @@ echo "hello $email";
     Choisis catégorie :<br><br>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="categorie" value="musique">
+          <input class="form-check-input" type="radio" name="categorie" value="Musique">
           <label class="form-check-label" for="gridRadios1">
             Musiques
           </label>
