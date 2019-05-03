@@ -4,23 +4,20 @@
 
 <?php 
 include 'navbar.php';
-$email = isset($_POST["emailVendeur"])? $_POST["emailVendeur"] : "";
+$email = isset($_POST["email"])? $_POST["email"] : "";
+$pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
 $categorie = isset($_POST["categorie"])? $_POST["categorie"] : "";
 
-$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
-$nom = isset($_POST["nom"])? $_POST["nom"] : "";
-echo "hello $email et $categorie
-et $auteur et $nom";
 
 //Déclaration et initialisation des variables $email et $pseudo 
 //avec ce qui a été passé par méthode POST
-//$nom = isset($_POST["nom"])? $_POST["nom"] : "";
+$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $descrip = isset($_POST["descrip"])? $_POST["descrip"] : "";
 $photo = isset($_POST["photo"])? $_POST["photo"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 
 //propre à Musique et Livres
-//$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
+$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 
 //propre aux Teeshirts
 $tailleS = isset($_POST["tailleS"])? $_POST["tailleS"] : "";
@@ -40,7 +37,7 @@ $couleur2 = isset($_POST["couleur2"])? $_POST["couleur2"] : "";
 if(isset($_POST["submit"]))
 {
     //Si un des champs commun est vide 
-    if ($nom="" || $descrip=="" || $photo=="" || $prix=="")
+    if ($nom=="" || $descrip=="" || $photo=="" || $prix=="")
     {
         //on affiche un message informant que des champs sont vides
         //on invite l'utilisateur à ré-essayer de se créer un compte via un bouton
@@ -56,7 +53,6 @@ if(isset($_POST["submit"]))
     }
     else
     {
-        echo "1er echo : $nom";
         //Identifier la BDD
         $database = "eceamazon";
         //Connexion dans la BDD
@@ -65,24 +61,26 @@ if(isset($_POST["submit"]))
 
         if ($db_found) 
         { 
-            echo "2er echo : $nom";
             //si l'item ajouté est une Musique ou un Livre
             if($categorie == "Musique" || $categorie == "livre")
             {
-                echo "3eme : $nom";
                 $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$categorie', '$email')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
                     //on affiche un message informant que le compte a été créé avec SUCCES
                     //ainsi, on invite l'utilisateur à se connecter via un bouton
-                    echo "<div class='bord'>";
+                    echo "<div class='uploadImgUser'>";
                     echo "<p class='titre'>L'item $auteur et $nom a bien été ajouté à la vente.</p>";
                     echo "</div>";
 
-                    echo "<div id='centrerB'><br><br>
-                                <form>
-                                    <button id='submitB' type='submit' formaction='loginVendeurForm.php'>Retourner à la page de votre compte vendeur.</button>
+                    echo "
+                        <div id='centrerB'><br><br>
+                                <form method='post' action='loginVendeur.php'>
+                                    <input type='hidden' name='email' value='".$email."'></input>
+                                    <input type='hidden' name='pseudo' value='".$pseudo."'></input>
+                                    <button id='submitB' type='submit'>Retourner à la page de votre compte vendeur.</button>
+                                    
                                 </form>
                             </div>";
 

@@ -26,6 +26,7 @@ else if ($email=="" && isset($_POST["pseudo"]))//si le champ pseudo n'a pas ét�
     echo "<p class='titre'>Le champ email est vide !</p></div>";
     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
 
+
 }
 else if($pseudo=="" && isset($_POST["email"]))//si le champ email n'a pas été rempli
 {
@@ -94,7 +95,8 @@ else //si les 2 valeurs ont ben été set
                     <p id='nomVendeur'>". $data['nom']."</p>
 
                     <form method='post' action='vendeurAjoutItemCat.php'>
-                        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+                        <input type='hidden' name='email' value='".$email."'></input>
+                        <input type='hidden' name='pseudo' value='".$pseudo."'></input>
                         <button id='button' type='submit'>Ajouter un nouvel item</button>
                     </form>
                     </div>
