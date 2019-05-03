@@ -23,6 +23,11 @@
                 </tr>
 
                 <tr>
+                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Nom :</strong></td>
+                    <td><input type="text" name="nom"/></td>
+                </tr>
+
+                <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">lien photo :</strong></td>
                     <td><input type="text" name="photo" placeholder="img/nomPhoto.jpg"/></td>
                 </tr>

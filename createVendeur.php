@@ -9,6 +9,7 @@
 //avec ce qui a été passé par méthode POST
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+$nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $photo = isset($_POST["photo"])? $_POST["photo"] : "";
 $img_fond = isset($_POST["img_fond"])? $_POST["img_fond"] : "";
 
@@ -20,7 +21,7 @@ $alreadyExist = false;
 if(isset($_POST["submit"]))
 {
     //Si un des champs est vide 
-    if ($email=="" || $pseudo=="" || $photo=="" || $img_fond=="")
+    if ($email=="" || $pseudo=="" || $photo=="" || $img_fond=="" || $nom=="")
     {
         //on affiche un message informant que des champs sont vides
         //on invite l'utilisateur à ré-essayer de se créer un compte via un bouton
@@ -82,7 +83,7 @@ if(isset($_POST["submit"]))
                 {
                     //$cpt++;
                     //requête sql permettant d'ajouter un vendeur dans la table vendeur
-                    $sql2 = "INSERT INTO vendeur(email, pseudo, photo, img_fond) values ('$email', '$pseudo', '$photo', '$img_fond')";
+                    $sql2 = "INSERT INTO vendeur(email, pseudo, nom, photo, img_fond) values ('$email', '$pseudo', '$nom', '$photo', '$img_fond')";
                 
                     //on vérifie que la requête a fonctionné
                     if (mysqli_query($db_handle, $sql2)) 
@@ -94,7 +95,7 @@ if(isset($_POST["submit"]))
                         echo "</div>";
 
                         echo "<div id='centrerB'><br><br>
-                                    <form><button id='submitB' type='submit' formaction='loginVendeur.php'>Se connecter dès maintenant</button></form>
+                                    <form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Se connecter dès maintenant</button></form>
                                 </div>";
 
                     } 

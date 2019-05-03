@@ -115,7 +115,7 @@ else //si les 2 valeurs ont ben été set
                             echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
                             echo "<h3 style='text-shadow:1px 1px #000000; color : #ffffff;' class='feature-title'>".$data1['nom']."</h3>"; //Titre
                             echo "<img src=".$data1['photo']." style='width : 250px;' class='img-fluid'>"; //Image
-                            echo "<p style='font-size:15px;text-shadow:1px 1px #000000; color : #ffffff;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
+                            echo "<p style='font-size:15px;text-shadow:1px 1px #000000; color : #ffffff;'><strong></strong>".$data1['descrip']."<br>";//Description Livre
                             echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
                             //Faire boutton supprimer de la vente
                             echo "</div>";

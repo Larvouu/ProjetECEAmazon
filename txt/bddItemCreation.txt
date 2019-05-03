@@ -69,7 +69,7 @@ values ("Nike Air Max 2017", "img/airmax.jpg", "Comme sur un petit nuage", "Chau
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
 values ("Stan Smith", "img/stan.jpg", "La chaussure la plus originale de tous les temps", "ChaussureH", "79.0", "40","42","44", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, vendeur_email) 
-values ("Adidas Falcon", "img/falcon.jpg", "Hyper coloré", "ChaussureH", "155.0", "40","42","44", "axel.vinant@edu.ece.fr");
+values ("Adidas Falcon", "img/falcon.jpg", "Haut en couleurs", "ChaussureH", "155.0", "40","42","44", "axel.vinant@edu.ece.fr");
 
 
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, vendeur_email) 
@@ -86,8 +86,8 @@ values ("Tee-shirt Pere(fect)", "img/perfect.jpg", "Au Masculin", "TeeShirt", "1
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Bisous And Love", "img/bisous.jpg", "Au Feminin", "TeeShirt", "23.99", "S","M","L", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
-values ("Tee-shirt Calvin Klein", "img/calvin.jpg", "Hyper trop style", "TeeShirt", "51.0", "S","M","L", "axel.vinant@edu.ece.fr");
+values ("Tee-shirt Calvin Klein", "img/calvin.jpg", "Tee shirt de la nouvelle collection", "TeeShirt", "51.0", "S","M","L", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
-values ("Tee-shirt Supreme", "img/supreme.jpg", "Un tee shirt de champions", "TeeShirt", "300.0", "S","M","L", "axel.vinant@edu.ece.fr");
+values ("Tee-shirt Supreme", "img/supreme.jpg", "Offrez vous un classique", "TeeShirt", "300.0", "S","M","L", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
-values ("Tee-shirt Brice de Nice", "img/brice.jpg", "Ca farte ?", "TeeShirt", "29.99", "S","M","L", "anto.ghiassi@edu.ece.fr");
+values ("Tee-shirt Brice de Nice", "img/brice.jpg", "Tee shirt jaune canari", "TeeShirt", "29.99", "S","M","L", "anto.ghiassi@edu.ece.fr");
