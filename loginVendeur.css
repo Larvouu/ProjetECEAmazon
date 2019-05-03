@@ -68,6 +68,27 @@
     height: 100%;
 }
 
+#supprBtn
+{
+    cursor: pointer;
+    color:white;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgb(234, 32, 39);
+    padding: 7px 20px;
+    margin-bottom: 10px;
+
+}
+
+#supprBtn:hover
+{
+    background-color: rgb(253, 122, 122);
+}
+
 /*            
 * Au dessus : la page elle même
 * En dessous : les blindages

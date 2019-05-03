@@ -23,7 +23,7 @@
                 </tr>
             </table>
 
-            <br><br><input id="button" type="submit" value="ENTER">
+            <br><br><input id="button" type="submit" value="ENTER" name='connect'>
         </form>
 
     </div>

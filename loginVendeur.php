@@ -12,7 +12,7 @@
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
  
-if ( $email=="" && $pseudo=="")
+if ( $email=="" && $pseudo=="" )
 {
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>les champs n'ont pas été saisis !</p></div>";
@@ -104,7 +104,7 @@ else //si les 2 valeurs ont ben été set
                     <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
                     //Requete pour afficher les items du vendeur
                     //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
-                    $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
+                    $sql1 = "SELECT item.id, item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
                     $result1 = mysqli_query($db_handle, $sql1);
                     if (mysqli_num_rows($result1) != 0) 
                     {
@@ -117,7 +117,31 @@ else //si les 2 valeurs ont ben été set
                             echo "<img src=".$data1['photo']." style='width : 230px; height:230px;' class='img-fluid'>"; //Image
                             echo "<p style='font-size:15px;text-shadow:1px 1px #000000; color : #ffffff;'><strong></strong>".$data1['descrip']."<br>";//Description Livre
                             echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
-                            //Faire boutton supprimer de la vente
+                            ///////////////////////////////////////////
+                            //////  SUPPRESSION D UN ITEM  DEBUT //////
+                            ///////////////////////////////////////////
+                            echo"<form action='' method='post' >
+                            <input type='hidden' name='email' value='".$email."'></input>
+                            <input type='hidden' name='pseudo' value='".$pseudo."'></input>
+                            <input  type='submit' id='supprBtn' name='".$data1['id']."' value='Retirer de la vente'>";
+                            echo"</form>";
+                            
+                            if(isset($_POST[$data1['id']]))
+                            {
+                                //Supprime l'item
+                                $sql_delete = "DELETE FROM item WHERE item.id = ".$data1['id']."";
+                                if(mysqli_query($db_handle, $sql_delete)) //Si la suppression marche on rafraichit la page
+                                {
+                                    echo '<script>location.reload();</script>';
+                                }
+                                else 
+                                {
+                                    echo "Error creating database: " . mysqli_error($db_handle);
+                                } 
+                            }
+                            ////////////////////////////////////////////
+                            //////    SUPPRESSION D UN ITEM  FIN  //////
+                            ////////////////////////////////////////////
                             echo "</div>";
                         }
                         echo "</div>";

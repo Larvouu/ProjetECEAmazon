@@ -77,22 +77,23 @@
 
 #supprBtn
 {
-    background-color: rgb(234, 32, 39);
     cursor: pointer;
-    color:rgba(255, 255, 255, 0.808);
-    border: 1px solid white;
-    border-radius: 8px;
+    color:white;
+    border-radius: 4px;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgb(234, 32, 39);
     padding: 7px 20px;
-    box-shadow: 0 16px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     margin-bottom: 10px;
 
 }
 
 #supprBtn:hover
 {
-    background-color: rgb(250, 67, 73);
+    background-color: rgb(253, 122, 122);
 }
 
 
