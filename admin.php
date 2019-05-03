@@ -53,7 +53,7 @@ if ($db_found)
         </form>
         </div>
 
-        <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>"; 
+        <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100% 100%;'>"; 
     }
     ///DEUXIEME WHILE
     /////////////////////////////////////////

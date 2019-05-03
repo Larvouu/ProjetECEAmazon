@@ -101,7 +101,7 @@ else //si les 2 valeurs ont ben été set
                     </form>
                     </div>
                     
-                    <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
+                    <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100% 100%;'>";
                     //Requete pour afficher les items du vendeur
                     //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
                     $sql1 = "SELECT item.id, item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
