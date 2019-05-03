@@ -44,7 +44,7 @@
                 </tr>
             </table>
 
-            <br><br><input id="button" type="submit" value="FAIRE MARCHER LA CONNECTION">
+            <br><br><input id="button" type="submit" value="Se connecter">
         </form>
 
     </div>
