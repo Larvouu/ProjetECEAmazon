@@ -12,6 +12,7 @@
     margin-left : auto;
     margin-right : auto;
     margin-top : 50px;
+    background-color: rgba(0, 0, 0, 0.274);
 }
 
 
@@ -19,7 +20,7 @@
 {
     cursor: pointer;
     color:white;
-    background-color:rgb(240, 142, 204);
+    background-color:#fc5c65;
     border-radius: 4px;
     text-align: center;
     font-size: 15px;

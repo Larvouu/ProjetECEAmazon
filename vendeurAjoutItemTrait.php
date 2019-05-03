@@ -2,7 +2,7 @@
     <title>ECE Amazon</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href='adminAjoutItemTrait.css' rel='stylesheet' type='text/css'>
+    <link href='vendeurAjoutItemTrait.css' rel='stylesheet' type='text/css'>
 </head>
 
 <?php include 'navbar.php';
@@ -17,7 +17,7 @@ if($categorie == "musique")//nom(titre), auteur(artiste), descrip(genre), photo,
     echo "
         <div class='uploadImgUser'>
             <strong style='color:#ffe0ef;'>Compléter les informations de la musique à ajouter:</strong>
-            <form action='adminAjoutItem.php' method='post'>
+            <form action='vendeurAjoutItem.php' method='post'>
             <input type='hidden' name='emailVendeur' value='".$email."'></input>
             <input type='hidden' name='categorie' value='".$categorie."'></input>
 
@@ -59,7 +59,7 @@ else if ($categorie == "livre")//nom, auteur, descrip(description), photo,  prix
     echo "
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations du livre à ajouter:</strong>
-        <form action='adminAjoutItem.php' method='post'>
+        <form action='vendeurAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
@@ -99,7 +99,7 @@ else if ($categorie == "sport")//nom, photo, descrip(descrip + durée), prix, --
     echo "
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations du sport/loisir à ajouter:</strong>
-        <form action='adminAjoutItem.php' method='post'>
+        <form action='vendeurAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
@@ -134,7 +134,7 @@ else if ($categorie == "teeshirt")//nom, descrip, photo, prix, tailleS, tailleM,
     echo "
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations du TeeShirt à ajouter:</strong>
-        <form action='adminAjoutItem.php' method='post'>
+        <form action='vendeurAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
@@ -175,7 +175,7 @@ else if ($categorie == "chaussh")//nom, descrip, photo, prix, tailleCh1, tailleC
     echo "
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations de la chaussure Homme à ajouter:</strong>
-        <form action='adminAjoutItem.php' method='post'>
+        <form action='vendeurAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>
@@ -217,7 +217,7 @@ else if ($categorie == "chaussf")//nom, descrip, photo, prix, tailleCh1, tailleC
     echo "
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations de la chaussure Femme à ajouter:</strong>
-        <form action='adminAjoutItem.php' method='post'>
+        <form action='vendeurAjoutItem.php' method='post'>
             
         <table style='margin-left:30px;'>
             <tr>

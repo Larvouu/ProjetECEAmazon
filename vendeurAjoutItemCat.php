@@ -2,7 +2,7 @@
     <title>ECE Amazon</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href='adminAjoutItemCat.css' rel='stylesheet' type='text/css'>
+    <link href='vendeurAjoutItemCat.css' rel='stylesheet' type='text/css'>
 </head>
 
 <?php include 'navbar.php';
@@ -14,7 +14,7 @@ echo "hello $email";
 <body>
 <div class="uploadImgUser">
 
-<form method="post" action="adminAjoutItemTrait.php">  
+<form method="post" action="vendeurAjoutItemTrait.php">  
   <!--On fait passer par méthode POST l'email du vendeur -->
   <input type='hidden' name='emailVendeur' value="<?php echo "".$email."" ?>"></input>
 

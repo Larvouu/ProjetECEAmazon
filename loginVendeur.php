@@ -46,7 +46,8 @@ else //si les 2 valeurs ont ben été set
     ////////////////////////////////////
     //  SI ON A AFFAIRE A UN VENDEUR  //
     ////////////////////////////////////
-    else{
+    else
+    {
     //Identifier la BDD
     $database = "eceamazon";
 
@@ -81,7 +82,7 @@ else //si les 2 valeurs ont ben été set
                     echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
                     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
                 }
-                else
+                else 
                 {              
                     echo "<div id='nav'>
                     
@@ -89,11 +90,14 @@ else //si les 2 valeurs ont ben été set
 
                     <p id='nomVendeur'>". $data['nom']."</p>
 
-                    <form><button id='button' type='submit' formaction='adminAjoutItemCat.php'>Ajouter un nouvel item</button></form>
+                    <form method='post' action='vendeurAjoutItemCat.php'>
+                        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+                        <button id='button' type='submit'>Ajouter un nouvel item</button>
+                    </form>
                     </div>
                     
                     <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
-                }
+                }//Remarque : On fait passer par méthode POST l'email du vendeur
             } 
 
             ///DEUXIEME WHILE

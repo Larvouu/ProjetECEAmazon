@@ -1,5 +1,5 @@
 <head>
-    <link href='createVendeur.css' rel='stylesheet' type='text/css'>
+    <link href='vendeurAjoutItem.css' rel='stylesheet' type='text/css'>
 </head>
 
 <?php 

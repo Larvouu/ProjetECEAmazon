@@ -8,17 +8,6 @@
 </head>
 
 
-
-<script>
-function fruit() 
-{
-    var selected_options = document.querySelector('#choose-fruit-multiple').selectedOptions;
-
-for(var i=0; i<selected_options.length; i++) {
-    document.getElementById("fruito").innerHTML = selected_options[].text;}
-}
-</script>
-
 <body>
 
     <!-- On inclut la barre de navigation 'navbar.php'. Cela permet d'éviter de tout recopier à chaque fois 
