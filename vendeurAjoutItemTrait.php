@@ -206,7 +206,7 @@ else if ($categorie == "chaussh")//nom, descrip, photo, prix, tailleCh1, tailleC
 
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
-                <td><input type='text' name='img_fond' placeholder='ex : 72.00&#8364'/></td>
+                <td><input type='text' name='prix' placeholder='ex : 72.00&#8364'/></td>
             </tr>
 
             <tr>
@@ -250,7 +250,7 @@ else if ($categorie == "chaussf")//nom, descrip, photo, prix, tailleCh1, tailleC
 
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
-                <td><input type='text' name='img_fond' placeholder='ex : 72.00&#8364'/></td>
+                <td><input type='text' name='prix' placeholder='ex : 72.00&#8364'/></td>
             </tr>
 
             <tr>
