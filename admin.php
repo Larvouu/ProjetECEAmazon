@@ -34,9 +34,14 @@ if ($db_found)
         /////////////////////////////////
         ///     LES TROIS BOUTONS     ///
         /////////////////////////////////
-        echo "<input id='addProductButton' type='button' value='Vendre un nouveau produit'>
-        <input id='addVendeursButton' type='button' value='Ajouter un vendeur'>
-        <form action='supprVendeurForm.php' method='post'>
+        echo "<input id='addProductButton' type='button' value='Vendre un nouveau produit'>";
+        //Ajouter un vendeur = redirection sur la page créer vendeur
+        
+        echo "<form action='createVendeurForm.php' method='post'>
+        <input id='addVendeursButton' type='submit' value='Ajouter un vendeur'>
+        </form>";
+        //Supprimer un vendeur
+        echo "<form action='supprVendeurForm.php' method='post'>
         <input id='supprVendeursButton' type='submit' value='Supprimer un vendeur'>
         </form>
         </div>

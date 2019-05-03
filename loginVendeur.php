@@ -102,30 +102,31 @@ else //si les 2 valeurs ont ben été set
                     </div>
                     
                     <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>";
+                    //Requete pour afficher les items du vendeur
+                    //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
+                    $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
+                    $result1 = mysqli_query($db_handle, $sql1);
+                    if (mysqli_num_rows($result1) != 0) 
+                    {
+                        echo "<div class='container features'>";
+                        echo "<div class='row'>";
+                        while($data1 = mysqli_fetch_assoc($result1))  
+                        {    
+                            echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
+                            echo "<h3 class='feature-title'>".$data1['nom']."</h3>"; //Titre
+                            echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
+                            echo "<p style='font-size:15px;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
+                            echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
+                            //Faire boutton supprimer de la vente
+                            echo "</div>";
+                        }
+                        echo "</div>";
+                    }
                 }//Remarque : On fait passer par méthode POST l'email du vendeur
             } 
 
         
-            //Requete pour afficher les items du vendeur
-            //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
-            $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
-            $result1 = mysqli_query($db_handle, $sql1);
-            if (mysqli_num_rows($result1) != 0) 
-            {
-                echo "<div class='container features'>";
-                echo "<div class='row'>";
-                while($data1 = mysqli_fetch_assoc($result1))  
-                {    
-                    echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
-                    echo "<h3 class='feature-title'>".$data1['nom']."</h3>"; //Titre
-                    echo "<img src=".$data1['photo']." class='img-fluid'>"; //Image
-                    echo "<p style='font-size:15px;'><strong>Description: </strong>".$data1['descrip']."<br>";//Description Livre
-                    echo "Prix: ".$data1['prix']."&#8364</strong></p>"; //Prix Livre
-                    //Faire boutton supprimer de la vente
-                    echo "</div>";
-                }
-                echo "</div>";
-            }
+            
         }
         
         mysqli_close($db_handle);
