@@ -36,9 +36,9 @@ if ($db_found)
         /////////////////////////////////
         echo "<input id='addProductButton' type='button' value='Vendre un nouveau produit'>
         <input id='addVendeursButton' type='button' value='Ajouter un vendeur'>
-
-        <a id='supprVendeursButton' class='button' href='supprVendeurForm.php' type='button'>Supprimer un vendeur</a>
-    
+        <form action='supprVendeurForm.php' method='post'>
+        <input id='supprVendeursButton' type='submit' value='Supprimer un vendeur'>
+        </form>
         </div>
 
         <div id='section' style=' background: url(".$data['img_fond'].") no-repeat center; background-size: 100%;'>"; 
@@ -82,7 +82,7 @@ if ($db_found)
                 {
                     echo '<script>location.reload();</script>';
                 }
-                if (!mysqli_query($db_handle, $sql_delete)) 
+                else 
                 {
                     echo "Error creating database: " . mysqli_error($db_handle);
                 } 

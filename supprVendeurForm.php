@@ -11,11 +11,11 @@
         <br><br>
         <p id="loginInterface">Login</p>
         <br><br>
-        <h1>Quel vendeur voulez vous supprimer ?</h1>
-        <form action="" method="post">
+        <h1>Entrez l'email du vendeur à supprimer</h1>
+        <form action="supprVendeur.php" method="post">
             <table style="text-align:center;">
                 <tr>
-                    <td style="color:white; font-family:Ebrima;"><strong> Email</strong></td>
+                    <td style="color:white; font-family:Ebrima;"><strong>Email</strong></td>
                     <td><input type="text" name="email"></td>
                 </tr>
             </table>

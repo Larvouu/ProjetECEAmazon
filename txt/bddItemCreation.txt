@@ -90,4 +90,4 @@ values ("Tee-shirt Calvin Klein", "img/calvin.jpg", "Hyper trop style", "TeeShir
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
 values ("Tee-shirt Supreme", "img/supreme.jpg", "Un tee shirt de champions", "TeeShirt", "300.0", "S","M","L", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, tailleS, tailleM, tailleL, vendeur_email) 
-values ("Tee-shirt Brice de Nice", "img/brice.jpg", "Ca farte ?", "TeeShirt", "29.99", "S","M","L", "axel.vinant@edu.ece.fr");
+values ("Tee-shirt Brice de Nice", "img/brice.jpg", "Ca farte ?", "TeeShirt", "29.99", "S","M","L", "anto.ghiassi@edu.ece.fr");
