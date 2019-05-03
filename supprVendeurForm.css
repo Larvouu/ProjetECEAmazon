@@ -20,11 +20,16 @@ body
     margin-bottom: 50px;
 }
 
+.container
+{
+    width : 100%;
+}
+
 input[type=text] 
 {
     
     margin: 8px 0;
-    width : 200px;
+    width : 300px;
     border: 3px solid rgb(252, 205, 212);
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -46,13 +51,16 @@ input[type=text]:focus
     text-align: center;
     color: white;
     font-size:20px;
-    width: 25%;
+    width: 100%;
     border: 3px solid white;
     border-radius: 12px;
     padding: 25px;
     margin-left: auto;
     margin-right: auto;
     margin-top : 10px;
+
+    border-width:5px;  
+    border-style:ridge;
 
 }
 
@@ -66,13 +74,26 @@ input[type=text]:focus
     text-align: center;
     font-size: 35px;
     border-radius: 25px 25px 25px 25px;
-    width: 25%;
+    width: 400px;
     margin: auto;
     
 
     
    
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 200px 500px;
+    grid-gap: 20px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    
+    text-align: center;
+    padding: 20px 0;
+  }
 
 #submitB
 {
@@ -88,3 +109,35 @@ input[type=text]:focus
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
 }
 
+.scrolling
+{
+ 	margin : auto;
+  background-color: rgba(255, 255, 255, 0.192);
+  height :530px;
+  border: 1px dotted black;
+  overflow: auto;
+  border-radius: 10px;
+
+}
+
+table, td, th 
+{  
+    border: 1px solid #ddd;
+    text-align: left;
+}
+  
+table 
+{
+    background-color: rgba(255, 255, 255, 0.205);
+    border-collapse: collapse;
+    width: 30%;
+    color:black;
+    border-width:5px;  
+    border-style:ridge;
+    border-radius :2px;
+}
+  
+th, td 
+{
+    padding: 15px;
+  }
