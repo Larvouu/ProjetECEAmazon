@@ -60,7 +60,8 @@ else if ($categorie == "livre")//nom, auteur, descrip(description), photo,  prix
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations du livre à ajouter:</strong>
         <form action='vendeurAjoutItem.php' method='post'>
-            
+        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+        <input type='hidden' name='categorie' value='".$categorie."'></input>
         <table style='margin-left:30px;'>
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Titre du livre : </strong></td>
@@ -96,11 +97,13 @@ else if ($categorie == "livre")//nom, auteur, descrip(description), photo,  prix
 }
 else if ($categorie == "sport")//nom, photo, descrip(descrip + durée), prix, ------- vendeur_email, categorie
 {
+    
     echo "
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations du sport/loisir à ajouter:</strong>
         <form action='vendeurAjoutItem.php' method='post'>
-            
+        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+        <input type='hidden' name='categorie' value='".$categorie."'></input>
         <table style='margin-left:30px;'>
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom de l'activité :</strong></td>
@@ -135,7 +138,8 @@ else if ($categorie == "teeshirt")//nom, descrip, photo, prix, tailleS, tailleM,
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations du TeeShirt à ajouter:</strong>
         <form action='vendeurAjoutItem.php' method='post'>
-            
+        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+        <input type='hidden' name='categorie' value='".$categorie."'></input>
         <table style='margin-left:30px;'>
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom du TeeShirt :</strong></td>
@@ -176,7 +180,8 @@ else if ($categorie == "chaussh")//nom, descrip, photo, prix, tailleCh1, tailleC
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations de la chaussure Homme à ajouter:</strong>
         <form action='vendeurAjoutItem.php' method='post'>
-            
+        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+        <input type='hidden' name='categorie' value='".$categorie."'></input>
         <table style='margin-left:30px;'>
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom de la chaussure :</strong></td>
@@ -218,7 +223,8 @@ else if ($categorie == "chaussf")//nom, descrip, photo, prix, tailleCh1, tailleC
     <div class='uploadImgUser'>
         <strong style='color:#ffe0ef;'>Compléter les informations de la chaussure Femme à ajouter:</strong>
         <form action='vendeurAjoutItem.php' method='post'>
-            
+        <input type='hidden' name='emailVendeur' value='".$email."'></input>
+        <input type='hidden' name='categorie' value='".$categorie."'></input>
         <table style='margin-left:30px;'>
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Nom de la chaussure :</strong></td>

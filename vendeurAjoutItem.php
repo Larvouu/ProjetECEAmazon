@@ -5,8 +5,8 @@
 <?php 
 include 'navbar.php';
 $email = isset($_POST["emailVendeur"])? $_POST["emailVendeur"] : "";
-echo "hello $email";
-
+$categorie = isset($_POST["categorie"])? $_POST["categorie"] : "";
+echo "hello $email et $categorie";
 
 //Déclaration et initialisation des variables $email et $pseudo 
 //avec ce qui a été passé par méthode POST
@@ -14,23 +14,29 @@ $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $descrip = isset($_POST["descrip"])? $_POST["descrip"] : "";
 $photo = isset($_POST["photo"])? $_POST["photo"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
+
+//propre à Musique et Livres
 $auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 
-$photo = isset($_POST["photo"])? $_POST["photo"] : "";
-$photo = isset($_POST["photo"])? $_POST["photo"] : "";
-$photo = isset($_POST["photo"])? $_POST["photo"] : "";
-$photo = isset($_POST["photo"])? $_POST["photo"] : "";
+//propre aux Teeshirts
+$tailleS = isset($_POST["tailleS"])? $_POST["tailleS"] : "";
+$tailleM = isset($_POST["tailleM"])? $_POST["tailleM"] : "";
+$tailleL = isset($_POST["tailleL"])? $_POST["tailleL"] : "";
 
+//propre aux Chaussures (Homme et Femme confondus)
+$tailleCh1 = isset($_POST["tailleCh1"])? $_POST["tailleCh1"] : "";
+$tailleCh2 = isset($_POST["tailleCh2"])? $_POST["tailleCh2"] : "";
+$tailleCh3 = isset($_POST["tailleCh3"])? $_POST["tailleCh3"] : "";
 
-//$cpt =0;
+//propre aux chaussures Femme
+$couleur1 = isset($_POST["couleur1"])? $_POST["couleur1"] : "";
+$couleur2 = isset($_POST["couleur2"])? $_POST["couleur2"] : "";
 
-//booléen vaut false si l'email entré n'existe pas encore dans la bdd
-$alreadyExist = false; 
 
 if(isset($_POST["submit"]))
 {
-    //Si un des champs est vide 
-    if ($email=="" || $pseudo=="" || $photo=="" || $img_fond=="")
+    //Si un des champs commun est vide 
+    if ($nom="" || $descrip=="" || $photo=="" || $prix=="")
     {
         //on affiche un message informant que des champs sont vides
         //on invite l'utilisateur à ré-essayer de se créer un compte via un bouton
@@ -53,7 +59,8 @@ if(isset($_POST["submit"]))
         $db_found = mysqli_select_db($db_handle, $database);
 
         if ($db_found) 
-        {
+        { 
+            
             //Vérifions que l'email entré (clé primaire) n'existe pas déjà dans la bdd
             $sql1 = "SELECT email FROM vendeur";
             $result = mysqli_query($db_handle, $sql1);   
