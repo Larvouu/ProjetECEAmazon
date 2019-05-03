@@ -100,19 +100,12 @@ else //si les 2 valeurs ont ben été set
                 }//Remarque : On fait passer par méthode POST l'email du vendeur
             } 
 
-            ///DEUXIEME WHILE
-            /////////////////////////////////////////
+        
             //Requete pour afficher les items du vendeur
             //Select les infos de l'item where l'email du vendeur = l'email de connection au compte vendeur (déjà vérifié donc déjà valide)
             $sql1 = "SELECT item.nom, item.photo, item.descrip, item.categorie, item.prix, item.vendeur_email FROM item, vendeur WHERE item.vendeur_email = vendeur.email AND vendeur.email = '$email' ";
             $result1 = mysqli_query($db_handle, $sql1);
-            if (mysqli_num_rows($result1) == 0) 
-            {
-                //pas de resultat1
-                echo "<br><br><div class='bord'><br>";
-                echo "<p class='titre'>Aucun item en vente pour le moment</p></div>";
-            } 
-            else 
+            if (mysqli_num_rows($result1) != 0) 
             {
                 echo "<div class='container features'>";
                 echo "<div class='row'>";
