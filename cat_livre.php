@@ -59,7 +59,7 @@
             {
                 echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
                 echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre Livre
-                echo "<img src=".$data['photo']." class='img-fluid'>"; //Couverture Livre
+                echo "<img src=".$data['photo']." style='width : 230px; height:230px;' class='img-fluid'>"; //Couverture Livre
                 echo "<p style='font-size:20px;'><strong>Auteur: ".$data['auteur']."<br>"; //Auteur Livre
                 echo "<p style='font-size:15px;'><strong>Description: </strong>".$data['descrip']."<br>";//Description Livre
                 echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix Livre

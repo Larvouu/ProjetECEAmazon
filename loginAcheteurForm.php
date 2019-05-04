@@ -28,10 +28,10 @@
                     <td><input type="text" name="email"></td>
                 </tr>
                 <td style="color:white; font-family:Ebrima;"><strong>Numéro de carte : </strong></td>
-                    <td><input type="text" name="numCarte"></td>
+                    <td><input type="password" name="numCarte"></td>
                 </tr>
                 <td style="color:white; font-family:Ebrima;"><strong>Type de carte : </strong></td>
-                    <td><input type="text" name="typeCarte"></td>
+                    <td><input type="password" name="typeCarte"></td>
                 </tr>
                 <td style="color:white; font-family:Ebrima;"><strong>Titulaire de la carte : </strong></td>
                     <td><input type="text" name="nomAfficheCarte"></td>
@@ -40,7 +40,7 @@
                     <td><input type="text" name="dateExpi"></td>
                 </tr>
                 <td style="color:white; font-family:Ebrima;"><strong>Code de sécurité : </strong></td>
-                    <td><input type="text" name="codeSecu"></td>
+                    <td><input type="password" name="codeSecu"></td>
                 </tr>
             </table>
 
