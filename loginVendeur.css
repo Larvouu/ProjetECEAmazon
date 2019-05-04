@@ -110,7 +110,7 @@ body
   font-family : Ebrima;
   font-size:20px;
   width: 50%;
-  border: 6px solid #ffcccc;
+  border: 6px solid #ffcccc00;
   border-radius: 12px;
   margin: auto;
     
@@ -125,7 +125,7 @@ body
 {
     cursor: pointer;
     color:white;
-    background-color:#f8a5c2;
+    background-color:#a29bfe;
     border-radius: 4px;
     text-align: center;
     font-size: 18px;
@@ -136,12 +136,19 @@ body
       
 }
 
+#submitB:hover
+{
+    background-color: #ffcccc;
+}
+
 .titre
 {
 	color:#4b4b4b;
-    font-family: Ebrima;
     text-align: center;
 	font-size:30px;
-	text-shadow: 2px 1px rgba(0,0,0,0.19);
+    text-shadow: 2px 1px rgba(0,0,0,0.19);
+    
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	line-height: 25px;
 }
 

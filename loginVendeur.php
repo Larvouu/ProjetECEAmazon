@@ -3,6 +3,7 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href='loginVendeur.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 </head>
 
 <?php 
@@ -15,8 +16,9 @@ $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
 if ( $email=="" && $pseudo=="" )
 {
     echo "<br><br><div class='bord'><br>";
-    echo "<p class='titre'>les champs n'ont pas été saisis !</p></div>";
+    echo "<p class='titre'>Les champs n'ont pas été saisis !</p></div>";
     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+    echo "<br><br><br>";
    
 }
 else if ($email=="" && isset($_POST["pseudo"]))//si le champ pseudo n'a pas été rempli
@@ -25,6 +27,7 @@ else if ($email=="" && isset($_POST["pseudo"]))//si le champ pseudo n'a pas ét�
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>Le champ email est vide !</p></div>";
     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+    echo "<br><br><br>";
 
 
 }
@@ -33,6 +36,7 @@ else if($pseudo=="" && isset($_POST["email"]))//si le champ email n'a pas été 
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>Le champ pseudo est vide !</p></div>";
     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+    echo "<br><br><br>";
 }
 else //si les 2 valeurs ont ben été set
 {
@@ -42,8 +46,9 @@ else //si les 2 valeurs ont ben été set
     if($email == "sarah.le@edu.ece.fr" && $pseudo =="schouketta")
     {
         echo "<br><br><div class='bord'><br>";
-        echo "<p class='titre'>Hello admin Sarah</p></div>";
-        echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='admin.php'>Accéder à votre page</button></div></form>";
+        echo "<p class='titre'>Bonjour admin Sarah</p></div>";
+        echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='admin.php'>Accéder ma page admin</button></div></form>";
+        echo "<br><br><br>";
     }
     ////////////////////////////////////
     //  SI ON A AFFAIRE A UN VENDEUR  //
@@ -68,9 +73,10 @@ else //si les 2 valeurs ont ben été set
         {
             //l'email entré n'existe pas
             echo "<br><br><div class='bord'><br>";
-            echo "<p class='titre'>l'email n'a pas été trouvé dans la bdd !</p></div>";
+            echo "<p class='titre'>L'email n'a pas été trouvé dans la bdd !</p></div>";
             echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
             echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createVendeurForm.php'>Créer un nouveau compte</button></div></form>";
+            echo "<br><br><br>";
         } 
         else 
         {
@@ -82,9 +88,10 @@ else //si les 2 valeurs ont ben été set
                 {
                     //le pseudo entré ne correspond pas à l'email
                     echo "<br><br><div class='bord'><br>";
-                    echo "<p class='titre'>le pseudo ne correspond pas à l'email !</p></div>";
+                    echo "<p class='titre'>Le pseudo ne correspond pas à l'email !</p></div>";
                     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
                     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createVendeurForm.php'>Créer un nouveau compte</button></div></form>";
+                    echo "<br><br><br>";
                 }
                 else 
                 {              
