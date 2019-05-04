@@ -18,7 +18,7 @@
                 </tr>
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Mot de passe :</strong></td>
-                    <td><input type="text" name="mdp"/></td>
+                    <td><input type="password" name="mdp"/></td>
                 </tr>
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Nom :</strong></td>
@@ -50,7 +50,7 @@
                 </tr>
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Numéro de carte :</strong></td>
-                    <td><input type="text" name="numCarte"/></td>
+                    <td><input type="password" name="numCarte"/></td>
                 </tr>
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Type de carte :</strong></td>
@@ -66,7 +66,7 @@
                 </tr>
                 <tr>
                     <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Code de sécurité :</strong></td>
-                    <td><input type="text" name="codeSecu"/></td>
+                    <td><input type="password" name="codeSecu"/></td>
                 </tr>
 
             <table>

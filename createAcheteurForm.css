@@ -46,6 +46,23 @@ input[type=text]:focus
     border: 2px solid #555;
 }
 
+input[type=password] 
+{
+    
+    width : 250px;
+    border: 2px solid rgb(252, 205, 212);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size : 18px;
+   text-align : center;
+}
+  
+input[type=password]:focus 
+{
+    border: 2px solid #555;
+}
+
 #submitB
 {
     cursor: pointer;
