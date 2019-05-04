@@ -79,7 +79,7 @@
                         echo"<div class='alert alert-success'>
                         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                         L'item <strong>".$data['nom']." - ".$data['auteur']."</strong> a été ajouté au panier
-                    </div>";
+                        </div>";
                     }
                     else 
                     {
