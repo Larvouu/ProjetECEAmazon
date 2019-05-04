@@ -94,18 +94,27 @@
                         echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
                         echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                         echo "</div>";
+
+                        
                     }
+
+                    
                 }
                 
                 mysqli_close($db_handle);
+                
             }
             else
             {
                 echo "Sorry, Database not found";
             }
+            
 
     ?>
     </div>
+    <!--Le bouton passer la commande-->
+    <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; margin-left:40%; ' value='Passer ma commande'>
+                        
     </div><br><br>
 
     <footer class="footer-copyright text-center text-black-50 py-3">
