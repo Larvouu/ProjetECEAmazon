@@ -17,6 +17,9 @@
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; ?> 
 
+
+    
+
     <?php
             //Identifier la BDD
             $database = "eceamazon";
@@ -24,6 +27,8 @@
             //Connexion dans la BDD
             $db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
+
+            $total_panier = '0';
            
 
             if ($db_found) 
@@ -41,21 +46,23 @@
                 } 
                 else 
                 {
+                    //Mon pannier titre
+                    echo"<div class='container-fluid'> 
+                            <div class='overlay'>
+                                <div class='description'>
+                                    <h1>Mon panier </h1>
+                                    <p>Retrouvez ici tous vos articles et passez votre commande en ligne !</p>
+                                
+                                </div>
+                            </div>
+                        </div>";
                     //s'il y a bien des résulats à la requête sql
                     //On affiche chacun des items appartenant à la categorie TeeShirt
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
-                        echo "<div class='container-fluid'> 
-                                <div class='overlay'>
-                                    <div class='description'>
-                                        <h1>Mon panier </h1>
-                                        <p>Retrouvez ici tous vos articles et passez votre commande en ligne !</p>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='container features'>
-                        <div class='row'>";
+                        $total_panier += ($data['prix']*$data['qteAchetee']);
+                        echo "<div class='container features'>
+                        <div class='row' >";
                         echo "<div class='col-lg-4 col-md-4'  style='text-align:center;'>";
                         echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre
                         echo "<p style='text-align:center;'><img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'></p>"; //Photo 
@@ -89,15 +96,29 @@
                         
                         echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque
                         echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix
-                        echo "Quantité : ".$data['qteAchetee']."</strong></p>"; //Prix
+                        if($data['taille_choisie']!="")
+                        {
+                            echo "<strong>Taille : ".$data['taille_choisie']."</strong></p>"; //Taille
+                        }
+                        if($data['couleur_choisie']!="")
+                        {
+                            echo "<strong>Couleur : ".$data['couleur_choisie']."</strong></p>"; //Couleur
+                        }
+                        echo "<strong>Quantité : ".$data['qteAchetee']."</strong></p>"; //Quantité
                         echo "</div>";
-                        echo "</div>";
-                        echo "<!--Le bouton passer la commande-->
-                        <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; margin-left:40%; ' value='Passer ma commande'>
-                        ";
+                        
+                        
                         
                     }
-
+                    echo "</div>";
+                    //Prix total
+                    echo"<div style='text-align:center; font-size:30px;'>
+                    <strong>Total : $total_panier &#8364 </strong>
+                    </div>    ";
+                    //Bouton passer ma commande
+                    echo"<div style='text-align:center;'>
+                    <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Passer ma commande'>
+                    </div>    ";
                     
                 }
                 
@@ -111,7 +132,8 @@
             
 
     ?>
-                        
+      
+
     </div><br><br>
 
     <footer class="footer-copyright text-center text-black-50 py-3">

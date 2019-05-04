@@ -20,8 +20,6 @@ body
     text-align: center;
 }
 
-
-
 .description 
 {
     left: 50%;
@@ -55,7 +53,7 @@ body
 
 .container-fluid
 {
-    margin-bottom: 200px;
+    margin-bottom: 150px;
 }
 
 .features .btn 
@@ -80,6 +78,8 @@ body
 .row
 {
     background-color: rgba(0, 0, 0, 0.096);
+    text-align: center;
+   
 }
 
 .p
