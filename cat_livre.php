@@ -76,7 +76,8 @@
                     $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1'  WHERE item.id = " .$data['id']." ";
                     if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
                     {
-                        echo "item ".$data['nom']." ajouté au panier !";
+                        //echo"<script>alert('Ajout confirmé')</script>";
+                        echo"L'item ".$data['nom']." a été ajouté au panier";
                     }
                     else 
                     {
