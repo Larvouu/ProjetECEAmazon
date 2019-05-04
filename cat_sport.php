@@ -43,7 +43,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT nom, photo, descrip, categorie, prix FROM item WHERE categorie = 'SportsLoisirs' ";
+                $sql = "SELECT id, nom, photo, descrip, categorie, prix FROM item WHERE categorie = 'SportsLoisirs' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -60,11 +60,34 @@
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
                         echo "<div class='col-lg-4 col-md-4'>";
-                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
-                            echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Image de la musique
-                            echo "<p>Description : ".$data['descrip']."<br>"; //Image de la musique
-                            echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
-                            echo "<p  style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                        echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
+                        echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Image de la musique
+                        echo "<p>Description : ".$data['descrip']."<br>"; //Image de la musique
+                        echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
+                        ///////////////////////////////////////////
+                        //////    AJOUTER AU PANIER DEBUT   ///////
+                        ///////////////////////////////////////////
+                        echo"<form action='' method='post' >";
+                        echo "<input  type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>";
+                        echo"</form>";
+                        
+                        if(isset($_POST[$data['id']]))
+                        {
+                            //Supprime l'item
+                            $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1'  WHERE item.id = " .$data['id']." ";
+                            if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                            {
+                                //echo"<script>alert('Ajout confirmé')</script>";
+                                echo"L'item ".$data['nom']." a été ajouté au panier";
+                            }
+                            else 
+                            {
+                                echo "Error creating database: " . mysqli_error($db_handle);
+                            } 
+                        }
+                        ////////////////////////////////////////////
+                        //////     AJOUTER AU PANIER  FIN     //////
+                        ////////////////////////////////////////////
                         echo "</div>";
                     }
                 }
