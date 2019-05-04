@@ -11,7 +11,7 @@ body
 
 .container-fluid
 {
-    margin-bottom: 130px;
+    margin-bottom: 200px;
 }
 
 .description 
@@ -26,7 +26,11 @@ body
    
 .description h1 
 {
-    color: #1334f1;
+    color: #5352ed;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 50px;
+    line-height: 65px;
+    margin-top:40px;
     
 }
 
@@ -49,8 +53,7 @@ body
 
 .features .btn 
 {
-    background-color: #5449f0;
-    border: 1px solid #ff0202;
+    background-color: #5352ed;
     color: #fff;
     margin-top: 20px;
 
@@ -68,4 +71,17 @@ select
     border: none;
     border-radius: 4px;
     background-color: #f1f1f1;
+}
+
+.p
+{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+    line-height: 25px;
+}
+
+.img-fluid
+{
+    text-align:center;
+    border-radius:2px;
 }

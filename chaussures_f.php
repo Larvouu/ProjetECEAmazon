@@ -3,63 +3,103 @@
     <title>ECE Amazon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="cat_sport.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="accueil.js"></script>
+    <link href="cat_musique.css" rel="stylesheet" type="text/css"/>
+    
+    <!--Les deux link suivants nous servent à avoir une police de titre spéciale-->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 </head>
 
 
 <body>
 
+    <!--______________________________________________________________________________ -->
     <!-- On inclut la barre de navigation 'navbar.php'. Cela permet d'éviter de tout recopier à chaque fois 
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; ?> 
-
 
     <div class="container-fluid"> 
         <div class="overlay">
             <div class="description">
                 <h1>Chaussures femmes </h1>
                 <p>Retrouvez ici toutes nos chaussures pour femme. Des chaussures de sport en passant par des talons élégants, vous trouverez tout ce qu'il vous faut !</p>
-              
             </div>
         </div>
     </div>
-    
 
     <div class="container features">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Nike Air Max 2017</h3>
-            <img src="img/airmaxf.jpg" class="img-fluid">
-            <p> Prix: 209€ <br> taille: disponible entre 35 et 42</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="J'en profite!" name="">
-            </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Croqs roses</h3>
-            <img src="img/croqs.jpg" class="img-fluid">
-            <p> Prix: 1000€ <br> taille: entre 34 et 44</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">lauboutin</h3>
-            <img src="img/lauboutin.jpg" class="img-fluid">
-            <p> Prix: 799€ <br> taille: entre 36 et 40</p>
-            <input  type="submit"  class="btn btn-secondary btn-block" formaction='assignment.php' value="ajouter au panier" name="">
-        </div>
-        
-       
-       </div>
-        </div>
 
-        
+    <?php
+            //Identifier la BDD
+            $database = "eceamazon";
 
+            //Connexion dans la BDD
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+           
 
+            if ($db_found) 
+            {
+                
+                $sql = "SELECT nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2 FROM item WHERE categorie = 'ChaussureF' ";
+                $result = mysqli_query($db_handle, $sql);
+                
+                //s'il n'y a de résultat
+                if (mysqli_num_rows($result) == 0) 
+                {
+                    echo "<br><br><div class='bord'><br>";
+                    echo "<p class='titre'>Erreur : Pas de résultats (select datas d'une musique)</p></div>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour menu</button></div></form>";
+                } 
+                else 
+                {
+                    //s'il y a bien des résulats à la requête sql
+                    //On affiche chacun des items appartenant à la categorie TeeShirt
+                    while ($data = mysqli_fetch_assoc($result)) 
+                    {
+                        echo "<div class='col-lg-4 col-md-4'>";
+                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
+                            echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
+                            echo "<p>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
+                            echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
+                            echo "
+                                
+                                    <form class='form-group' method='post'>
 
-        
+                                        <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Pointure</label>
+                                        <select name='sel' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
+                                            <option  value='' disabled selected>Choix...</option>
+                                            <option value=".$data['tailleCh1'].">".$data['tailleCh1']."</option>
+                                            <option value=".$data['tailleCh2'].">".$data['tailleCh2']."</option>
+                                            <option value=".$data['tailleCh3'].">".$data['tailleCh3']."</option>
+                                        </select>
 
+                                        <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Couleur</label>
+                                        <select name='sel2' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
+                                            <option value='' disabled selected>Choix...</option>
+                                            <option value=".$data['couleur1'].">".$data['couleur1']."</option>
+                                            <option value=".$data['couleur2'].">".$data['couleur2']."</option>
+                                        </select>
+                                        <button name='submit' class='btn btn-primary my-1'>Ajouter au panier</button>
+                                    </form>
+                                
+                            ";
+                           // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                        echo "</div>";
+                    }
+                }
+                
+                mysqli_close($db_handle);
+            }
+            else
+            {
+                echo "Sorry, Database not found";
+            }
 
-
-
+    ?>
+    </div>
+    </div><br><br>
 
     <footer>
         <small>
@@ -68,11 +108,35 @@
             </p>
         </small>
     </footer>
-        
+
 
         
 </body>
-
-
-
 </html>
+
+<!-- Code de traitement du bouton "ajouter panier". 
+     Ce code traite la Taille du vêtement que l'acheteur
+     a selectionné. -->
+
+<?php
+
+if(isset($_POST['submit']))
+{       
+    $option = isset($_POST['sel']) ? $_POST['sel'] : false;
+    $option2 = isset($_POST['sel2']) ? $_POST['sel2'] : false;
+
+    if ($option && $option2) 
+    {
+        echo "taille :".$_POST['sel']."";
+        echo "couleur :".$_POST['sel2']."";
+        echo "<script>alert('Vous avez ajouté chaussure pointure : ".$_POST['sel']." et couleur : ".$_POST['sel2']."');</script>";
+        
+    } 
+    else 
+    {
+        echo "task option is required";
+        exit; 
+    }
+
+}
+?>

@@ -22,7 +22,11 @@ body
    
 .description h1 
 {
-    color: #1334f1;
+    color: #5352ed;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 50px;
+    line-height: 65px;
+    margin-top:40px;
     
 }
 
@@ -39,16 +43,14 @@ body
 
 .container-fluid
 {
-    margin-bottom: 140px;
+    margin-bottom: 200px;
 }
 
 .features .btn 
 {
-    background-color: #5449f0;
-    border: 1px solid #ff0202;
+    background-color: #5352ed;
     color: #fff;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .features .btn:hover 
@@ -60,9 +62,17 @@ body
 .img-fluid
 {
     text-align:center;
+    border-radius:2px;
 }
 
 .row
 {
     background-color: rgba(0, 0, 0, 0.096);
+}
+
+.p
+{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+    line-height: 25px;
 }

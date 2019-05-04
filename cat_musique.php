@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_musique.css" rel="stylesheet" type="text/css"/>
+
+    <!--Les deux link suivants nous servent à avoir une police de titre spéciale-->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 </head>
 
 
@@ -18,7 +22,7 @@
         <div class="overlay">
             <div class="description">
                 <h1>Nos musiques </h1>
-                <p>Retrouvez ici toutes nos musiques.</p><br><br>
+                <p>Retrouvez ici toutes nos musiques.</p>
             </div>
         </div>
     </div>

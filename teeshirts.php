@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_musique.css" rel="stylesheet" type="text/css"/>
 
+    <!--Les deux link suivants nous servent à avoir une police de titre spéciale-->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+
 </head>
 
 
@@ -57,7 +61,7 @@
                         echo "<div class='col-lg-4 col-md-4'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
                             echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
-                            echo "<p>Marque: ".$data['descrip']."<br>"; //Marque du Tshirt
+                            echo "<p>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                             echo "
                                 

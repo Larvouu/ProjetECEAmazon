@@ -3,6 +3,10 @@
     <title>ECE Amazon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_sport.css" rel="stylesheet" type="text/css"/>
+
+    <!--Les deux link suivants nous servent à avoir une police de titre spéciale-->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 </head>
 
 
@@ -23,11 +27,10 @@
         </div>
     </div>
 
-    <!--________________________________________________________________________________________-->
     <div class="container features">
         <div class="row">
 
-    <?php
+        <?php
             //Identifier la BDD
             $database = "eceamazon";
 
