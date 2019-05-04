@@ -43,7 +43,7 @@
     if ($db_found) //Si la connection est établie
     {
         //On sélectionne les attributs (seulement ceux à afficher) d'item pour les livres (WHERE)
-        $sql = "SELECT nom, photo, descrip, categorie, prix, auteur FROM item WHERE categorie = 'Livre' ";
+        $sql = "SELECT id, nom, photo, descrip, categorie, prix, auteur FROM item WHERE categorie = 'Livre' ";
         $result = mysqli_query($db_handle, $sql);
         
         if (mysqli_num_rows($result) == 0) //Si on a aucun résultat suite à la requette
@@ -63,7 +63,29 @@
                 echo "<p style='font-size:20px;'><strong>Auteur: ".$data['auteur']."<br>"; //Auteur Livre
                 echo "<p style='font-size:15px;'><strong>Description: </strong>".$data['descrip']."<br>";//Description Livre
                 echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix Livre
-                echo "<input  type='submit'  class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'>";
+                ///////////////////////////////////////////
+                //////    AJOUTER AU PANIER DEBUT   ///////
+                ///////////////////////////////////////////
+                echo"<form action='' method='post' >";
+                echo "<input  type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>";
+                echo"</form>";
+                
+                if(isset($_POST[$data['id']]))
+                {
+                    //Supprime l'item
+                    $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1'  WHERE item.id = " .$data['id']." ";
+                    if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                    {
+                        echo "item ".$data['nom']." ajouté au panier !";
+                    }
+                    else 
+                    {
+                        echo "Error creating database: " . mysqli_error($db_handle);
+                    } 
+                }
+                ////////////////////////////////////////////
+                //////     AJOUTER AU PANIER  FIN     //////
+                ////////////////////////////////////////////
                 echo "</div>";
             }
 
