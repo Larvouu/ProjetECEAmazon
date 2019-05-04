@@ -59,7 +59,7 @@
             <a class="nav-link" href="acheteurFormulaire.php"><img src="img/monCompte.png" height=25px width=25px> Mon Compte</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><img src="img/panier.png" height=30px width=30px></a>
+            <a class="nav-link" href="panier.php"><img src="img/panier.png" height=30px width=30px></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="loginVendeurForm.php">Admin</a>
