@@ -16,6 +16,9 @@ $descrip = isset($_POST["descrip"])? $_POST["descrip"] : "";
 $photo = isset($_POST["photo"])? $_POST["photo"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 
+//propre à Musique
+$video = isset($_POST["video"])? $_POST["video"] : "";
+
 //propre à Musique et Livres
 $auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 
@@ -62,7 +65,35 @@ if(isset($_POST["submit"]))
         if ($db_found) 
         { 
             //si l'item ajouté est une Musique ou un Livre
-            if($categorie == "Musique" || $categorie == "livre")
+            if($categorie == "Musique")
+            {
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, video, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$video','$categorie', '$email')"; 
+                 
+                if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
+                {
+                    //on affiche un message informant que l'item a été ajouté avec SUCCES
+                    //ainsi, on invite l'utilisateur à retourner sur son compte Vendeur
+                    echo "<div class='uploadImgUser'>";
+                    echo "<p class='titre'>L'item $auteur - $nom a bien été ajouté à la vente.</p>";
+                    echo "</div>";
+
+                    echo "
+                        <div id='centrerB'><br><br>
+                                <form method='post' action='loginVendeur.php'>
+                                    <input type='hidden' name='email' value='".$email."'></input>
+                                    <input type='hidden' name='pseudo' value='".$pseudo."'></input>
+                                    <button id='submitB' type='submit'>Retourner à la page de votre compte vendeur.</button>
+                                    
+                                </form>
+                            </div>";
+
+                } 
+                else 
+                {
+                    echo "Error database: " . mysqli_error($db_handle);
+                }
+            }
+            else if ($categorie == "livre")
             {
                 $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$categorie', '$email')"; 
                  

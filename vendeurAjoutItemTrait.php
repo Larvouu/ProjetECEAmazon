@@ -49,6 +49,11 @@ if($categorie == "Musique")//nom(titre), auteur(artiste), descrip(genre), photo,
                     <td><input type='text' class='inputText' name='prix' placeholder='ex : 0.99&#8364'/></td>
                 </tr>
 
+                <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Lien YouTube (champ optionnel) (Remplacez /'watch?v=/' par /'embed/'):</strong></td>
+                    <td><input type='text' class='inputText' name='video' placeholder='ex : https://www.youtube.com/embed/qfNmyxV2Ncw'/></td>
+                </tr>
+
             </table>
                 <br><br>
                 <input class='button' type='submit' name='submit' value='ENTER'/>
