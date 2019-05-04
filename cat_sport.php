@@ -61,8 +61,8 @@
                     {
                         echo "<div class='col-lg-4 col-md-4'>";
                         echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
-                        echo "<p  style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Image de la musique
-                        echo "<p>Description : ".$data['descrip']."<br>"; //Image de la musique
+                        echo "<p  style='text-align:center;'><img src=".$data['photo']." style='width : 230px; height:230px;' class='img-fluid'></p>"; //Image de la musique
+                        echo "<p>Description : ".$data['descrip']."<br>"; //Description de la musique
                         echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
                         ///////////////////////////////////////////
                         //////    AJOUTER AU PANIER DEBUT   ///////

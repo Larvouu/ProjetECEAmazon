@@ -58,7 +58,7 @@
                     {
                         echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
-                            echo "<img data-toggle='modal' data-target=#".$data['nom']." src=".$data['photo']." class='img-fluid'>"; //Image de la musique
+                            echo "<img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'>"; //Image de la musique
 
                             //Si l'item possède une vidéo, la vidéo s'affiche en cliquant sur la photo de l'item
                            if($data['video']!="")

@@ -60,7 +60,7 @@
                     {
                         echo "<div class='col-lg-4 col-md-4'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
-                            echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt   
+                            echo "<p style='text-align:center;'><img src=".$data['photo']." style='width : 230px; height:230px;' class='img-fluid'></p>"; //Photo du Tshirt   
                             echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                             echo "

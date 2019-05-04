@@ -62,7 +62,7 @@
                     {
                         echo "<div class='col-lg-4 col-md-4'  style='text-align:center;'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
-                            echo "<p style='text-align:center;'><img data-toggle='modal' data-target=#".$data['nom']." src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
+                            echo "<p style='text-align:center;'><img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
                             //Si l'item possède une vidéo, la vidéo s'affiche en cliquant sur la photo de l'item
                             if($data['video']!="")
                             {
