@@ -101,7 +101,7 @@
 body
 {
     
-    background: url(img/degrade.jpg) no-repeat center fixed; 
+    background: url(img/bckgnd.jpg) no-repeat center fixed; 
     background-size: cover;
 }
 
@@ -110,7 +110,7 @@ body
   font-family : Ebrima;
   font-size:20px;
   width: 50%;
-  border: 6px solid #ffe0ef;
+  border: 6px solid #ffcccc;
   border-radius: 12px;
   margin: auto;
     
@@ -125,7 +125,7 @@ body
 {
     cursor: pointer;
     color:white;
-    background-color:#00d8a5;
+    background-color:#f8a5c2;
     border-radius: 4px;
     text-align: center;
     font-size: 18px;
@@ -138,7 +138,7 @@ body
 
 .titre
 {
-	color: #ffe0ef;
+	color:#4b4b4b;
     font-family: Ebrima;
     text-align: center;
 	font-size:30px;

@@ -57,7 +57,7 @@
   </a>
 </div>
 
-<br><br><br><br>
+<br><br><br><br><br>
 <!-- -->
     <div class="container features">
         <div class="row">
@@ -89,17 +89,9 @@
                 <input type="submit" class="btn btn-lg" value="Envoyer" name="">
 
         </div>
-    </div>
+    </div> <br><br><br><br><br>
 
-        
-    <footer>
-        <small>
-            <p>
-                Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
-            </p>
-        </small>
-    </footer>
-        
+<?php include 'footer.php' ?>
 
         
 </body>
