@@ -17,8 +17,8 @@ $pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
 
 <form method="post" action="vendeurAjoutItemTrait.php">  
   <!--On fait passer par méthode POST l'email du vendeur -->
-  <input type='hidden' name='email' value="<?php echo "".$email."" ?>"></input>
-  <input type='hidden' name='pseudo' value="<?php echo "".$pseudo."" ?>"></input>
+  <input type='hidden' name='email' value="<?php echo "".$email."" ?>">
+  <input type='hidden' name='pseudo' value="<?php echo "".$pseudo."" ?>">
 
     <!-- Le vendeur doit cocher la catégorie de l'item qu'il veut vendre-->
     Choisis catégorie :<br><br>

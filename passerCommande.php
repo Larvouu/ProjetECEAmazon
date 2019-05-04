@@ -113,19 +113,19 @@ else //si les 2 valeurs ont ben été set
                         </tr>
                     </table>
 
-                    <input type='hidden' name='email1' value='".$email."'>
-                    <input type='hidden' name='mdp1' value='".$mdp."'>
+                    <input type='hidden' name='email' value='".$email."'>
+                    <input type='hidden' name='mdp' value='".$mdp."'>
         
                     <br><br><input id='button' type='submit' value='Finaliser ma commande' name='payer'>
                 </form>";  
 
                 if(isset($_POST['payer']))
                 {
-                    if($_POST["nom"] == $data['nom'] && $_POST["prenom"] == $data['prenom'] && $_POST["adresse"] == $data['adresse'] && 
-                    $_POST["ville"] == $data['ville'] &&
-                    $_POST["pays"] == $data['pays'] && $_POST["codePostal"] == $data['codePostal'] && $_POST["numTel"] == $data['numTel'] &&
-                    $_POST["numCarte"] == $data['numCarte'] && $_POST["nomAfficheCarte"] == $data['nomAfficheCarte'] && $_POST["dateExpi"] == $data['dateExpi'] &&
-                    $_POST["codeSecu"] == $data['codeSecu'] && $_POST["typeCarte"] == $data['typeCarte']  )
+                    if($_POST["nom"] = $data['nom'] && $_POST["prenom"] = $data['prenom'] && $_POST["adresse"] = $data['adresse'] && 
+                    $_POST["ville"] = $data['ville'] &&
+                    $_POST["pays"] = $data['pays'] && $_POST["codePostal"] = $data['codePostal'] && $_POST["numTel"] = $data['numTel'] &&
+                    $_POST["numCarte"] = $data['numCarte'] && $_POST["nomAfficheCarte"] = $data['nomAfficheCarte'] && $_POST["dateExpi"] = $data['dateExpi'] &&
+                    $_POST["codeSecu"] = $data['codeSecu'] && $_POST["typeCarte"] = $data['typeCarte'] )
                     {
                         echo"GAGNE";
                     }
