@@ -42,7 +42,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2 FROM item WHERE categorie = 'ChaussureF' ";
+                $sql = "SELECT id,nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3, taille_choisie, couleur1, couleur2, couleur_choisie FROM item WHERE categorie = 'ChaussureF' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -67,24 +67,46 @@
                                 
                                     <form class='form-group' method='post'>
 
-                                        <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Pointure</label>
-                                        <select name='sel' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
-                                            <option  value='' disabled selected>Choix...</option>
-                                            <option value=".$data['tailleCh1'].">".$data['tailleCh1']."</option>
-                                            <option value=".$data['tailleCh2'].">".$data['tailleCh2']."</option>
-                                            <option value=".$data['tailleCh3'].">".$data['tailleCh3']."</option>
-                                        </select>
+                                    <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Pointure</label>
+                                    <select name='sel' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
+                                        <option  value='' disabled selected>Choix...</option>
+                                        <option value=".$data['tailleCh1'].">".$data['tailleCh1']."</option>
+                                        <option value=".$data['tailleCh2'].">".$data['tailleCh2']."</option>
+                                        <option value=".$data['tailleCh3'].">".$data['tailleCh3']."</option>
+                                    </select>
 
-                                        <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Couleur</label>
-                                        <select name='sel2' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
-                                            <option value='' disabled selected>Choix...</option>
-                                            <option value=".$data['couleur1'].">".$data['couleur1']."</option>
-                                            <option value=".$data['couleur2'].">".$data['couleur2']."</option>
-                                        </select>
-                                        <button name='submit' class='btn btn-primary my-1'>Ajouter au panier</button>
-                                    </form>
+                                    <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Couleur</label>
+                                    <select name='sel2' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
+                                        <option value='' disabled selected>Choix...</option>
+                                        <option value=".$data['couleur1'].">".$data['couleur1']."</option>
+                                        <option value=".$data['couleur2'].">".$data['couleur2']."</option>
+                                    </select>";
+                                    ///////////////////////////////////////////
+                                    //////    AJOUTER AU PANIER DEBUT   ///////
+                                    ///////////////////////////////////////////
+                                    echo "<input  type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>
+                                    
+                                            </form> 
+                                            ";
+                                    // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
                                 
-                            ";
+                                    if(isset($_POST[$data['id']]))
+                                    {
+                                        //Supprime l'item
+                                        $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1', taille_choisie='".$_POST['sel']."', couleur_choisie='".$_POST['sel2']."'   WHERE item.id = " .$data['id']." ";
+                                        if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                                        {
+                                            //echo"<script>alert('Ajout confirmé')</script>";
+                                            echo"L'item ".$data['nom']." taille ".$_POST['sel']." en colori ".$_POST['sel2']." a été ajouté au panier";
+                                        }
+                                        else 
+                                        {
+                                            echo "Error creating database: " . mysqli_error($db_handle);
+                                        } 
+                                    }
+                                    ////////////////////////////////////////////
+                                    //////     AJOUTER AU PANIER  FIN     //////
+                                    ////////////////////////////////////////////
                            // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
                         echo "</div>";
                     }

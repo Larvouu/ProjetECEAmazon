@@ -42,7 +42,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT nom, photo, descrip, prix, tailleS, tailleM, tailleL FROM item WHERE categorie = 'TeeShirt' ";
+                $sql = "SELECT id,nom, photo, descrip, prix, tailleS, tailleM, tailleL,taille_choisie FROM item WHERE categorie = 'TeeShirt' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -72,12 +72,34 @@
                                         <option value=".$data['tailleS'].">".$data['tailleS']."</option>
                                         <option value=".$data['tailleM'].">".$data['tailleM']."</option>
                                         <option value=".$data['tailleL'].">".$data['tailleL']."</option>
-                                    </select>
+                                    </select>";
 
-                                    <button name='submit' class='btn btn-primary my-1'>Ajouter au panier</button>
-                                    </form>
+                                    ///////////////////////////////////////////
+                                    //////    AJOUTER AU PANIER DEBUT   ///////
+                                    ///////////////////////////////////////////
+                                    echo "<input  type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>
+                                    
+                                            </form> 
+                                            ";
+                                    // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
                                 
-                            ";
+                                    if(isset($_POST[$data['id']]))
+                                    {
+                                        //Supprime l'item
+                                        $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1', taille_choisie='".$_POST['sel']."'   WHERE item.id = " .$data['id']." ";
+                                        if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                                        {
+                                            //echo"<script>alert('Ajout confirmé')</script>";
+                                            echo"L'item ".$data['nom']." taille ".$_POST['sel']." a été ajouté au panier";
+                                        }
+                                        else 
+                                        {
+                                            echo "Error creating database: " . mysqli_error($db_handle);
+                                        } 
+                                    }
+                                    ////////////////////////////////////////////
+                                    //////     AJOUTER AU PANIER  FIN     //////
+                                    ////////////////////////////////////////////
                            // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
                         echo "</div>";
                     }
@@ -112,7 +134,7 @@
      a selectionné. -->
 
 <?php
-
+/*
 if(isset($_POST['submit']))
 {       
     $option = isset($_POST['sel']) ? $_POST['sel'] : false;
@@ -127,5 +149,5 @@ if(isset($_POST['submit']))
         echo "task option is required";
         exit; 
     }
-}
+}*/
 ?>

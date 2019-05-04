@@ -119,7 +119,7 @@
                                 if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
                                 {
                                     //echo"<script>alert('Ajout confirmé')</script>";
-                                    echo"L'item ".$data['nom']." a été ajouté au panier";
+                                    echo"L'item ".$data['nom']." taille ".$_POST['sel']." a été ajouté au panier";
                                 }
                                 else 
                                 {
