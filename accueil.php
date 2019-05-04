@@ -20,7 +20,7 @@
     <?php include 'navbar.php'; ?> 
 
             <div class="description">
-                <h1>Bienvenue Dans l'ECE Amazon !</h1>
+                <h1>Bienvenue Dans l'ECE Amazon !</h1><br>
                <!-- <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p> -->
                 <a class="btn btn-lg" role="button" href="ventes_flash.php">Découvirir les offres du moment</a>
             </div>
