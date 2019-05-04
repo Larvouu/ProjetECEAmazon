@@ -58,10 +58,10 @@
                     //On affiche chacun des items appartenant à la categorie TeeShirt
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
-                        echo "<div class='col-lg-4 col-md-4'>";
+                        echo "<div class='col-lg-4 col-md-4'  style='text-align:center;'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
                             echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
-                            echo "<p>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
+                            echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                             echo "
                                 

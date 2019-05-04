@@ -40,7 +40,7 @@
 
             if ($db_found) 
             {
-                $sql = "SELECT nom, photo, descrip, categorie, prix, auteur FROM item WHERE categorie = 'Musique' ";
+                $sql = "SELECT nom, photo, descrip, categorie, prix, auteur, video FROM item WHERE categorie = 'Musique'";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -58,7 +58,35 @@
                     {
                         echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
-                            echo "<img src=".$data['photo']." class='img-fluid'>"; //Image de la musique
+                            echo "<img data-toggle='modal' data-target=#".$data['nom']." src=".$data['photo']." class='img-fluid'>"; //Image de la musique
+
+                            //Si l'item possède une vidéo, la vidéo s'affiche en cliquant sur la photo de l'item
+                           if($data['video']!="")
+                            {
+                                //On utilise les OPEN MODAL de Bootstrap
+                            echo "
+                            <div class='modal fade' id=".$data['nom']." role='dialog'>
+                                <div class='modal-dialog modal-dialog-centered'>
+                                
+                                    <!-- Modal content-->
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                        <h4 class='modal-title'>".$data['auteur']." - ".$data['nom']."</h4>
+                                        </div>
+                                        <div class='modal-body'>
+                                        <iframe width='420' height='345' src=".$data['video'].">
+                                        </iframe>
+                                        </div>
+                                        <div class='modal-footer'>
+                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>                     
+                            ";
+                           }
                             echo "<p style='font-size:20px;'><strong>Artiste: ".$data['auteur']."<br>"; //Artiste de la musique
                             echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
                             echo "<input  type='submit'  class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'>";

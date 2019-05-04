@@ -22,7 +22,7 @@
         <div class="overlay">
             <div class="description">
                 <h1>Nos Tee-shirts </h1>
-                <p>Retrouvez ici notre plus belle selection de Tshirts et impressionez vous amis avec nos Tshirts originiaux !</p>
+                <p>Retrouvez ici notre plus belle selection de Tshirts et impressionez vos amis avec nos Tshirts originaux !</p>
             </div>
         </div>
     </div>
@@ -60,15 +60,15 @@
                     {
                         echo "<div class='col-lg-4 col-md-4'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
-                            echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
-                            echo "<p>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
+                            echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt   
+                            echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                             echo "
                                 
                                     <form class='form-inline' method='post'>
                                     <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Taille</label>
                                     <select name='sel' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
-                                        <option selected>Choix...</option>
+                                        <option disabled selected>Choix...</option>
                                         <option value=".$data['tailleS'].">".$data['tailleS']."</option>
                                         <option value=".$data['tailleM'].">".$data['tailleM']."</option>
                                         <option value=".$data['tailleL'].">".$data['tailleL']."</option>

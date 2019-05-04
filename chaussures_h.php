@@ -21,7 +21,7 @@
     <div class="container-fluid"> 
         <div class="overlay">
             <div class="description">
-                <h1>Chaussures homme </h1>
+                <h1>Chaussures Homme </h1>
                 <p>Retrouvez ici toutes nos chaussures pour homme. Vous en trouverez pour tous les goûts, alors faites vous plaisir!</p>
               
             </div>
@@ -44,7 +44,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3 FROM item WHERE categorie = 'ChaussureH' ";
+                $sql = "SELECT nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3, video FROM item WHERE categorie = 'ChaussureH' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -60,10 +60,38 @@
                     //On affiche chacun des items appartenant à la categorie TeeShirt
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
-                        echo "<div class='col-lg-4 col-md-4'>";
+                        echo "<div class='col-lg-4 col-md-4'  style='text-align:center;'>";
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre du Tshirt
-                            echo "<p style='text-align:center;'><img src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
-                            echo "<p>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
+                            echo "<p style='text-align:center;'><img data-toggle='modal' data-target=#".$data['nom']." src=".$data['photo']." class='img-fluid'></p>"; //Photo du Tshirt
+                            //Si l'item possède une vidéo, la vidéo s'affiche en cliquant sur la photo de l'item
+                            if($data['video']!="")
+                            {
+                                //On utilise les OPEN MODAL de Bootstrap
+                            echo "
+                            <div class='modal fade' id=".$data['nom']." role='dialog'>
+                                <div class='modal-dialog modal-dialog-centered'>
+                                
+                                    <!-- Modal content-->
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                        <h4 class='modal-title'>".$data['nom']."</h4>
+                                        </div>
+                                        <div class='modal-body'>
+                                        <iframe width='420' height='345' src=".$data['video'].">
+                                        </iframe>
+                                        </div>
+                                        <div class='modal-footer'>
+                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>                     
+                            ";
+                            }
+                            
+                            echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                             echo "
                                 
