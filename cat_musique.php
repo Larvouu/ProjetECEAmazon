@@ -8,6 +8,9 @@
     <!--Les deux link suivants nous servent à avoir une police de titre spéciale-->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 </head>
 
 
@@ -92,7 +95,7 @@
                             //////    AJOUTER AU PANIER DEBUT   ///////
                             ///////////////////////////////////////////
                             echo"<form action='' method='post' >";
-                            echo "<input  type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>";
+                            echo "<input type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>";
                             echo"</form>";
                             
                             if(isset($_POST[$data['id']]))
@@ -102,7 +105,12 @@
                                 if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
                                 {
                                     //echo"<script>alert('Ajout confirmé')</script>";
-                                    echo"L'item ".$data['nom']." a été ajouté au panier";
+                                   
+                                    echo"<div class='alert alert-success'>
+                                        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                                        L'item <strong>".$data['nom']." - ".$data['auteur']."</strong> a été ajouté au panier
+                                    </div>";
+                                    
                                 }
                                 else 
                                 {
