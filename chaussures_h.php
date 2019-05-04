@@ -44,7 +44,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3, video FROM item WHERE categorie = 'ChaussureH' ";
+                $sql = "SELECT id, nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3,taille_choisie, video FROM item WHERE categorie = 'ChaussureH' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -95,21 +95,40 @@
                             echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
                             echo "
                                 
-                                    <form class='form-inline' method='post'>
+                                    <form class='form-inline' method='post' action=''>
                                     <label class='my-1 mr-2' for='inlineFormCustomSelectPref'>Pointure</label>
                                     <select name='sel' class='custom-select my-1 mr-sm-2' id='inlineFormCustomSelectPref'>
                                         <option value='' disabled selected>Choix...</option>
                                         <option value=".$data['tailleCh1'].">".$data['tailleCh1']."</option>
                                         <option value=".$data['tailleCh2'].">".$data['tailleCh2']."</option>
                                         <option value=".$data['tailleCh3'].">".$data['tailleCh3']."</option>
-                                    </select><br>
-
-                                    <button name='submit' class='btn btn-primary my-1'>Ajouter au panier</button>
-                                    </form>
-                              
-                                
-                            ";
-                           // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                                    </select><br>";
+                            ///////////////////////////////////////////
+                            //////    AJOUTER AU PANIER DEBUT   ///////
+                            ///////////////////////////////////////////
+                            echo "<input  type='submit' name='".$data['id']."' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Ajouter au panier'>
+                            
+                                    </form> 
+                                    ";
+                            // echo "<p style='text-align:center;'><input type='submit' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' formaction='ajoutPanier.php' value='Ajouter au panier'></p>";
+                           
+                            if(isset($_POST[$data['id']]))
+                            {
+                                //Supprime l'item
+                                $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1', taille_choisie='".$_POST['sel']."'   WHERE item.id = " .$data['id']." ";
+                                if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                                {
+                                    //echo"<script>alert('Ajout confirmé')</script>";
+                                    echo"L'item ".$data['nom']." a été ajouté au panier";
+                                }
+                                else 
+                                {
+                                    echo "Error creating database: " . mysqli_error($db_handle);
+                                } 
+                            }
+                            ////////////////////////////////////////////
+                            //////     AJOUTER AU PANIER  FIN     //////
+                            ////////////////////////////////////////////
                         echo "</div>";
                     }
                 }
@@ -143,7 +162,7 @@
      a selectionné. -->
 
 <?php
-
+/*
 if(isset($_POST['submit']))
 {       
     $option = isset($_POST['sel']) ? $_POST['sel'] : false;
@@ -158,5 +177,5 @@ if(isset($_POST['submit']))
         echo "task option is required";
         exit; 
     }
-}
+}*/
 ?>
