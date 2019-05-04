@@ -30,8 +30,8 @@ CREATE TABLE item(
 );
 
 #
-INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
-values ("Main Theme", "img/malte.jpg", "Orchestre", "Musique", "1.29", "Game of Thrones", "axel.vinant@edu.ece.fr");
+INSERT INTO item(nom, photo, descrip, categorie, prix, video, auteur, vendeur_email) 
+values ("Main Theme", "img/malte.jpg", "Orchestre", "Musique", "1.29","https://www.youtube.com/watch?v=V5d4a6a5SQo", "Game of Thrones", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
 values ("Overgrown", "img/wonder.jpg", "Pop", "Musique", "1.19", "Oh Wonder", "axel.vinant@edu.ece.fr");
 INSERT INTO item(nom, photo, descrip, categorie, prix, auteur, vendeur_email) 
