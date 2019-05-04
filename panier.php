@@ -58,11 +58,12 @@
                         </div>";
                     //s'il y a bien des résulats à la requête sql
                     //On affiche chacun des items appartenant à la categorie TeeShirt
+                    echo "<div class='container features'>
+                        <div class='row' >";
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
                         $total_panier += ($data['prix']*$data['qteAchetee']);
-                        echo "<div class='container features'>
-                        <div class='row' >";
+                        
                         echo "<div class='col-lg-4 col-md-4'  style='text-align:center;'>";
                         echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre
                         echo "<p style='text-align:center;'><img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'></p>"; //Photo 
@@ -106,9 +107,6 @@
                         }
                         echo "<strong>Quantité : ".$data['qteAchetee']."</strong></p>"; //Quantité
                         echo "</div>";
-                        
-                        
-                        
                     }
                     echo "</div>";
                     //Prix total
@@ -117,7 +115,9 @@
                     </div>    ";
                     //Bouton passer ma commande
                     echo"<div style='text-align:center;'>
+                    <form action='passerCommandeForm.php'>
                     <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Passer ma commande'>
+                    </form>
                     </div>    ";
                     
                 }

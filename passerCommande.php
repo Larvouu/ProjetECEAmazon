@@ -17,7 +17,7 @@ if ( $email=="" || $mdp=="" )
 {
     echo "<br><br><div class='bord'><br>";
     echo "<p class='titre'>Les champs n'ont pas été saisis !</p></div>";
-    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='loginVendeurForm.php'>Ré-essayer de se connecter</button></div></form>";
+    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='passerCommandeForm.php'>Ré-essayer de se connecter</button></div></form>";
     echo "<br><br><br>";
    
 }
@@ -56,7 +56,7 @@ else //si les 2 valeurs ont ben été set
                     //le mdp entré ne correspond pas à l'email
                     echo "<br><br><div class='bord'><br>";
                     echo "<p class='titre'>Le mot de passe ne correspond pas à l'email !</p></div>";
-                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='PasserCommandeForm.php'>Ré-essayer de se connecter</button></div></form>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='passerCommandeForm.php'>Ré-essayer de se connecter</button></div></form>";
                     echo "<br><br><br>";
                 }
                 else 
@@ -112,6 +112,9 @@ else //si les 2 valeurs ont ben été set
                             <td><input type='password' name='codeSecu'></td>
                         </tr>
                     </table>
+
+                    <input type='hidden' name='email1' value='".$email."'>
+                    <input type='hidden' name='mdp1' value='".$mdp."'>
         
                     <br><br><input id='button' type='submit' value='Finaliser ma commande' name='payer'>
                 </form>";  
@@ -122,14 +125,14 @@ else //si les 2 valeurs ont ben été set
                     $_POST["ville"] == $data['ville'] &&
                     $_POST["pays"] == $data['pays'] && $_POST["codePostal"] == $data['codePostal'] && $_POST["numTel"] == $data['numTel'] &&
                     $_POST["numCarte"] == $data['numCarte'] && $_POST["nomAfficheCarte"] == $data['nomAfficheCarte'] && $_POST["dateExpi"] == $data['dateExpi'] &&
-                    $_POST["codeSecu"] == $data['codeSecu'] && $_POST["typeCarte"] == $data['typeCarte'] && )
+                    $_POST["codeSecu"] == $data['codeSecu'] && $_POST["typeCarte"] == $data['typeCarte']  )
                     {
                         echo"GAGNE";
                     }
                     else{//si on rentre les mauvaises infos ...
                     echo "<br><br><div class='bord'><br>";
                     echo "<p class='titre'>Aucune correspondance avec la base de données !</p></div>";
-                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='PasserCommandeForm.php'>Ré-essayer</button></div></form>";
+                    echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='passerCommandeForm.php'>Ré-essayer</button></div></form>";
                     echo "<br><br><br>";
                     }
                 }
