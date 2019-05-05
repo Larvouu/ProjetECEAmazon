@@ -39,7 +39,7 @@
 
     <!-- Grid column -->
     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-      <h6 class="text-uppercase mb-4 font-weight-bold">Liens utils</h6>
+      <h6 class="text-uppercase mb-4 font-weight-bold">Liens utiles</h6>
       <p>
         <a style="color:#7158e2;" href="ventes_flash.php">Ventes Flash</a>
       </p>
@@ -47,10 +47,7 @@
         <a style="color:#7158e2;" href="vendeurFormulaire.php">Vendre un produit</a>
       </p>
       <p>
-        <a style="color:#7158e2;" href="admin.php">Admin</a>
-      </p>
-      <p>
-        <a style="color:#7158e2;" href="#!">Help</a>
+        <a style="color:#7158e2;" href="vendeurFormulaire.php">Admin</a>
       </p>
     </div>
 

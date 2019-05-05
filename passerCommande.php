@@ -222,8 +222,7 @@ else //si les 2 valeurs ont ben été set
                                     $reset_item = "UPDATE item SET isPanier = '0', qteVendue=qteVendue+'1', qteEnVente=qteEnVente-qteAchetee, qteAchetee ='0' WHERE id='".$data_reset['id']."'";
                                     if (mysqli_query($db_handle, $reset_item))
                                     {
-                                        //Si une quantité tombe à 0 ...
-                                        echo "succes1";
+                                        //Requete reussie
                                     }
                                     else
                                     {
@@ -236,7 +235,7 @@ else //si les 2 valeurs ont ben été set
                             $sqlsar = "DELETE FROM item WHERE qteEnVente <= '0' ";
                            if(mysqli_query($db_handle, $sqlsar))
                            {
-                                echo"sarah mother of dragon king of the seven kingdoms last sang pur targaryen ";
+                                //Requete reussie
                            }
                            else
                             {
