@@ -19,8 +19,11 @@
     <!-- On inclut la barre de navigation 'navbar.php'. Cela permet d'éviter de tout recopier à chaque fois 
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
     <?php include 'navbar.php'; 
-     echo "<div class='alert alert-primary' role='alert'>
-    Clickez sur un des items pour voir une vidéo !
+     echo "<div id='msg' class='alert alert-primary' role='alert'>
+    Click sur un des items pour voir une vidéo !
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button>
     </div>";
     ?> 
 
