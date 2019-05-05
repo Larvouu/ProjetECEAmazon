@@ -9,6 +9,21 @@ Avant d'aller visiter notre site, il faut :
 2) Ouvrir les trois fichiers .txt et les copier/coller dans phpmyadmin ("bddItemCreation.txt","bddAcheteurCreation.txt","bddVendeurCreation.txt")
 
 ---------------------------------------------------------------------------
+
+Pour accéder au compte de l'administrateur 
+
+email : sarah.le@edu.ece.fr
+
+pseudo : schouketta
+
+Et les deux comptes vendeur déjà présents sur le site
+
+Vendeur 1 -- email : axel.vinant@edu.ece.fr	pseudo : busterfake
+
+Vendeur 2 -- email : anto.ghiassi@edu.ece.fr    pseudo : anto
+
+---------------------------------------------------------------------------
+
 BONUS :
 
 - Dans l'onglet "panier" de notre site web, le code promo "LOVEMOM26" permet d'obtenir 30% de réduction sur l'ensemble des achats, 
