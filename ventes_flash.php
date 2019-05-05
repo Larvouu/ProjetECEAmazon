@@ -53,15 +53,14 @@
                     echo "<p class='titre'>Notre site n'a pas encore enregistré de vente, soyez la première personne à nous faire confiance !</p></div>";
                     echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour menu</button></div></form>";
                 }*/ 
-                if (mysqli_num_rows($result) != 0) 
+                if (mysqli_num_rows($result) != 0) //Si des produits ont déja été vendus
                 {
                     //s'il y a bien des résulats à la requête sql
-                    //On affiche chacun des items appartenant à la categorie Musique
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
                         echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
-                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
-                            echo "<img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'>"; //Image de la musique
+                            echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre 
+                            echo "<img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'>"; //Image 
 
                             //Si l'item possède une vidéo, la vidéo s'affiche en cliquant sur la photo de l'item
                            if($data['video']!="")
@@ -88,9 +87,8 @@
                                 </div>
                             </div>                     
                             ";
-                           }
-                            echo "<p style='font-size:20px;'><strong>Artiste: ".$data['auteur']."<br>"; //Artiste de la musique
-                            echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
+                            }
+                            echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix  
                             ///////////////////////////////////////////
                             //////    AJOUTER AU PANIER DEBUT   ///////
                             ///////////////////////////////////////////
