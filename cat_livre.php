@@ -43,7 +43,7 @@
     if ($db_found) //Si la connection est établie
     {
         //On sélectionne les attributs (seulement ceux à afficher) d'item pour les livres (WHERE)
-        $sql = "SELECT id, nom, photo, descrip, categorie, prix, auteur FROM item WHERE categorie = 'Livre' ";
+        $sql = "SELECT * FROM item WHERE categorie = 'Livre' ";
         $result = mysqli_query($db_handle, $sql);
         
         if (mysqli_num_rows($result) == 0) //Si on a aucun résultat suite à la requette
@@ -60,9 +60,10 @@
                 echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
                 echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre Livre
                 echo "<img src=".$data['photo']." style='width : 230px; height:230px;' class='img-fluid'>"; //Couverture Livre
-                echo "<p style='font-size:20px;'><strong>Auteur: ".$data['auteur']."<br>"; //Auteur Livre
-                echo "<p style='font-size:15px;'><strong>Description: </strong>".$data['descrip']."<br>";//Description Livre
-                echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix Livre
+                echo "<p style='font-size:20px;'><strong>Auteur: ".$data['auteur']."</strong><br>"; //Auteur Livre
+                echo "<p style='font-size:15px;'><strong>Genre: </strong>".$data['descrip']."<br>";//Description Livre
+                echo "<strong>Prix:</strong> ".$data['prix']."&#8364<br>"; //Prix Livre
+                echo "<strong>Quantité disponible : ".$data['qteEnVente']."</strong></p>"; //Quantité disponible
                 ///////////////////////////////////////////
                 //////    AJOUTER AU PANIER DEBUT   ///////
                 ///////////////////////////////////////////

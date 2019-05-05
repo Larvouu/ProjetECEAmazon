@@ -44,7 +44,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT id, nom, photo, descrip, prix, tailleCh1, tailleCh2, tailleCh3,taille_choisie, video FROM item WHERE categorie = 'ChaussureH' ";
+                $sql = "SELECT * FROM item WHERE categorie = 'ChaussureH' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -91,8 +91,10 @@
                             ";
                             }
                             
-                            echo "<p style='font-size:15px;'><strong>Marque : ".$data['descrip']."<br>"; //Marque du Tshirt
-                            echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix du Tshirt
+                            echo "<p style='font-size:15px;'><strong>Description: </strong>".$data['descrip']."<br>";//Description
+                            echo "<strong>Prix:</strong> ".$data['prix']."&#8364<br>"; //Prix 
+                            echo "<strong>Quantité disponible : ".$data['qteEnVente']."</strong></p>"; //Quantité disponible
+                            
                             echo "
                                 
                                     <form class='form-inline' method='post' action=''>

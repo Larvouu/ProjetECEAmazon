@@ -43,7 +43,7 @@
 
             if ($db_found) 
             {
-                $sql = "SELECT id,nom, photo, descrip, categorie, prix, auteur, video FROM item WHERE categorie = 'Musique'";
+                $sql = "SELECT * FROM item WHERE categorie = 'Musique'";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -89,8 +89,10 @@
                             </div>                     
                             ";
                            }
-                            echo "<p style='font-size:20px;'><strong>Artiste: ".$data['auteur']."<br>"; //Artiste de la musique
-                            echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
+                            echo "<p style='font-size:20px;'><strong>Auteur: ".$data['auteur']."</strong><br>"; //Auteur 
+                            echo "<p style='font-size:15px;'><strong>Genre: </strong>".$data['descrip']."<br>";//Description 
+                            echo "<strong>Prix:</strong> ".$data['prix']."&#8364<br>"; //Prix 
+                            echo "<strong>Quantité disponible : ".$data['qteEnVente']."</strong></p>"; //Quantité disponible
                             ///////////////////////////////////////////
                             //////    AJOUTER AU PANIER DEBUT   ///////
                             ///////////////////////////////////////////

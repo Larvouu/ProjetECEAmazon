@@ -88,7 +88,8 @@
                             </div>                     
                             ";
                             }
-                            echo "Prix: ".$data['prix']."&#8364</strong></p>"; //Prix  
+                            echo "<strong>Prix: </strong>".$data['prix']."&#8364</p>"; //Prix  
+                            echo "<strong>Quantité disponible : ".$data['qteEnVente']."</strong></p>"; //Quantité disponible
                             ///////////////////////////////////////////
                             //////    AJOUTER AU PANIER DEBUT   ///////
                             ///////////////////////////////////////////

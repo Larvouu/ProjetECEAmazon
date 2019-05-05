@@ -43,7 +43,7 @@
             if ($db_found) 
             {
                 
-                $sql = "SELECT id, nom, photo, descrip, categorie, prix FROM item WHERE categorie = 'SportsLoisirs' ";
+                $sql = "SELECT * FROM item WHERE categorie = 'SportsLoisirs' ";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -60,10 +60,12 @@
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
                         echo "<div class='col-lg-4 col-md-4'>";
-                        echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre de la musique
-                        echo "<p  style='text-align:center;'><img src=".$data['photo']." style='width : 230px; height:230px;' class='img-fluid'></p>"; //Image de la musique
-                        echo "<p>Description : ".$data['descrip']."<br>"; //Description de la musique
-                        echo "Prix : ".$data['prix']."&#8364</strong></p>"; //Prix de la musique 
+                        echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre 
+                        echo "<p  style='text-align:center;'><img src=".$data['photo']." style='width : 230px; height:230px;' class='img-fluid'></p>"; //Image 
+                        echo "<p style='font-size:15px;'><strong>Description: </strong>".$data['descrip']."<br>";//Description
+                        echo "<strong>Prix:</strong> ".$data['prix']."&#8364<br>"; //Prix 
+                        echo "<strong>Quantité disponible : ".$data['qteEnVente']."</strong></p>"; //Quantité disponible
+                            
                         ///////////////////////////////////////////
                         //////    AJOUTER AU PANIER DEBUT   ///////
                         ///////////////////////////////////////////
