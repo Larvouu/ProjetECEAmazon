@@ -1,7 +1,7 @@
 body
 {
     
-    background: url(img/bckgnd.jpg) no-repeat center fixed; 
+    background: url(img/degrade.jpg) no-repeat center fixed; 
     background-size: cover;
 }
 
@@ -20,22 +20,40 @@ body
     margin-bottom: 50px;
 }
 
-#button:hover
-{
-    background-color: rgb(198, 156, 247);
-}
-
 input[type=text] 
 {
+    
+    margin: 8px 0;
+    width : 200px;
+    border: 3px solid rgb(252, 205, 212);
     -webkit-transition: 0.5s;
     transition: 0.5s;
-}
+    outline: none;
+    font-size : 20px;
+   text-align : center;
+  }
   
 input[type=text]:focus 
 {
     border: 3px solid #555;
 }
-
+input[type=password] 
+{
+    
+    margin: 8px 0;
+    width : 200px;
+    border: 3px solid rgb(252, 205, 212);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size : 20px;
+   text-align : center;
+  }
+  
+input[type=password]:focus 
+{
+    border: 3px solid #555;
+}
 
 
 .logForm
@@ -46,13 +64,12 @@ input[type=text]:focus
     color: white;
     font-size:20px;
     width: 25%;
-    border: 2px solid rgba(255, 255, 255, 0.596);
+    border: 3px solid white;
     border-radius: 12px;
     padding: 25px;
     margin-left: auto;
     margin-right: auto;
-    margin-top : 60px;
-    background-color: rgba(0, 0, 0, 0.075);
+    margin-top : 10px;
 
 }
 

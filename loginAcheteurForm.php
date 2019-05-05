@@ -8,9 +8,9 @@
     <?php include 'navbar.php'; ?>
 
     <div class="logForm">
-        <br><br>
+        <br>
         <p id="loginInterface">Login</p>
-        <br><br>
+        <br>
         <form action="loginAcheteur.php" method="post">
             <table style="text-align:center;">
                 <tr>
@@ -44,7 +44,7 @@
                 </tr>
             </table>
 
-            <br><br><input id="button" type="submit" value="Se connecter">
+            <br><input id="button" type="submit" value="Se connecter">
         </form>
 
     </div>
