@@ -204,6 +204,29 @@ else //si les 2 valeurs ont ben été set
                                 Votre panier est désormais vide. Retour <a href='accueil.php' class='alert-link'>page d'accueil</a>.
                             </div>
                             ";
+                            
+                            //Reset des variables isPanier et qteAchetee + ajustement de qteEnVente et suppression si besoin
+                            $reset = "SELECT * FROM item WHERE isPanier = '1'";
+                            $result_reset = mysqli_query($db_handle, $reset);
+                            //Si aucun resultat pour la requete (normalement ce cas ne doit jamais se produire)
+                            if (mysqli_num_rows($result_delete) == 0) 
+                            {
+                                echo "Le reset n'a pas marché";
+                            }
+                            //Si au moins 1 résultat
+                            else{
+                                while ($data_reset = mysqli_fetch_assoc($result_reset)) 
+                                {
+                                    //On reset les variables
+                                    $reset_item = "UPDATE item SET isPanier = '0', qteVendue=qteVendue+'1', qteEnVente=qteEnVente-qteAchetee, qteAchetee ='0' ";
+                                    //Si une quantité tombe à 0 ...
+                                    if($data_reset['qteEnVente'] <= 0)
+                                    {
+                                        //On supprime l'item qui n'est plus en vente
+                                        $delete_item = "DELETE FROM item WHERE qteEnVente <= 0 ";
+                                    }
+                                }
+                            }
                         }
                         else
                         {
