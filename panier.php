@@ -28,7 +28,8 @@
             $db_handle = mysqli_connect('localhost', 'root', '');
             $db_found = mysqli_select_db($db_handle, $database);
 
-            $total_panier = '0';
+            $total_panier =0;
+            $promo_utilisee = 0; //code promo pas encore utilisé
            
 
             if ($db_found) 
@@ -113,14 +114,30 @@
                     echo"<div style='text-align:center; font-size:30px;'>
                             <strong>Total : $total_panier &#8364 </strong>
                         </div>";
-                    
-                    
-    
+                    //Code promo LOVEMOM26
+                    echo"<div style='text-align:center; font-size:30px;'>
+                    <form action='' method='post'>
+                    <strong>30% de réduction avec un code promo :  </strong>
+                    <input type='text' name='promo' class='form-control'>
+                    <input  type='submit' name='promoBtn' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Activer mon code'>
+                    </form>
+                    </div>";
 
+                    if(isset($_POST["promoBtn"]))
+                    {
+                        if($_POST["promo"] == 'LOVEMOM26' && $promo_utilisee == '0')
+                        {
+                            //Rabais de 30% pour la fête des mères
+                            $total_panier = $total_panier*0.70;
+                            //Le code devient inutilisable
+                            $promo_utilisee = 1;
+                            echo "<div style='text-align:center; font-size:30px;'>
+                            <strong>Total après application du code : ".$total_panier." &#8364</strong></div>";
+                        }
+                    }
                     //Bouton passer ma commande
                     echo"<div style='text-align:center;'>
                             <form action='passerCommandeForm.php' method='post'>
-                            
                                 <input type='hidden' name='totalpanier' value='".$total_panier."'>
                                 <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Passer ma commande'>
                             </form>
