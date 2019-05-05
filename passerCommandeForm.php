@@ -5,7 +5,10 @@
 
 <body>
     
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar.php'; 
+    $totalPanier= isset($_POST["totalpanier"])? $_POST["totalpanier"] : "";
+
+    ?>
 
     <div class="logForm">
         <br><br>
@@ -22,7 +25,7 @@
                     <td><input type="password" name="mdp"></td>
                 </tr>
             </table>
-
+            <input type='hidden' name='totalpanier' value="<?php echo "".$totalPanier."" ?>">
             <br><br><input id="button" type="submit" value="ENTER" name='connect'>
         </form>
 

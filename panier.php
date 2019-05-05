@@ -111,15 +111,19 @@
                     echo "</div>";
                     //Prix total
                     echo"<div style='text-align:center; font-size:30px;'>
-                    <strong>Total : $total_panier &#8364 </strong>
-                    </div>    ";
+                            <strong>Total : $total_panier &#8364 </strong>
+                        </div>";
+                    
+                    echo"<input type='hidden' name='totalpanier' value='".$total_panier."'>";
+    
+
                     //Bouton passer ma commande
                     echo"<div style='text-align:center;'>
-                    <form action='passerCommandeForm.php'>
-                    <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Passer ma commande'>
-                    </form>
-                    </div>    ";
-                    
+                            <form action='passerCommandeForm.php'>
+                                <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Passer ma commande'>
+                            </form>
+                        </div>";
+                            
                 }
                 
                 mysqli_close($db_handle);

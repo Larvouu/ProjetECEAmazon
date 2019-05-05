@@ -12,6 +12,7 @@
 //avec ce qui a été passé par méthode POST
 $email = isset($_POST["email"])? $_POST["email"] : "";
 $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
+$totalpanier= isset($_POST["totalpanier"])? $_POST["totalpanier"] : "";
  
 if ( $email=="" || $mdp=="" )
 {
@@ -115,6 +116,7 @@ else //si les 2 valeurs ont ben été set
 
                     <input type='hidden' name='email' value='".$email."'>
                     <input type='hidden' name='mdp' value='".$mdp."'>
+                    <input type='hidden' name='totalpanier' value='".$totalpanier."'>
                     
         
                     <br><br><input id='button' type='submit' value='Finaliser ma commande' name='payer'>
@@ -122,6 +124,8 @@ else //si les 2 valeurs ont ben été set
 
                 if(isset($_POST['payer']))
                 {
+                    $totalpanier= isset($_POST["totalpanier"])? $_POST["totalpanier"] : "";
+
                     if($_POST["nom"] == $data['nom'] && $_POST["prenom"] == $data['prenom'] && $_POST["adresse"] == $data['adresse'] && 
                     $_POST["ville"] == $data['ville'] &&
                     $_POST["pays"] == $data['pays'] && $_POST["codePostal"] == $data['codePostal'] && $_POST["numTel"] == $data['numTel'] &&
@@ -136,24 +140,31 @@ else //si les 2 valeurs ont ben été set
 
 
                         $to=$email;
-                        $message='<html><body> 
+                        $message='<html>
+                        <head>
+                            
+                        </head>
+                      
+                        <body> 
                         
-                        <div style="text-align:center; font-size:30px;">ECE AMAZON</div>
+                        <div style="text-align:center; font-size:30px;"><h1>ECE AMAZON</h1></div><hr>
                         <br><br>
-                        Bonjour '.$_POST["prenom"].' '. $data["nom"].',<br>
-                        Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.<br><br>
+                       <p style="font-size:18px;"> Bonjour <strong>'.$_POST["prenom"].' '. $data["nom"].'</strong>,</p>
+                       <p style="font-size:18px;"> Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.</p><hr>
                         
-                        Détails de votre commande <hr><br>
-                        Prix Total : 
+                       <p style="text-align:center; font-size:18px;">Détails de votre commande<br><p>
+                        <div style="background-color :#d1d1d1;">
+                            <div> <p style="text-align:center; font-size:15px;">Livraison : </p><p style="text-align:center; color:green; font-size:15px;"><strong>Mardi 14 Mai 2019</strong></p></div>
+                            <div><p style="text-align:center; font-size:15px;">Votre adresse :</p><p style="text-align:center; color:green; font-size:15px;"><strong> '.$_POST['adresse'].', '.$_POST['ville'].', '.$_POST['codePostal'].'</strong></p></div>
+                            
+                        </div>
+                        <div><p style="font-size:18px;"><strong>Prix Total :'.$totalpanier.' </strong></p></div><br>
 
-
-
-                       
                         </body>
                         </html>
                         ';
 
-                        mail("sarah.lepkmn@gmail.com", "Copie : ".$email." a passé une commande", $message, $header);
+                        mail("sarah.lepkmn@gmail.com", "Copie : ".$_POST["prenom"]." ".$data["nom"]." a passé une commande", $message, $header);
                         
                         if(  mail($to, "Confirmation de votre commande ECEAmazon", $message, $header)
                         )
