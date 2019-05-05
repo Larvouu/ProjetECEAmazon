@@ -5,14 +5,15 @@
     text-align: center;
     color: white;
     font-size:20px;
-    width: 37%;
+    width: 34%;
     border: 2px solid rgba(255, 255, 255, 0.596);
     border-radius: 12px;
     padding: 25px;
     margin-left: auto;
     margin-right: auto;
     margin-top : 60px;
-    background-color: rgba(0, 0, 0, 0.075);
+    background-color: rgba(0, 0, 0, 0.178);
+    margin-bottom: 40px;
 
 }
 
@@ -54,28 +55,28 @@ input[type=text]
 {
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    width:100%;
 }
   
 input[type=text]:focus 
 {
-    border: 3px solid #555;
+    border: 2px solid #555;
 }
 
 input[type=password] 
 {
     
-    width : 250px;
-    border: 2px solid rgb(252, 205, 212);
+    width:100%;
+    border: 1px solid rgb(255, 155, 170);
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-    font-size : 18px;
    text-align : center;
 }
   
 input[type=password]:focus 
 {
-    border: 2px solid #555;
+    border: 2px solid rgb(252, 158, 158);
 }
 
 

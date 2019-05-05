@@ -6,26 +6,6 @@
 <body>
     
     <?php include 'navbar.php'; ?>
-   
-
-<div class="logForm">
-        <br><br>
-        <p id="loginInterface">Login</p><br>
-       
-        <form action="loginVendeur.php" method="post">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Saisir email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Pseudo</label>
-                <input type="text" name="pseudo" class="form-control" id="exampleInputPassword1" placeholder="Pseudo">
-            </div>
-            <br>
-            <input id="button" type="submit" value="ENTER" name='connect'>
-        </form>
-    </div>
-
 
         <div class="logForm">
             <br>
@@ -70,23 +50,23 @@
                     <td><input type="text" name="numTel"/></td>
                 </tr>
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Numéro de carte :</td>
+                    <td style="color:white; font-family: Ebrima; font-size: 19px;">Numéro de carte :</td>
                     <td><input type="password" name="numCarte"/></td>
                 </tr>
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Type de carte :</strong></td>
+                    <td style="color:white; font-family: Ebrima; font-size: 19px;">Type de carte :</td>
                     <td><input type="text" name="typeCarte"/></td>
                 </tr>
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Titulaire de la carte :</strong></td>
+                    <td style="color:white; font-family: Ebrima; font-size: 19px;">Titulaire de la carte :</td>
                     <td><input type="text" name="nomAfficheCarte"/></td>
                 </tr>
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Date d'expiration :</strong></td>
+                    <td style="color:white; font-family: Ebrima; font-size: 19px;">Date d'expiration :</td>
                     <td><input type="text" name="dateExpi"/></td>
                 </tr>
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Code de sécurité :</strong></td>
+                    <td style="color:white; font-family: Ebrima; font-size: 19px;">Code de sécurité :</td>
                     <td><input type="password" name="codeSecu"/></td>
                 </tr>
 
