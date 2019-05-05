@@ -188,7 +188,7 @@ else if ($categorie == "teeshirt")//nom, descrip, photo, prix, tailleS, tailleM,
 
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
-                <td><input type='text' class='inputText' name='prix' placeholder='ex : 36.50&#8364'/></td>
+                <td><input type='text' class='inputText' name='prix' placeholder='ex : 36.50'/></td>
             </tr>
 
             <tr>
