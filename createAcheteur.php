@@ -80,7 +80,7 @@ if(isset($_POST["submit"]))
                         //alors, on invite l'utilisateur à ré-essayer de se créer un compte vendeur via un bouton
                         echo "<br><br><div class='bord'><br>";
                         echo "<p class='titre'>l'email existe déjà dans la bdd</p></div>";
-                        echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createVendeurForm.php'>Ré-essayer de créer un compte</button></div></form>";
+                        echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='createAcheteurForm.php'>Ré-essayer de créer un compte</button></div></form>";
                     }
                     
                 }

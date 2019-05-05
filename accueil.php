@@ -62,40 +62,88 @@
     <div class="container features">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Meilleure vente</h3>
-            <img src="img/malte.jpg" class="img-fluid">
-            <p> Venez découvrir nos articles les plus vendus et ne ratez pas votre chance de vous les procurer!</p>
-            <a class="btn btn-lg" role="button" href="ventes_flash.php">J'en profite !</a>
-        </div>
+                <h3 class="feature-title">Meilleure vente</h3>
+                <img src="img/malte.jpg" class="img-fluid">
+                <p> Venez découvrir nos articles les plus vendus et ne ratez pas votre chance de vous les procurer!</p>
+                <a class="btn btn-lg" role="button" href="ventes_flash.php">J'en profite !</a>
+            </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Vendre des articles</h3>
-            <img src="img/buda.jpg" class="img-fluid">
-            <p>Vous avez des articles dont vous ne vous servez plus? Venez les vendre sur notre site web au lieu de les jeter!</p>
-            <a class="btn btn-lg" role="button" href="vendeurFormulaire.php">Vendre des articles</a>
-        </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h3 class="feature-title">Vendre des articles</h3>
+                <img src="img/buda.jpg" class="img-fluid">
+                <p>Vous avez des articles dont vous ne vous servez plus? Venez les vendre sur notre site web au lieu de les jeter!</p>
+                <a class="btn btn-lg" role="button" href="vendeurFormulaire.php">Vendre des articles</a>
+            </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Entrer en contact!</h3>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Votre nom:" name="">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Courriel:" name="email">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="4">Vos commentaires</textarea>
-                </div>
-                <input type="submit" class="btn btn-lg" value="Envoyer" name="">
-
-        </div>
-    </div> <br><br><br><br><br>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+            <form action="" method="post">
+                <h3 class="feature-title">Entrer en contact!</h3>
+                    <div class="form-group">
+                        <input name="nom" type="text" class="form-control" placeholder="Nom Prénom" >
+                    </div>
+                    <div class="form-group">
+                        <input name="email" type="email" class="form-control" placeholder="votreEmail@gmail.com" >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="msg" class="form-control" id="com" placeholder="Le message que vous voulez nous transmettre">Vos commentaires</textarea>
+                    </div>
+                    <input name="submit" type="submit" class="btn btn-lg" value="Envoyer" >
+            </form>
+            </div>
+        
+    </div> <!--fin div container features -->
+    <br><br><br><br><br>
 
 <?php include 'footer.php' ?>
-
-        
+ 
 </body>
 
-
-
 </html>
+
+<!--_______________________________________________________________________________________-->
+<?php      
+$email = isset($_POST["email"])? $_POST["email"] : "";//EXPEDITEUR :mail de la personne souhaitant entrer en contact avec nous
+$nom= isset($_POST["nom"])? $_POST["nom"] : "";//nom et prénom de la personne souhaitant entrer en contact avec nous
+$to="sarah.lepkmn@gmail.com";//DESTINATAIRE : mail de l'admin de ECEAmazon
+$msg= isset($_POST["msg"])? $_POST["msg"] : "";//CONTENU du mail
+ 
+if ( $email=="" || $nom=="" || $msg=="")
+{
+    echo"
+    <div class='alert alert-danger' role='alert'>
+        Vous n'avez pas entré un des champs! (votre nom/prénom, votre adresse mail ou le message que vous voulez nous transmettre ! Veuillez remplir les 3 champs.)
+    </div>
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+    </button>
+    ";
+}
+else
+{
+
+    $header="MIME-Version: 1.0\r\n";
+    $header.='From:"'.$nom.'"<'.$email.'>'."\n";
+    $header.='Content-Type:text/html; charset="uft-8"'."\n";
+    $header.='Content-Transfer-Encoding: 8bit';
+
+
+    //envoi mail 
+    if( mail($to, "Avis utilisateur de $email", $msg, $header))
+    {
+        //Une fois que le mail a bien été envoyé, une message de succès s'affiche 
+        echo"
+        <div id='msg' class='alert alert-success' role='alert'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            <strong>Votre mail d'avis utilisateur a bien été envoyé !</strong><br>
+            Nous vous remercions d'avoir partager votre avis.
+        </div>
+        ";
+    }
+
+}
+
+
+
+?>

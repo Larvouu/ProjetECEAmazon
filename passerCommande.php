@@ -232,6 +232,7 @@ else //si les 2 valeurs ont ben été set
                                 }
                             }
 
+                            //On supprime de la vente tous les items où qteEnVente est inférieur ou égal à 0
                             $sqlsar = "DELETE FROM item WHERE qteEnVente <= '0' ";
                            if(mysqli_query($db_handle, $sqlsar))
                            {
