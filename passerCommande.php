@@ -2,7 +2,7 @@
     <title>ECE Amazon</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href='loginVendeur.css' rel='stylesheet' type='text/css'>
+    <link href='passerCommande.css' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 </head>
 
@@ -61,9 +61,18 @@ else //si les 2 valeurs ont ben été set
                     echo "<br><br><br>";
                 }
                 else 
-                {
-                    echo"<form action='' method='post'>
-                    <table style='text-align:center;'>
+                {  
+                    echo"<h1 style='color:#2f3542; text-align:center; margin-top:60px;'>Informations de paiements :</h1>";
+                    echo "<div class='grid-container'>";
+                    echo "<div> </div>";
+                    echo"<form action='' method='post'>";
+                    
+                    
+                    echo "<div class='section'>
+                        
+                  
+                    
+                    <table>
                         <tr>
                             <td style='color:white; font-family:Ebrima;'><strong> Nom : </strong></td>
                             <td><input type='text' name='nom'></td>
@@ -113,69 +122,88 @@ else //si les 2 valeurs ont ben été set
                             <td><input type='password' name='codeSecu'></td>
                         </tr>
                     </table>
+                    </div>
+                    <div></div>
+                    </div>
 
                     <input type='hidden' name='email' value='".$email."'>
                     <input type='hidden' name='mdp' value='".$mdp."'>
                     <input type='hidden' name='totalpanier' value='".$totalpanier."'>
                     
         
-                    <br><br><input id='button' type='submit' value='Finaliser ma commande' name='payer'>
+                    <div id='centrerB'><br><br><input id='submitB' type='submit' value='Finaliser ma commande' name='payer'>
                 </form>";  
 
+                //Si l'acheteur a bien appuyé sur le bouton "Finaliser ma commande"
                 if(isset($_POST['payer']))
                 {
+                    //on récupère la valeur du prix total
                     $totalpanier= isset($_POST["totalpanier"])? $_POST["totalpanier"] : "";
 
+                    //Si toutes les infos de paiement correspondent bien à l'acheteur
                     if($_POST["nom"] == $data['nom'] && $_POST["prenom"] == $data['prenom'] && $_POST["adresse"] == $data['adresse'] && 
-                    $_POST["ville"] == $data['ville'] &&
-                    $_POST["pays"] == $data['pays'] && $_POST["codePostal"] == $data['codePostal'] && $_POST["numTel"] == $data['numTel'] &&
+                    $_POST["ville"] == $data['ville'] && $_POST["pays"] == $data['pays'] && $_POST["codePostal"] == $data['codePostal'] && $_POST["numTel"] == $data['numTel'] &&
                     $_POST["numCarte"] == $data['numCarte'] && $_POST["nomAfficheCarte"] == $data['nomAfficheCarte'] && $_POST["dateExpi"] == $data['dateExpi'] &&
                     $_POST["codeSecu"] == $data['codeSecu'] && $_POST["typeCarte"] == $data['typeCarte'] )
                     {
-                        echo"GAGNE";
                         $header="MIME-Version: 1.0\r\n";
                         $header.='From:"Sarah"<sarah.lepkmn@gmail.com>'."\n";
                         $header.='Content-Type:text/html; charset="uft-8"'."\n";
                         $header.='Content-Transfer-Encoding: 8bit';
 
+                        //destinataire : l'acheteur qui vient de passer une commande
+                        $to=$email; 
 
-                        $to=$email;
+                        //Contenu du mail (en html/css) que l'acheteur va recevoir
                         $message='<html>
 
-                        <body> 
-                        
-                        <div style="text-align:center; font-size:30px;"><h1>ECE AMAZON</h1></div><hr>
-                        <br><br>
-                       <p style="font-size:18px;"> Bonjour <strong>'.$_POST["prenom"].' '. $data["nom"].'</strong>,</p>
-                       <p style="font-size:18px;"> Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.</p><br>
-                       
-                       <div style="background-color :#e8e8e8;">
-                       <p style="text-align:center; font-size:25px;"><strong>Détails de votre commande</strong><p>
-                            <div> <p style="text-align:center; font-size:15px;">Livraison : </p><p style="text-align:center; color:green; font-size:15px;"><strong>Mardi 14 Mai 2019</strong></p></div>
-                            <div><p style="text-align:center; font-size:15px;">Votre adresse :</p><p style="text-align:center; color:green; font-size:15px;"><strong> '.$_POST['adresse'].', '.$_POST['ville'].', '.$_POST['codePostal'].'</strong></p><br></div>
+                            <body> 
                             
-                        </div>
-                        <div><p style="font-size:25px; text-align:center;"><strong>Montant total : '.$totalpanier.'&euro; </strong></p></div><br>
-                        <hr>
-                        </body>
+                                <div style="text-align:center; font-size:30px;"><h1>ECE AMAZON</h1></div><hr><br><br>
+                                
+                                <p style="font-size:18px;"> Bonjour <strong>'.$_POST["prenom"].' '. $data["nom"].'</strong>,</p>
+                                <p style="font-size:18px;"> Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.</p><br>
+                                
+                                <div style="background-color :#e8e8e8;">
+                                <p style="text-align:center; font-size:25px;"><strong>Détails de votre commande</strong><p>
+                                        <div> <p style="text-align:center; font-size:15px;">Livraison : </p><p style="text-align:center; color:green; font-size:15px;"><strong>Mardi 14 Mai 2019</strong></p></div>
+                                    <div><p style="text-align:center; font-size:15px;">Votre adresse :</p><p style="text-align:center; color:green; font-size:15px;"><strong> '.$_POST['adresse'].', '.$_POST['ville'].', '.$_POST['codePostal'].'</strong></p><br></div>
+                                    
+                                </div>
+                                <div><p style="font-size:25px; text-align:center;"><strong>Montant total : '.$totalpanier.'&euro; </strong></p></div><br>
+                                <hr>
 
-                        <footer class="footer-copyright text-center text-black-50 py-3">
-                        <small>
-                            <p>
-                                Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
-                            </p>
-                        </small>
-                    </footer>
-                    </html>
+                            </body>
+
+                            <footer class="footer-copyright text-center text-black-50 py-3">
+                                <small>
+                                    <p>
+                                        Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
+                                    </p>
+                                </small>
+                            </footer>
+                            </html>
 
                         ';
 
+                        //envoi mail à l'admin pour l'informer d'un achat
                         mail("sarah.lepkmn@gmail.com", "Copie : ".$_POST["prenom"]." ".$data["nom"]." a passé une commande", $message, $header);
                         
-                        if(  mail($to, "Confirmation de votre commande ECEAmazon", $message, $header)
-                        )
+
+                        //envoi mail de confirmation à l'acheteur pour la commande qu'il vient de passer
+                        if(  mail($to, "Confirmation de votre commande ECEAmazon", $message, $header))
                         {
-                            echo "sent";
+                            //Une fois que le mail de confirmation a bien été envoyé, une message de succès s'affiche 
+                            //et on invite l'utilisateur a retourné sur la page d'accueil
+                            echo"
+                            <div id='msg' class='alert alert-success' role='alert'>
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                    <span aria-hidden='true'>&times;</span>
+                                </button>
+                                Votre commande a été passé avec succès. Un <strong>email de confirmation</strong> vous a été envoyé.<br>
+                                Votre panier est désormais vide. Retour <a href='accueil.php' class='alert-link'>page d'accueil</a>.
+                            </div>
+                            ";
                         }
                         else
                         {

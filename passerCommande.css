@@ -1,0 +1,91 @@
+.grid-container 
+{
+    display: grid;
+    grid-template-columns: 550px 600px 600px;
+    grid-gap: 20px;
+    padding: 10px;
+    margin-top:30px;
+  }
+
+#msg
+{
+    position: fixed;
+    top: 300px;
+    left: 0;
+    width: 100%;
+}
+
+
+body
+{
+    
+    background: url(img/bckgnd.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+.bord
+{ 
+  font-family : Ebrima;
+  font-size:20px;
+  width: 50%;
+  border: 6px solid #ffcccc00;
+  border-radius: 12px;
+  margin: auto;
+    
+}
+
+#centrerB
+{
+  text-align: center;
+}
+
+#submitB
+{
+    cursor: pointer;
+    color:white;
+    background-color:#a29bfe;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 14px 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      
+}
+
+#submitB:hover
+{
+    background-color: #ffcccc;
+}
+
+.titre
+{
+	color:#4b4b4b;
+    text-align: center;
+	font-size:30px;
+    text-shadow: 2px 1px rgba(0,0,0,0.19);
+    
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	line-height: 25px;
+}
+
+table, td, th 
+{  
+    border: 1px solid #ddd;
+    text-align: left;
+}
+  
+table 
+{
+    background-color: rgba(49, 49, 49, 0.308);
+    border-collapse: collapse;
+    width: 35%;
+    color:black;
+
+}
+  
+th, td 
+{
+    padding: 15px;
+  }

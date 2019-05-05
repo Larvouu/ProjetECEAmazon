@@ -7,7 +7,6 @@
     
     <?php include 'navbar.php'; 
     $totalPanier= isset($_POST["totalpanier"])? $_POST["totalpanier"] : "";
-    echo "dhzjdhzahza : ".$totalPanier."feju";
 
     ?>
 
