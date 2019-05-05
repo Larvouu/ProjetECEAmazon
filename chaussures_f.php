@@ -94,19 +94,22 @@
                                 
                                     if(isset($_POST[$data['id']]) && isset($_POST['sel']) && isset($_POST['sel2']))
                                     {
-                                        //Supprime l'item
-                                        $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1', taille_choisie='".$_POST['sel']."', couleur_choisie='".$_POST['sel2']."'   WHERE item.id = " .$data['id']." ";
-                                        if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                                        if($data['qteEnVente'] > $data['qteAchetee'])
                                         {
-                                            echo"<div class='alert alert-success'>
-                                            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                                            L'item <strong>".$data['nom']." - Taille ".$_POST['sel'].", Couleur : ".$_POST['sel2']."</strong> a été ajouté au panier
-                                            </div>";
+                                            //Ajout panier
+                                            $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1', taille_choisie='".$_POST['sel']."', couleur_choisie='".$_POST['sel2']."'   WHERE item.id = " .$data['id']." ";
+                                            if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                                            {
+                                                echo"<div class='alert alert-success'>
+                                                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                                                L'item <strong>".$data['nom']." - Taille ".$_POST['sel'].", Couleur : ".$_POST['sel2']."</strong> a été ajouté au panier
+                                                </div>";
+                                            }
+                                            else 
+                                            {
+                                                echo "Error creating database: " . mysqli_error($db_handle);
+                                            } 
                                         }
-                                        else 
-                                        {
-                                            echo "Error creating database: " . mysqli_error($db_handle);
-                                        } 
                                     }
                                     else if((isset($_POST[$data['id']]) && !isset($_POST['sel'])) || (isset($_POST[$data['id']]) && !isset($_POST['sel2'])) )
                                     {

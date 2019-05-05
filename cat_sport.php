@@ -75,19 +75,22 @@
                         
                         if(isset($_POST[$data['id']]))
                         {
-                            //Supprime l'item
-                            $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1'  WHERE item.id = " .$data['id']." ";
-                            if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                            if($data['qteEnVente'] > $data['qteAchetee'])
                             {
-                                echo"<div class='alert alert-success'>
-                                        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                                        L'item <strong>".$data['nom']."</strong> a été ajouté au panier
-                                    </div>";
+                                //Ajout panier
+                                $sql_ajout_panier = "UPDATE item SET isPanier = '1', qteAchetee=qteAchetee+'1'  WHERE item.id = " .$data['id']." ";
+                                if(mysqli_query($db_handle, $sql_ajout_panier)) //Si la suppression marche on le fait savoir
+                                {
+                                    echo"<div class='alert alert-success'>
+                                            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                                            L'item <strong>".$data['nom']."</strong> a été ajouté au panier
+                                        </div>";
+                                }
+                                else 
+                                {
+                                    echo "Error creating database: " . mysqli_error($db_handle);
+                                } 
                             }
-                            else 
-                            {
-                                echo "Error creating database: " . mysqli_error($db_handle);
-                            } 
                         }
                         ////////////////////////////////////////////
                         //////     AJOUTER AU PANIER  FIN     //////
