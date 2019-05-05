@@ -1,8 +1,9 @@
 body
 {
-    background: url(img/whiteadmin.jpg) no-repeat center fixed; 
+    background: url(img/bckgnd.jpg) no-repeat center fixed; 
     background-size: cover;
 }
+
 
 .button
 {
@@ -16,6 +17,37 @@ body
     font-weight: bold;
     padding: 14px 40px;
     box-shadow: 0 16px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+
+.p
+{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+    line-height: 25px;
+}
+
+.description 
+{
+    left: 50%;
+    position: absolute;
+    top: 20%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+    
+}
+.description h1 
+{
+    color: #4f4f50;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 35px;
+    line-height: 65px;
+    margin-top:40px;
+}
+
+.button:hover
+{
+    background-color: white;
     
 }
 
