@@ -24,7 +24,7 @@
     <div class="container-fluid"> 
         <div class="overlay">
             <div class="description">
-                <h1>Ventes flash </h1>
+                <h1>Best-Seller</h1>
                 <p>Retrouvez ici nos produits les plus vendus.</p>
             </div>
         </div>

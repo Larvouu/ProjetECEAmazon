@@ -1,6 +1,6 @@
 <head>
     <title>Créer un compte</title>
-    <link href='createVendeur.css' rel='stylesheet' type='text/css'>
+    <link href='loginVendeur.css' rel='stylesheet' type='text/css'>
 </head>
 
 <?php 

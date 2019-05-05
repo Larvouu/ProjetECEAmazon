@@ -22,7 +22,7 @@
             <div class="description">
                 <h1>Bienvenue Dans l'ECE Amazon !</h1><br>
                <!-- <p>Venez acheter ou vendre tous types de produits ! le premier site de commerce uniquement pour les élèves de l'ECE</p> -->
-                <a class="btn btn-lg" role="button" href="ventes_flash.php">Découvirir les offres du moment</a>
+                <a class="btn btn-lg" role="button" href="ventes_flash.php">Découvrir les offres du moment</a>
             </div>
     
     <!-- -->
@@ -71,7 +71,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Vendre des articles</h3>
             <img src="img/buda.jpg" class="img-fluid">
-            <p>Vous avez des articles dont vous ne vous servez plus? Venez les ventre sur notre site web au lieu de les jetter!</p>
+            <p>Vous avez des articles dont vous ne vous servez plus? Venez les vendre sur notre site web au lieu de les jeter!</p>
             <a class="btn btn-lg" role="button" href="vendeurFormulaire.php">Vendre des articles</a>
         </div>
 
