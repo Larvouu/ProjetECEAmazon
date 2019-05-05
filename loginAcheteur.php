@@ -55,6 +55,27 @@ else //si les valeurs ont ben été set
             echo "<br><br><div class='bord'><br>";
             echo "<p class='titre'>Connection réussie, bienvenue $prenom</p></div>";
             echo "<BR><br><div id='centrerB'><form><button id='submitB' type='submit' formaction='accueil.php'>Retour à la page d'accueil</button></div></form>";
+
+            /*
+                Quand un acheteur se connecte, le panier se vide ! Il faut donc set isPanier=0 et qteAchetee=0.
+                Dans la table item, l'attribut qteAchetee = quantité de l'item dans le panier qu'on veut acheter =qté en cours d'achat.
+                
+            */
+
+            //////////////////////////////////////////////////////////////////////////////
+            $sqlset = "UPDATE item SET isPanier = '0' AND qteAchetee='0'";
+            if (mysqli_query($db_handle, $sqlset))
+            {
+                //Requete reussie
+                //echo "set isPanier=0 et qteAchetee=0";
+            }
+            else
+            {
+                echo "Error database: " . mysqli_error($db_handle);
+            }
+            
+            ////////////////////////////////////////////////////////////////////////////////:
+
         }
         
         mysqli_close($db_handle);
