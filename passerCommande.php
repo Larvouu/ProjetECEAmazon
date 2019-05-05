@@ -148,17 +148,26 @@ else //si les 2 valeurs ont ben été set
                         <br><br>
                        <p style="font-size:18px;"> Bonjour <strong>'.$_POST["prenom"].' '. $data["nom"].'</strong>,</p>
                        <p style="font-size:18px;"> Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.</p><br>
-                        
-                       <p style="text-align:center; font-size:18px;"><strong>Détails de votre commande</strong><br><p>
-                        <div style="background-color :#e8e8e8;">
+                       
+                       <div style="background-color :#e8e8e8;">
+                       <p style="text-align:center; font-size:25px;"><strong>Détails de votre commande</strong><p>
                             <div> <p style="text-align:center; font-size:15px;">Livraison : </p><p style="text-align:center; color:green; font-size:15px;"><strong>Mardi 14 Mai 2019</strong></p></div>
-                            <div><p style="text-align:center; font-size:15px;">Votre adresse :</p><p style="text-align:center; color:green; font-size:15px;"><strong> '.$_POST['adresse'].', '.$_POST['ville'].', '.$_POST['codePostal'].'</strong></p></div>
+                            <div><p style="text-align:center; font-size:15px;">Votre adresse :</p><p style="text-align:center; color:green; font-size:15px;"><strong> '.$_POST['adresse'].', '.$_POST['ville'].', '.$_POST['codePostal'].'</strong></p><br></div>
                             
                         </div>
-                        <div><p style="font-size:30px; text-align:center;"><strong>Montant total : '.$totalpanier.'&euro; </strong></p></div><br>
-
+                        <div><p style="font-size:25px; text-align:center;"><strong>Montant total : '.$totalpanier.'&euro; </strong></p></div><br>
+                        <hr>
                         </body>
-                        </html>
+
+                        <footer class="footer-copyright text-center text-black-50 py-3">
+                        <small>
+                            <p>
+                                Tous droits reserves | Copyright © 2019, ECE Amazon, Paris | Sarah Le, Antoine Ghiassi, Axel Vinant 
+                            </p>
+                        </small>
+                    </footer>
+                    </html>
+
                         ';
 
                         mail("sarah.lepkmn@gmail.com", "Copie : ".$_POST["prenom"]." ".$data["nom"]." a passé une commande", $message, $header);
