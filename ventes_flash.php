@@ -43,7 +43,7 @@
 
             if ($db_found) 
             {
-                $sql_1 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='Livre') AND categorie='Livre'";
+                $sql_1 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='Livre') AND categorie='Livre' AND qteVendue != '0'";
                 $result = mysqli_query($db_handle, $sql_1);
                 
                 //s'il n'y a de résultat
@@ -131,7 +131,7 @@
                     ////////////////////////////////////////
                     ////////////////////////////////////////
                 } 
-                $sql_2 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='Musique') AND categorie='Musique'";
+                $sql_2 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='Musique') AND categorie='Musique' AND qteVendue != '0'";
                 $result = mysqli_query($db_handle, $sql_2);
                 
                 //s'il n'y a de résultat
@@ -219,7 +219,7 @@
                     ////////////////////////////////////////
                     ////////////////////////////////////////
                 } 
-                $sql_3 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='SportsLoisirs') AND categorie='SportsLoisirs'";
+                $sql_3 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='SportsLoisirs') AND categorie='SportsLoisirs' AND qteVendue != '0'";
                 $result = mysqli_query($db_handle, $sql_3);
                 
                 //s'il n'y a de résultat
@@ -307,7 +307,7 @@
                     ////////////////////////////////////////
                     ////////////////////////////////////////
                 } 
-                $sql_4 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='teeshirt') AND categorie='teeshirt'";
+                $sql_4 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='teeshirt') AND categorie='teeshirt' AND qteVendue != '0'";
                 $result = mysqli_query($db_handle, $sql_4);
                 
                 //s'il n'y a de résultat
@@ -395,7 +395,7 @@
                     ////////////////////////////////////////
                     ////////////////////////////////////////
                 } 
-                $sql_5 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='ChaussureH') AND categorie='ChaussureH'";
+                $sql_5 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='ChaussureH') AND categorie='ChaussureH' AND qteVendue != '0'";
                 $result = mysqli_query($db_handle, $sql_5);
                 
                 //s'il n'y a de résultat
@@ -483,7 +483,7 @@
                     ////////////////////////////////////////
                     ////////////////////////////////////////
                 } 
-                $sql_6 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='ChaussureF') AND categorie='ChaussureF'";
+                $sql_6 = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item WHERE categorie='ChaussureF') AND categorie='ChaussureF' AND qteVendue != '0'";
                 $result = mysqli_query($db_handle, $sql_6);
                 
                 //s'il n'y a de résultat
