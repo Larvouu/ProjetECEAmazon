@@ -1,0 +1,81 @@
+body 
+{
+    padding: 0px;
+    margin: 0px;
+    background: #f2f6e9;
+    background-image: url('img/bckgnd_ventes_flash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-fluid
+{
+    margin-bottom: 200px;
+}
+
+.description 
+{
+    left: 50%;
+    position: absolute;
+    top: 20%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+    
+}
+   
+.description h1 
+{
+    color: #5352ed;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 50px;
+    line-height: 65px;
+    margin-top:40px;
+}
+    
+	
+
+.row
+{
+    background-color: rgba(0, 0, 0, 0.096);
+    text-align : center;
+}
+
+.feature-title 
+{
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-align : center;
+}
+
+.features .btn 
+{
+    background-color: #5352ed;
+    color: #fff;
+    margin-top: 20px;
+
+}
+
+.features .btn:hover 
+{
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+.p
+{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+    line-height: 25px;
+}
+
+.img-fluid
+{
+    text-align:center;
+    border-radius:2px;
+}
+
