@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Passer ma commande</title>
     <link href="loginVendeurForm.css" rel="stylesheet" type="text/css">
 </head>
 

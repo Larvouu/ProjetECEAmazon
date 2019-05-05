@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Se connecter</title>
     <link href="loginAcheteurForm.css" rel="stylesheet" type="text/css">
 </head>
 

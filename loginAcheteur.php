@@ -1,5 +1,5 @@
 <head>
-    <title>ECE Amazon</title>
+    <title>Se connecter</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href='loginVendeur.css' rel='stylesheet' type='text/css'>

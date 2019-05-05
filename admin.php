@@ -1,5 +1,5 @@
 <head>
-    <title>ECE Amazon</title>
+    <title>Admin</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href='admin.css' rel='stylesheet' type='text/css'>

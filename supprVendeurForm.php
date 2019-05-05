@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Supprimer un vendeur</title>
     <link href="supprVendeurForm.css" rel="stylesheet" type="text/css">
 </head>
 

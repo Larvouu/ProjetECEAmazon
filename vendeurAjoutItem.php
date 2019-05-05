@@ -1,4 +1,5 @@
 <head>
+    <title>Ajouter un item</title>
     <link href='vendeurAjoutItem.css' rel='stylesheet' type='text/css'>
 </head>
 

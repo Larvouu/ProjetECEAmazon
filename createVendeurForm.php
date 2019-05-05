@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Créer un compte</title>  
     <link href="createVendeurForm.css" rel="stylesheet" type="text/css">
 </head>
 

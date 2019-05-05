@@ -1,5 +1,5 @@
 <head>
-    <title>ECE Amazon</title>
+    <title>Passer ma commande</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href='passerCommande.css' rel='stylesheet' type='text/css'>

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>ECE Amazon</title>
+    <title>Sports et loisirs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="cat_sport.css" rel="stylesheet" type="text/css"/>
 
