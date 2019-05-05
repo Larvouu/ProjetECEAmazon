@@ -1,49 +1,64 @@
-.uploadImgUser
+.logForm
 {
-
+    
     font-family: Ebrima;
     text-align: center;
-    font-size:19px;
-    color: #ffe0ef;
-    width: 40%;
-    border: 3px solid white;
+    color: white;
+    font-size:20px;
+    width: 37%;
+    border: 2px solid rgba(255, 255, 255, 0.596);
     border-radius: 12px;
-    padding: 35px;
-    margin-left : auto;
-    margin-right : auto;
-    margin-top : 50px;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 60px;
+    background-color: rgba(0, 0, 0, 0.075);
+
+}
+
+#loginInterface
+{
+    background-color: transparent; 
+    color: white;
+    font-weight: bold;
+    font-family: Calibri;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 25px 25px 25px 25px;
+    margin: auto;
+   
 }
 
 
-.button
+#button
 {
     cursor: pointer;
     color:white;
-    background-color:rgb(240, 142, 204);
+    background-color:rgb(248, 158, 170);
     border-radius: 4px;
     text-align: center;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    padding: 15px 35px;
+    padding: 10px 35px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 50px;
+}
+
+#button:hover
+{
+    background-color: rgb(198, 156, 247);
 }
 
 input[type=text] 
 {
-    
-    width : 250px;
-    border: 2px solid rgb(252, 205, 212);
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    outline: none;
-    font-size : 18px;
-   text-align : center;
 }
   
 input[type=text]:focus 
 {
-    border: 2px solid #555;
+    border: 3px solid #555;
 }
 
 input[type=password] 
@@ -63,24 +78,11 @@ input[type=password]:focus
     border: 2px solid #555;
 }
 
-#submitB
-{
-    cursor: pointer;
-    color:white;
-    background-color:#e28a43;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    padding: 10px 35px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
-}
 
 body
 {
     
-    background: url(img/degrade.jpg) no-repeat center fixed; 
+    background: url(img/bckgnd.jpg) no-repeat center fixed; 
     background-size: cover;
 }
 
