@@ -64,7 +64,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Meilleure vente</h3>
             <img src="img/malte.jpg" class="img-fluid">
-            <p> Venez découvrir notre article le plus vendu et ne ratez pas votre chance de vous le procurer!</p>
+            <p> Venez découvrir nos articles les plus vendus et ne ratez pas votre chance de vous les procurer!</p>
             <a class="btn btn-lg" role="button" href="ventes_flash.php">J'en profite !</a>
         </div>
 
