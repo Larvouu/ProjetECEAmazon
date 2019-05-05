@@ -209,7 +209,7 @@ else //si les 2 valeurs ont ben été set
                             $reset = "SELECT * FROM item WHERE isPanier = '1'";
                             $result_reset = mysqli_query($db_handle, $reset);
                             //Si aucun resultat pour la requete (normalement ce cas ne doit jamais se produire)
-                            if (mysqli_num_rows($result_delete) == 0) 
+                            if (mysqli_num_rows($result_reset) == 0) 
                             {
                                 echo "Le reset n'a pas marché";
                             }
@@ -218,13 +218,31 @@ else //si les 2 valeurs ont ben été set
                                 while ($data_reset = mysqli_fetch_assoc($result_reset)) 
                                 {
                                     //On reset les variables
-                                    $reset_item = "UPDATE item SET isPanier = '0', qteVendue=qteVendue+'1', qteEnVente=qteEnVente-qteAchetee, qteAchetee ='0' ";
-                                    //Si une quantité tombe à 0 ...
-                                    if($data_reset['qteEnVente'] <= 0)
+                                    $reset_item = "UPDATE item SET isPanier = '0', qteVendue=qteVendue+'1', qteEnVente=qteEnVente-qteAchetee, qteAchetee ='0' WHERE id='".$data_reset['id']."'";
+                                    if (mysqli_query($db_handle, $reset_item))
+                                    {
+                                        //Si une quantité tombe à 0 ...
+                                        echo "succes1";
+                                    }
+                                    else
+                                    {
+                                        echo "Error database: " . mysqli_error($db_handle);
+                                    }
+
+                                   /* if($data_reset['qteEnVente'] <= 0)
                                     {
                                         //On supprime l'item qui n'est plus en vente
-                                        $delete_item = "DELETE FROM item WHERE qteEnVente <= 0 ";
-                                    }
+                                        $delete_item = "DELETE FROM item WHERE id='".$data_reset['id']."' ";
+                                        if (mysqli_query($db_handle, $delete_item))
+                                        {
+                                            echo "PROJET FINI";
+                                        }
+                                        else
+                                        {
+                                            echo "Error database: " . mysqli_error($db_handle);
+                                        }
+                                    }*/
+                                    
                                 }
                             }
                         }
