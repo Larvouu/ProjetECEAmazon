@@ -236,7 +236,7 @@ else //si les 2 valeurs ont ben été set
                             $sqlsar = "DELETE FROM item WHERE qteEnVente <= '0' ";
                            if(mysqli_query($db_handle, $sqlsar))
                            {
-                                echo"sarah mother of dragon king of the seven kingdoms last sang pur targaryen";
+                                echo"sarah mother of dragon king of the seven kingdoms last sang pur targaryen ";
                            }
                            else
                             {
