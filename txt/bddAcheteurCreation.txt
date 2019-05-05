@@ -22,4 +22,5 @@ CREATE TABLE acheteur(
 
 #
 
-INSERT INTO acheteur(email, mdp, nom, prenom, ville, adresse, codePostal, pays, numTel, numCarte, typeCarte, nomAfficheCarte, dateExpi, codeSecu) values ("manolo.hina@edu.ece.fr", "abc", "Hina", "Manolo", "Paris", "37 quai de Grenelle", "75015", "France", "0666666666", "123456789", "visa", "Hina", "jamais", "123");
+INSERT INTO acheteur(email, mdp, nom, prenom, ville, adresse, codePostal, pays, numTel, numCarte, typeCarte, nomAfficheCarte, dateExpi, codeSecu) values ("ghiassiantoine@gmail.com", "azerty", "GHIASSI", "Antoine", "Paris", "37 quai de Grenelle", "75015", "France", "123456789", "123456789", "visa", "GHIASSI", "2021", "123");
+INSERT INTO acheteur(email, mdp, nom, prenom, ville, adresse, codePostal, pays, numTel, numCarte, typeCarte, nomAfficheCarte, dateExpi, codeSecu) values ("sarah.lepkmn@gmail.com", "azerty", "LE", "Sarah", "Paris", "37 quai de Grenelle", "75015", "France", "123456789", "123456789", "visa", "LE", "2021", "123");
