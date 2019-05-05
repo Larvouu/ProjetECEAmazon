@@ -141,24 +141,21 @@ else //si les 2 valeurs ont ben été set
 
                         $to=$email;
                         $message='<html>
-                        <head>
-                            
-                        </head>
-                      
+
                         <body> 
                         
                         <div style="text-align:center; font-size:30px;"><h1>ECE AMAZON</h1></div><hr>
                         <br><br>
                        <p style="font-size:18px;"> Bonjour <strong>'.$_POST["prenom"].' '. $data["nom"].'</strong>,</p>
-                       <p style="font-size:18px;"> Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.</p><hr>
+                       <p style="font-size:18px;"> Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.</p><br>
                         
-                       <p style="text-align:center; font-size:18px;">Détails de votre commande<br><p>
-                        <div style="background-color :#d1d1d1;">
+                       <p style="text-align:center; font-size:18px;"><strong>Détails de votre commande</strong><br><p>
+                        <div style="background-color :#e8e8e8;">
                             <div> <p style="text-align:center; font-size:15px;">Livraison : </p><p style="text-align:center; color:green; font-size:15px;"><strong>Mardi 14 Mai 2019</strong></p></div>
                             <div><p style="text-align:center; font-size:15px;">Votre adresse :</p><p style="text-align:center; color:green; font-size:15px;"><strong> '.$_POST['adresse'].', '.$_POST['ville'].', '.$_POST['codePostal'].'</strong></p></div>
                             
                         </div>
-                        <div><p style="font-size:18px;"><strong>Prix Total :'.$totalpanier.' </strong></p></div><br>
+                        <div><p style="font-size:30px; text-align:center;"><strong>Montant total : '.$totalpanier.'&euro; </strong></p></div><br>
 
                         </body>
                         </html>

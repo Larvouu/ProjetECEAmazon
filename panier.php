@@ -114,12 +114,14 @@
                             <strong>Total : $total_panier &#8364 </strong>
                         </div>";
                     
-                    echo"<input type='hidden' name='totalpanier' value='".$total_panier."'>";
+                    
     
 
                     //Bouton passer ma commande
                     echo"<div style='text-align:center;'>
-                            <form action='passerCommandeForm.php'>
+                            <form action='passerCommandeForm.php' method='post'>
+                            
+                                <input type='hidden' name='totalpanier' value='".$total_panier."'>
                                 <input  type='submit' name='passer_commande' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Passer ma commande'>
                             </form>
                         </div>";
