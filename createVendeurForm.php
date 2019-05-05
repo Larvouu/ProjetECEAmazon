@@ -14,27 +14,27 @@
                 
             <table style="margin-left:30px;">
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Email :</strong></td>
+                    <td><strong style="color:white; font-family: Ebrima; font-size: 19px;">Email :</strong></td>
                     <td><input type="text" name="email"/></td>
                 </tr>
 
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Pseudo :</strong></td>
+                    <td><strong style="color:white; font-family: Ebrima; font-size: 19px;">Pseudo :</strong></td>
                     <td><input type="text" name="pseudo"/></td>
                 </tr>
 
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">Nom :</strong></td>
+                    <td><strong style="color:white; font-family: Ebrima; font-size: 19px;">Nom :</strong></td>
                     <td><input type="text" name="nom"/></td>
                 </tr>
 
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">lien photo :</strong></td>
+                    <td><strong style="color:white; font-family: Ebrima; font-size: 19px;">lien photo :</strong></td>
                     <td><input type="text" name="photo" placeholder="img/nomPhoto.jpg"/></td>
                 </tr>
 
                 <tr>
-                    <td><strong style="color:#ffe0ef; font-family: Ebrima; font-size: 19px;">lien image de fond :</strong></td>
+                    <td><strong style="color:white; font-family: Ebrima; font-size: 19px;">lien image de fond :</strong></td>
                     <td><input type="text" name="img_fond" placeholder="img/nomImage.jpg"/></td>
                 </tr>
 
