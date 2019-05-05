@@ -214,7 +214,8 @@ else //si les 2 valeurs ont ben été set
                                 echo "Le reset n'a pas marché";
                             }
                             //Si au moins 1 résultat
-                            else{
+                            else
+                            {
                                 while ($data_reset = mysqli_fetch_assoc($result_reset)) 
                                 {
                                     //On reset les variables
@@ -228,23 +229,21 @@ else //si les 2 valeurs ont ben été set
                                     {
                                         echo "Error database: " . mysqli_error($db_handle);
                                     }
-
-                                   /* if($data_reset['qteEnVente'] <= 0)
-                                    {
-                                        //On supprime l'item qui n'est plus en vente
-                                        $delete_item = "DELETE FROM item WHERE id='".$data_reset['id']."' ";
-                                        if (mysqli_query($db_handle, $delete_item))
-                                        {
-                                            echo "PROJET FINI";
-                                        }
-                                        else
-                                        {
-                                            echo "Error database: " . mysqli_error($db_handle);
-                                        }
-                                    }*/
                                     
                                 }
                             }
+
+                            $sqlsar = "DELETE FROM item WHERE qteEnVente <= '0' ";
+                           if(mysqli_query($db_handle, $sqlsar))
+                           {
+                                echo"sarah mother of dragon king of the seven kingdoms last sang pur targaryen";
+                           }
+                           else
+                            {
+                                echo "Error database: " . mysqli_error($db_handle);
+                            }
+                           
+
                         }
                         else
                         {
