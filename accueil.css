@@ -98,9 +98,10 @@ body
 #msg
 {
     position: fixed;
-    top: 300px;
+    top: 400px;
     left: 0;
     width: 100%;
+    text-align:center;
 }
    
    
