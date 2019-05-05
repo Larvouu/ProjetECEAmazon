@@ -115,19 +115,57 @@ else //si les 2 valeurs ont ben été set
 
                     <input type='hidden' name='email' value='".$email."'>
                     <input type='hidden' name='mdp' value='".$mdp."'>
+                    
         
                     <br><br><input id='button' type='submit' value='Finaliser ma commande' name='payer'>
                 </form>";  
 
                 if(isset($_POST['payer']))
                 {
-                    if($_POST["nom"] = $data['nom'] && $_POST["prenom"] = $data['prenom'] && $_POST["adresse"] = $data['adresse'] && 
-                    $_POST["ville"] = $data['ville'] &&
-                    $_POST["pays"] = $data['pays'] && $_POST["codePostal"] = $data['codePostal'] && $_POST["numTel"] = $data['numTel'] &&
-                    $_POST["numCarte"] = $data['numCarte'] && $_POST["nomAfficheCarte"] = $data['nomAfficheCarte'] && $_POST["dateExpi"] = $data['dateExpi'] &&
-                    $_POST["codeSecu"] = $data['codeSecu'] && $_POST["typeCarte"] = $data['typeCarte'] )
+                    if($_POST["nom"] == $data['nom'] && $_POST["prenom"] == $data['prenom'] && $_POST["adresse"] == $data['adresse'] && 
+                    $_POST["ville"] == $data['ville'] &&
+                    $_POST["pays"] == $data['pays'] && $_POST["codePostal"] == $data['codePostal'] && $_POST["numTel"] == $data['numTel'] &&
+                    $_POST["numCarte"] == $data['numCarte'] && $_POST["nomAfficheCarte"] == $data['nomAfficheCarte'] && $_POST["dateExpi"] == $data['dateExpi'] &&
+                    $_POST["codeSecu"] == $data['codeSecu'] && $_POST["typeCarte"] == $data['typeCarte'] )
                     {
                         echo"GAGNE";
+                        $header="MIME-Version: 1.0\r\n";
+                        $header.='From:"Sarah"<sarah.lepkmn@gmail.com>'."\n";
+                        $header.='Content-Type:text/html; charset="uft-8"'."\n";
+                        $header.='Content-Transfer-Encoding: 8bit';
+
+
+                        $to=$email;
+                        $message='<html><body> 
+                        
+                        <div style="text-align:center; font-size:30px;">ECE AMAZON</div>
+                        <br><br>
+                        Bonjour '.$_POST["prenom"].' '. $data["nom"].',<br>
+                        Nous vous informons que votre commande a été expédiée. Votre colis est en cours d\'acheminement.<br><br>
+                        
+                        Détails de votre commande <hr><br>
+                        Prix Total : 
+
+
+
+                       
+                        </body>
+                        </html>
+                        ';
+
+                        mail("sarah.lepkmn@gmail.com", "Copie : ".$email." a passé une commande", $message, $header);
+                        
+                        if(  mail($to, "Confirmation de votre commande ECEAmazon", $message, $header)
+                        )
+                        {
+                            echo "sent";
+                        }
+                        else
+                        {
+                            echo"erreur";
+                        }
+                        
+
                     }
                     else{//si on rentre les mauvaises infos ...
                     echo "<br><br><div class='bord'><br>";
