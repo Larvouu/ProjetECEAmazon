@@ -141,6 +141,20 @@ else
         </div>
         ";
     }
+    else
+    {
+        echo"
+        <div id='msg' class='alert alert-danger' role='alert'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            L'envoi du mail ne peut pas se faire sans avoir téléchargé <strong>Fake Send Mail</strong> associé à quelques autres manipulation.<br>
+            Si cela vous intéresse, voici <a href='https://www.youtube.com/watch?v=2KmzkPWty7Y' class='alert-link'>un tuto Youtube.</a> et 
+            <a href='https://www.glob.com.au/sendmail/ ' class='alert-link'>le lien pour télécharger FakeSendMail</a>.
+
+        </div>
+        ";
+    }
 
 }
 
