@@ -43,7 +43,7 @@
 
             if ($db_found) 
             {
-                $sql = "SELECT * FROM item WHERE qteVendue > '0'";
+                $sql = "SELECT * FROM item WHERE qteVendue =(SELECT MAX(qteVendue) FROM item) AND categorie='teeshirt'";
                 $result = mysqli_query($db_handle, $sql);
                 
                 //s'il n'y a de résultat
@@ -59,6 +59,7 @@
                     while ($data = mysqli_fetch_assoc($result)) 
                     {
                         echo "<div class='col-lg-4 col-md-4' style='text-align:center;'>";
+                            echo "<h2 class='feature-title'>".$data['categorie']." le plus vendu</h2>"; //Titre
                             echo "<h3 class='feature-title'>".$data['nom']."</h3>"; //Titre 
                             echo "<img data-toggle='modal' data-target=#".$data['nom']." style='width : 230px; height:230px;' src=".$data['photo']." class='img-fluid'>"; //Image 
 
@@ -124,6 +125,11 @@
                             ////////////////////////////////////////////
                         echo "</div>";
                     }
+                    ////////////////////////////////////////
+                    ////////////////////////////////////////
+                    ////////  CATEGORIE SUIVANTE   /////////
+                    ////////////////////////////////////////
+                    ////////////////////////////////////////
                 } //else = si la requete a des resultats
                 
                 mysqli_close($db_handle);
