@@ -115,11 +115,11 @@
                             <strong>Total : $total_panier &#8364 </strong>
                         </div>";
                     //Code promo LOVEMOM26
-                    echo"<div style='text-align:center; font-size:30px;'>
+                    echo"<div style='width:100%;'>
                     <form action='' method='post'>
-                    <strong>30% de réduction avec un code promo :  </strong>
-                    <input type='text' name='promo' class='form-control'>
-                    <input  type='submit' name='promoBtn' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Activer mon code'>
+                        <strong>30% de réduction avec un code promo :  </strong>
+                        <div style='text-align:center;'><input type='text' name='promo' class='form-control'></div>
+                        <input  type='submit' name='promoBtn' class='btn btn-secondary' style='padding:11px 40px; font-size:18px; ' value='Activer mon code'>
                     </form>
                     </div>";
 

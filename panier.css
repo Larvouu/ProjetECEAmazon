@@ -50,6 +50,24 @@ body
     text-align : center;
 }
 
+input[type=text] 
+{
+    
+    width : 30%;
+    border: 1px solid rgba(82, 82, 82, 0.082);
+    border-radius:2px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size : 18px;
+   text-align : center;
+}
+
+input[type=text]:focus 
+{
+    border: 4px solid rgb(255, 110, 110);
+}
+
 .container-fluid
 {
     margin-bottom: 170px;
