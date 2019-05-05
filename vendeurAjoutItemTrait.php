@@ -40,6 +40,11 @@ if($categorie == "Musique")//nom(titre), auteur(artiste), descrip(genre), photo,
                 </tr>
 
                 <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Quantité :</strong></td>
+                    <td><input type='text' class='inputText' name='qte' placeholder='ex : 1'/></td>
+                </tr>
+
+                <tr>
                     <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Lien photo :</strong></td>
                     <td><input type='text' class='inputText' name='photo' placeholder='ex : img/nomPhoto.jpg'/></td>
                 </tr>
@@ -92,6 +97,11 @@ else if ($categorie == "livre")//nom, auteur, descrip(description), photo,  prix
             </tr>
 
             <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Quantité :</strong></td>
+                    <td><input type='text' class='inputText' name='qte' placeholder='ex : 1'/></td>
+            </tr>
+
+            <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Page de couverture:</strong></td>
                 <td><input type='text' class='inputText' name='photo' placeholder='ex : img/nomImage.jpg'/></td>
             </tr>
@@ -130,6 +140,11 @@ else if ($categorie == "sport")//nom, photo, descrip(descrip + durée), prix, --
             </tr>
 
             <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Quantité :</strong></td>
+                    <td><input type='text' class='inputText' name='qte' placeholder='ex : 1'/></td>
+            </tr>
+
+            <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Photo de l'activité :</strong></td>
                 <td><input type='text' class='inputText' name='photo' placeholder='ex : img/nomImage.jpg'/></td>
             </tr>
@@ -159,6 +174,11 @@ else if ($categorie == "teeshirt")//nom, descrip, photo, prix, tailleS, tailleM,
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Description :</strong></td>
                 <td><input type='text' class='inputText' name='descrip' placeholder='ex : col rond, cintré'/></td>
+            </tr>
+
+            <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Quantité :</strong></td>
+                    <td><input type='text' class='inputText' name='qte' placeholder='ex : 1'/></td>
             </tr>
 
             <tr>
@@ -210,6 +230,11 @@ else if ($categorie == "chaussh")//nom, descrip, photo, prix, tailleCh1, tailleC
             </tr>
 
             <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Quantité :</strong></td>
+                    <td><input type='text' class='inputText' name='qte' placeholder='ex : 1'/></td>
+            </tr>
+
+            <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Prix :</strong></td>
                 <td><input type='text' class='inputText' name='prix' placeholder='ex : 72.00&#8364'/></td>
             </tr>
@@ -251,6 +276,11 @@ else if ($categorie == "chaussf")//nom, descrip, photo, prix, tailleCh1, tailleC
             <tr>
                 <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Lien photo :</strong></td>
                 <td><input type='text' class='inputText' name='photo' placeholder='ex : img/nomPhoto.jpg'/></td>
+            </tr>
+
+            <tr>
+                    <td><strong style='color:#ffe0ef; font-family: Ebrima; font-size: 19px;'>Quantité :</strong></td>
+                    <td><input type='text' class='inputText' name='qte' placeholder='ex : 1'/></td>
             </tr>
 
             <tr>

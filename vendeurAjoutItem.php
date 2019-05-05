@@ -15,6 +15,7 @@ $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $descrip = isset($_POST["descrip"])? $_POST["descrip"] : "";
 $photo = isset($_POST["photo"])? $_POST["photo"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
+$qte = isset($_POST["qte"])? $_POST["qte"] : "";
 
 //propre à Musique
 $video = isset($_POST["video"])? $_POST["video"] : "";
@@ -40,7 +41,7 @@ $couleur2 = isset($_POST["couleur2"])? $_POST["couleur2"] : "";
 if(isset($_POST["submit"]))
 {
     //Si un des champs commun est vide 
-    if ($nom=="" || $descrip=="" || $photo=="" || $prix=="")
+    if ($nom=="" || $descrip=="" || $photo=="" || $prix=="" || $qte=="")
     {
         //on affiche un message informant que des champs sont vides
         //on invite l'utilisateur à ré-essayer de se créer un compte via un bouton
@@ -67,7 +68,7 @@ if(isset($_POST["submit"]))
             //si l'item ajouté est une Musique ou un Livre
             if($categorie == "Musique")
             {
-                $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, video, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$video','$categorie', '$email')"; 
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, video, categorie, vendeur_email, qteEnVente) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$video','$categorie', '$email', '$qte')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
@@ -95,7 +96,7 @@ if(isset($_POST["submit"]))
             }
             else if ($categorie == "livre")
             {
-                $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$categorie', '$email')"; 
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, auteur, categorie, vendeur_email, qteEnVente) values ('$nom', '$descrip', '$photo', '$prix', '$auteur','$categorie', '$email', '$qte')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
@@ -123,7 +124,7 @@ if(isset($_POST["submit"]))
             }
             else if ($categorie == "sport")
             {
-                $sql = "INSERT INTO item (nom, descrip, photo, prix, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$categorie', '$email')"; 
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, categorie, vendeur_email, qteEnVente) values ('$nom', '$descrip', '$photo', '$prix','$categorie', '$email', '$qte')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
@@ -151,7 +152,7 @@ if(isset($_POST["submit"]))
             }
             else if ($categorie == "teeshirt")
             {
-                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleS, tailleM, tailleL, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$tailleS','$tailleM','$tailleL','$categorie', '$email')"; 
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleS, tailleM, tailleL, categorie, vendeur_email, qteEnVente) values ('$nom', '$descrip', '$photo', '$prix','$tailleS','$tailleM','$tailleL','$categorie', '$email', '$qte')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
@@ -179,7 +180,7 @@ if(isset($_POST["submit"]))
             }
             else if ($categorie == "chaussh")
             {
-                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$tailleCh1','$tailleCh2','$tailleCh3','$categorie', '$email')"; 
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, categorie, vendeur_email, qteEnVente) values ('$nom', '$descrip', '$photo', '$prix','$tailleCh1','$tailleCh2','$tailleCh3','$categorie', '$email', '$qte')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
@@ -207,7 +208,7 @@ if(isset($_POST["submit"]))
             }
             else if ($categorie == "chaussf")
             {
-                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, categorie, vendeur_email) values ('$nom', '$descrip', '$photo', '$prix','$tailleCh1','$tailleCh2','$tailleCh3','$couleur1','$couleur2','$categorie', '$email')"; 
+                $sql = "INSERT INTO item (nom, descrip, photo, prix, tailleCh1, tailleCh2, tailleCh3, couleur1, couleur2, categorie, vendeur_email, qteEnVente) values ('$nom', '$descrip', '$photo', '$prix','$tailleCh1','$tailleCh2','$tailleCh3','$couleur1','$couleur2','$categorie', '$email', '$qte')"; 
                  
                 if (mysqli_query($db_handle, $sql)) //Si la requête a bien été réalisée
                 {
