@@ -18,7 +18,11 @@
 
     <!-- On inclut la barre de navigation 'navbar.php'. Cela permet d'éviter de tout recopier à chaque fois 
     car cette barre de navigation est utilisée dans beaucoup de fichiers.-->
-    <?php include 'navbar.php'; ?> 
+    <?php include 'navbar.php'; 
+     echo "<div class='alert alert-primary' role='alert'>
+    Clickez sur un des items pour voir une vidéo !
+    </div>";
+    ?> 
 
 
     <div class="container-fluid"> 

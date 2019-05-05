@@ -107,6 +107,11 @@ $nom= isset($_POST["nom"])? $_POST["nom"] : "";//nom et prénom de la personne s
 $to="sarah.lepkmn@gmail.com";//DESTINATAIRE : mail de l'admin de ECEAmazon
 $msg= isset($_POST["msg"])? $_POST["msg"] : "";//CONTENU du mail
  
+
+if(isset($_POST['submit']))
+{
+
+
 if ( $email=="" || $nom=="" || $msg=="")
 {
     echo"
@@ -156,6 +161,7 @@ else
         ";
     }
 
+}
 }
 
 
